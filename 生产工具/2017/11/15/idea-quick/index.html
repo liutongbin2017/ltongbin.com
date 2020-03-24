@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <link rel="dns-prefetch" href="//darknights.me">
+    <link rel="dns-prefetch" href="//darknights.cn">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Dark knight's的个人技术博客,专注于web开发,追求前端最完美体验">
+    <meta name="keyword"  content="web,前端开发,网站设计,程序员,java,javascript,nodejs,python,Dark knight's">
+    <link rel="apple-touch-icon" href="https://cdn.darknights.cn/assets/images/desk-icon.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="https://cdn.darknights.cn/assets/images/desk-icon.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="https://cdn.darknights.cn/assets/images/desk-icon.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="https://cdn.darknights.cn/assets/images/desk-icon.png" />
+    <link href="https://cdn.darknights.cn/assets/images/desk-icon.png" rel="icon" sizes="192x192" />
+    <link href="https://cdn.darknights.cn/assets/images/desk-icon.png" rel="icon" sizes="128x128" />
+
+    <link rel="shortcut icon" href="https://cdn.darknights.cn/assets/images/favicon.ico">
+
+    <title>IDEA快捷键 - Dark knight's Blog</title>
+
+    <link rel="canonical" href="http://darknights.me/%E7%94%9F%E4%BA%A7%E5%B7%A5%E5%85%B7/2017/11/15/idea-quick/">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://cdn.darknights.cn/assets/styles/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link href="https://cdn.darknights.cn/assets/styles/animate.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://cdn.darknights.cn/assets/styles/hux-blog.min.css">
+    <!--<link rel="stylesheet" href="http://127.0.0.1:4000/assets/styles/hux-blog.min.css">-->
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="https://cdn.darknights.cn/assets/styles/syntax.css">
+
+    <link href="https://cdn.darknights.cn/assets/styles/jquery.auto-complete.min.css" rel="stylesheet">
+
+    <!--<link href="https://cdn.bootcss.com/jqcloud/1.0.4/jqcloud.css" rel="stylesheet">-->
+
+    <!--语法高亮-->
+    <link rel="stylesheet" href="https://cdn.darknights.cn/assets/styles/monokai-sublime.min.css"   />
+
+
+    <!-- toshiba 自己的样式覆盖 CSS -->
+    <link rel="stylesheet" href="https://cdn.darknights.cn/assets/styles/custom1.css">
+    <!--<link rel="stylesheet" href="http://127.0.0.1:4000/assets/styles/custom.css">-->
+
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <link href="https://cdn.darknights.cn/assets/styles/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <!--<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>-->
+        <script src="https://cdn.darknights.cn/assets/scripts/html5.min.js"></script>
+        <!--<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>-->
+        <script src="https://cdn.darknights.cn/assets/scripts/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" data-spy="scroll" data-target="#toc" data-offset="20">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Dark Knight</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/category">category</a>
+                    </li>
+                    <!--<li>-->
+                        <!--<a href="/tags">tags</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<a href="/essay">essay</a>-->
+                    <!--</li>-->
+                    <li>
+                        <a href="/news">news</a>
+                    </li>
+                    <li>
+                        <a href="/about">about</a>
+                    </li>
+                    <!---->
+                    <!--<li>-->
+                        <!--<a href="/about/">About</a>-->
+                    <!--</li>-->
+                    <!---->
+                    <!--<li>-->
+                        <!--<a href="/category/">category</a>-->
+                    <!--</li>-->
+                    <!---->
+                    <!--<li>-->
+                        <!--<a href="/essay/">ESSAY</a>-->
+                    <!--</li>-->
+                    <!---->
+                    <!--<li>-->
+                        <!--<a href="/news/">NEWS</a>-->
+                    <!--</li>-->
+                    <!---->
+                    <!--<li>-->
+                        <!--<a href="/tags/">Tags</a>-->
+                    <!--</li>-->
+                    <!---->
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Page Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('https://cdn.darknights.cn/assets/images/bg/batman/bat1.jpg ')
+    }
+</style>
+
+
+
+
+
+    <header class="intro-header" >
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                            <a class="tag" href="/tags/#生产工具" title="生产工具">生产工具</a>
+                            
+                            <a class="tag" href="/tags/#IDE" title="IDE">IDE</a>
+                            
+                        </div>
+                        <h1>IDEA快捷键</h1>
+                        
+                        
+                        <h2 class="subheading">熟悉IDEA快捷键工欲善其事必先利其器快捷键总结Mac版</h2>
+                        
+                        <span class="meta">Posted by toshiba on November 15, 2017</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container">
+				<h3 id="常用快捷键">常用快捷键</h3>
+<ul>
+  <li><code>Command + Alt + L</code>： 格式化代码</li>
+  <li><code>Command + Alt + I</code>： 将选中的代码进行自动缩进编排，这个功能在编辑JSP文件时也可以工作</li>
+  <li><code>Command + Alt + o</code>： 优化导入的类和包(去掉无用的import语句)</li>
+  <li><code>Command + /</code>： 注释 //</li>
+  <li><code>Command + shift + /</code>： 注释 /**/</li>
+  <li><code>Ctrl + shift + J</code>： 将两行合并成一行</li>
+</ul>
+
+<h3 id="定位跳转">定位跳转</h3>
+<ul>
+  <li><code>Command + B</code>： 快速打开光标处的类或方法</li>
+  <li><code>Command + Alt + B</code>： 跳转到方法实现处</li>
+  <li><code>Command + Alt + Left/Right</code>： 返回至上次浏览的位置</li>
+  <li><code>Command + Shift + Backspace</code>： 跳转到上次编辑的地方</li>
+  <li><code>F2/Shift+F2</code>： 高亮错误或警告快速定位(跳转至报错的位置)</li>
+  <li><code>Command + G</code>： 定位行(跳到输入的指定行数)</li>
+  <li><code>Command + [ or ]</code>： 可以跑到大括号的开头与结尾(方便if或者方法范围查看)</li>
+  <li><code>Alt + F3</code>： 逐个往下查找相同文本，并高亮显示</li>
+</ul>
+
+<h3 id="查找定位">查找定位</h3>
+<ul>
+  <li><code>Command + N</code>： 可以快速打开类</li>
+  <li><code>Command + Shift + N</code>： 可以快速打开文件  查找类中的方法或变量</li>
+  <li><code>Command + Alt + Shift + N</code>： 查找类中的方法或变量</li>
+  <li><code>Command + F</code>： 本文件中查找</li>
+  <li><code>Ctrl + Shift + F</code>： 全局查找(在路径中查找)</li>
+  <li><code>Shift + Shift</code>： 全局查找</li>
+</ul>
+
+<h3 id="代码操作">代码操作</h3>
+<ul>
+  <li><code>Command + W</code>： 选中单词逐步扩大范围</li>
+  <li><code>Command + R</code>： 在本文件替换文本</li>
+  <li><code>Ctrl + Shift + R</code>： 在本文件替换文本</li>
+  <li><code>Command + X</code>： 删除行</li>
+  <li><code>Command + D</code>： 复制行</li>
+  <li><code>Command + Y</code>： 删除当前行</li>
+  <li><code>Alt + Shift + Up/Down</code>： 当前行上下移动</li>
+  <li><code>Command + Shift + U</code>： 大小写转化</li>
+  <li><code>Command + Shift + Z</code>： 重做，即反撤销(与搜狗输入法查看字符冲突)</li>
+  <li><code>Command + Shift + V</code>： 查看最近复制的多条内容，并选择需要的内容粘贴</li>
+</ul>
+
+<h3 id="代码方法生成">代码(方法)生成</h3>
+<ul>
+  <li><code>psvm/sout</code>： main函数/System.out.println();</li>
+  <li><code>Command + J</code>： 查看更多快捷方法</li>
+  <li><code>Command + Shift + 回车</code>： 自动补全、换行</li>
+  <li><code>Ctrl + Space</code>： 代码提示（与系统输入法快捷键冲突）</li>
+  <li><code>Command + Alt + T</code>： 可以把代码包在一个块内，例如：try/catch</li>
+</ul>
+
+<h3 id="其他操作">其他操作</h3>
+<ul>
+  <li><code>Command + E</code>： 显示最近操作过的文件</li>
+  <li><code>Alt + F7</code>： 查找整个工程中使用地某一个类、方法或者变量的位置</li>
+  <li><code>Command + F7</code>： 可以查询当前元素在当前文件中的引用，然后按 F3 可以选择</li>
+  <li><code>Command + Shift + F7</code>： 高亮显示所有该文本，按 Esc 高亮消失</li>
+  <li><code>Command + P</code>： 可以显示参数信息</li>
+  <li><code>Command + F12</code>： 可以显示当前文件的结构</li>
+  <li><code>Ctrl + H</code>： 显示类结构图（类的继承层次）</li>
+  <li><code>Command + 6</code>： 查看所有TODO</li>
+  <li><code>Command + 7</code>： 查看本类结构</li>
+  <li><code>Command + +/-</code>： 当前方法展开、折叠</li>
+  <li><code>Command + Shift + +/-</code>： 全部展开、折叠</li>
+</ul>
+
+<p>Alt+Insert：可以生成构造器/Getter/Setter等(建议使用lombok插件及@Data注解) 未验证
+Alt+ Up/Down(上下箭头)：在方法间快速移动定位</p>
+
+<h4 id="参考文章">参考文章</h4>
+<ul>
+  <li><a href="http://wiki.jikexueyuan.com/project/intellij-idea-tutorial/keymap-mac-introduce.html">IntelliJ IDEA For Mac 快捷键</a>
+    <h4 id="intellij-idea-for-mac-快捷键">IntelliJ IDEA For Mac 快捷键</h4>
+  </li>
+  <li>根据官方pdf翻译：<a href="https://www.jetbrains.com/idea/docs/IntelliJIDEA_ReferenceCard_Mac.pdf">https://www.jetbrains.com/idea/docs/IntelliJIDEA_ReferenceCard_Mac.pdf</a></li>
+  <li>在 IntelliJ IDEA 中有两个 Mac 版本的快捷键，一个叫做：Mac OS X，一个叫做：Mac OS X 10.5+</li>
+  <li>目前都是用：Mac OS X 10.5+</li>
+  <li>有两套的原因：<a href="https://intellij-support.jetbrains.com/hc/en-us/community/posts/206159109-Updated-Mac-OS-X-keymap-Feedback-needed">https://intellij-support.jetbrains.com/hc/en-us/community/posts/206159109-Updated-Mac-OS-X-keymap-Feedback-needed</a>
+    <blockquote>
+      <p>建议将 Mac 系统中与 IntelliJ IDEA 冲突的快捷键取消或更改，不建议改 IntelliJ IDEA 的默认快捷键。</p>
+    </blockquote>
+  </li>
+</ul>
+
+
+                <hr>
+
+                <ul class="pager">
+    
+    <li class="previous">
+        <a href="/%E7%94%9F%E4%BA%A7%E5%B7%A5%E5%85%B7/2017/11/15/quick-key/" data-toggle="tooltip" data-placement="top" title="Visual Studio快捷键">&larr; Previous Post</a>
+    </li>
+    
+    
+    <li class="next">
+        <a href="/%E7%94%9F%E4%BA%A7%E5%B7%A5%E5%85%B7/2017/11/15/sublime-quick/" data-toggle="tooltip" data-placement="top" title="SublimeText快捷键">Next Post &rarr;</a>
+    </li>
+    
+</ul>
+
+
+
+
+<!-- disqus 评论框 start -->
+<div class="comment">
+    <div id="disqus_thread"
+         data-thread-key="/%E7%94%9F%E4%BA%A7%E5%B7%A5%E5%85%B7/2017/11/15/idea-quick"
+         data-title="IDEA快捷键"
+         data-url="http://darknights.me/%E7%94%9F%E4%BA%A7%E5%B7%A5%E5%85%B7/2017/11/15/idea-quick/"></div>
+    <script>
+
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        /*
+         var disqus_config = function () {
+         this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+         this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+         };
+         */
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://iori-1.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+<!-- disqus 评论框 end -->
+
+
+
+
+
+
+
+
+
+            </div>
+
+            <!-- Sidebar Container -->
+            
+
+
+
+
+
+<div class="
+                col-lg-3 col-lg-offset-0
+                col-md-3 col-md-offset-0
+                col-sm-12
+                col-xs-12
+                sidebar-container
+                hidden-xs
+                hidden-sm
+            ">
+    <!-- Search Container -->
+    <div class="hidden-xs">
+        <div class="input-group">
+            <input type="text" name="q" autofocus="" class="form-control" id="autocomplete" placeholder="搜索" autocomplete="off">
+            <span class="input-group-btn">
+                <button class="btn  btn-default" id="search-btn" type="submit">Go</button>
+            </span>
+        </div>
+    </div>
+
+    <hr class="hidden-sm hidden-xs">
+    <!--<h5 id="catalog">-->
+        <!--<a class="catalog-toggle" href="#">目录</a>-->
+    <!--</h5>-->
+    <div id="toc"></div>
+
+
+    <!--<ul class="catalog-body">-->
+        <!--<li class="h2_nav"><a href="#多页应用vuepwa" rel="nofollow">多页应用、Vue、PWA？</a></li>-->
+        <!--<li class="h2_nav"><a href="#实现-prpl-模式" rel="nofollow">实现 “PRPL” 模式</a></li>-->
+        <!--<li class="h3_nav active"><a href="#1-pushpreload推送预加载初始-url-路由所需的关键资源" rel="nofollow">1. PUSH/PRELOAD，推送/预加载初始 URL 路由所需的关键资源。</a></li>-->
+    <!--</ul>-->
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+            <!-- 详情底部的友情链接和标签云这里不单独抽离 -->
+            <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                            <a href="/tags/#博客搭建" title="博客搭建" rel="2">
+                                博客搭建
+                            </a>
+        				
+                            <a href="/tags/#JavaScript" title="JavaScript" rel="3">
+                                JavaScript
+                            </a>
+        				
+                            <a href="/tags/#jekyll" title="jekyll" rel="1">
+                                jekyll
+                            </a>
+        				
+                            <a href="/tags/#interview" title="interview" rel="1">
+                                interview
+                            </a>
+        				
+                            <a href="/tags/#工具" title="工具" rel="5">
+                                工具
+                            </a>
+        				
+                            <a href="/tags/#git" title="git" rel="3">
+                                git
+                            </a>
+        				
+                            <a href="/tags/#娱乐" title="娱乐" rel="1">
+                                娱乐
+                            </a>
+        				
+                            <a href="/tags/#html" title="html" rel="1">
+                                html
+                            </a>
+        				
+                            <a href="/tags/#管理系统主题" title="管理系统主题" rel="1">
+                                管理系统主题
+                            </a>
+        				
+                            <a href="/tags/#计算机基础" title="计算机基础" rel="4">
+                                计算机基础
+                            </a>
+        				
+                            <a href="/tags/#javascript" title="javascript" rel="20">
+                                javascript
+                            </a>
+        				
+                            <a href="/tags/#生产工具" title="生产工具" rel="4">
+                                生产工具
+                            </a>
+        				
+                            <a href="/tags/#IDE" title="IDE" rel="4">
+                                IDE
+                            </a>
+        				
+                            <a href="/tags/#Lodash" title="Lodash" rel="1">
+                                Lodash
+                            </a>
+        				
+                            <a href="/tags/#ES6学习笔记" title="ES6学习笔记" rel="1">
+                                ES6学习笔记
+                            </a>
+        				
+                            <a href="/tags/#读书总结" title="读书总结" rel="13">
+                                读书总结
+                            </a>
+        				
+                            <a href="/tags/#Vim" title="Vim" rel="1">
+                                Vim
+                            </a>
+        				
+                            <a href="/tags/#reactjs" title="reactjs" rel="1">
+                                reactjs
+                            </a>
+        				
+                            <a href="/tags/#面试" title="面试" rel="9">
+                                面试
+                            </a>
+        				
+                            <a href="/tags/#CSS" title="CSS" rel="1">
+                                CSS
+                            </a>
+        				
+                            <a href="/tags/#HTML" title="HTML" rel="1">
+                                HTML
+                            </a>
+        				
+                            <a href="/tags/#调试" title="调试" rel="1">
+                                调试
+                            </a>
+        				
+                            <a href="/tags/#脚手架" title="脚手架" rel="1">
+                                脚手架
+                            </a>
+        				
+                            <a href="/tags/#基础" title="基础" rel="6">
+                                基础
+                            </a>
+        				
+                            <a href="/tags/#LeetCode" title="LeetCode" rel="5">
+                                LeetCode
+                            </a>
+        				
+                            <a href="/tags/#HSTS" title="HSTS" rel="1">
+                                HSTS
+                            </a>
+        				
+        			</div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+                    
+                        <li><a href=""></a></li>
+                    
+                        <li><a href="http://www.ruanyifeng.com/blog/">阮一峰的网络日志</a></li>
+                    
+                        <li><a href="http://www.zhangxinxu.com/wordpress/">张鑫旭</a></li>
+                    
+                        <li><a href="http://www.cnblogs.com/TomXu/tag/JavaScript/">汤姆大叔的博客</a></li>
+                    
+                        <li><a href="http://macshuo.com/">MacTalk By 池建强</a></li>
+                    
+                        <li><a href="http://www.barretlee.com/">小胡子哥</a></li>
+                    
+                        <li><a href="https://lifesinger.wordpress.com/">岁月如歌玉伯</a></li>
+                    
+                        <li><a href="https://mritd.me">漠然</a></li>
+                    
+                        <li><a href="http://xtoshiba.me">Hux Blog</a></li>
+                    
+                        <li><a href="http://blog.codingplayboy.com/">熊建刚</a></li>
+                    
+                        <li><a href="https://teddysun.com/">秋水逸冰</a></li>
+                    
+                        <li><a href="http://www.alloyteam.com">AlloyTeam</a></li>
+                    
+                        <li><a href="https://efe.baidu.com">百度EFE</a></li>
+                    
+                        <li><a href="http://eux.baidu.com/">百度EUX</a></li>
+                    
+                        <li><a href="https://fed.taobao.org">淘宝前端团队</a></li>
+                    
+                        <li><a href="https://isux.tencent.com/">腾讯ISUX</a></li>
+                    
+                        <li><a href="https://aotu.io/">凹凸实验室</a></li>
+                    
+                </ul>
+                
+            </div>
+
+
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    
+
+                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+                    
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/sun-dong-zhi/activities">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://weibo.com/2407846257/profile?rightmod=1&wvr=6&mod=personinfo">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+
+                    
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/profile.php?id=100004675021382">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/IORI20091101">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Dark Knight 2020 |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=IORI20091101&repo=IORI20091101.github.io&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<!--<script src="/assets/scripts/jquery.min.js "></script>-->
+<script src="https://cdn.darknights.cn/assets/scripts/jquery.min.js"></script>
+
+<script src="https://cdn.darknights.cn/assets/scripts/jquery.auto-complete.min.js"></script>
+
+<script src="https://cdn.darknights.cn/assets/scripts/highlight.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<!--<script src="/assets/scripts/bootstrap.min.js"></script>-->
+<script src="https://cdn.darknights.cn/assets/scripts/bootstrap.min.js"></script>
+
+
+<!--<script type="text/javascript" color="0,229,238" opacity='0.5' zIndex="-2" count="100" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>-->
+
+
+<!--<script src="https://cdn.bootcss.com/jqcloud/1.0.4/jqcloud-1.0.4.min.js"></script>-->
+<script src="https://cdn.darknights.cn/assets/scripts/fastclick.min.js"></script>
+
+
+<script src="https://cdn.darknights.cn/assets/scripts/jquery.tagcloud.js"></script>
+
+<script src="https://cdn.darknights.cn/assets/scripts/toc.js"></script>
+<script src="https://cdn.darknights.cn/assets/scripts/custom.js"></script>
+
+<!--<script src="http://127.0.0.1:4000/assets/scripts/toc.js"></script>-->
+<!--<script src="http://127.0.0.1:4000/assets/scripts/custom.js"></script>-->
+<!--<script src="http://127.0.0.1:4000/assets/scripts/jquery.nav.js"></script>-->
+
+
+
+<!-- async load function -->
+<!--<script>-->
+    <!--function async(u, c) {-->
+      <!--var d = document, t = 'script',-->
+          <!--o = d.createElement(t),-->
+          <!--s = d.getElementsByTagName(t)[0];-->
+      <!--o.src = u;-->
+      <!--if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }-->
+      <!--s.parentNode.insertBefore(o, s);-->
+    <!--}-->
+<!--</script>-->
+
+
+
+
+<!--
+     Because of the native support for backtick-style fenced code blocks
+     right within the Markdown is landed in Github Pages,
+     From V1.6, There is no need for Highlight.js,
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/
+-->
+
+
+
+
+<!--fastClick.js -->
+
+
+<!-- Google Analytics -->
+
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-107257239-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments)};
+    gtag('js', new Date());
+
+    gtag('config', 'UA-107257239-1');
+</script>
+
+
+
+
+<script>
+        (function(window,document,undefined){
+            var hearts = [];
+            window.requestAnimationFrame = (function(){
+                    return window.requestAnimationFrame ||
+                               window.webkitRequestAnimationFrame ||
+                               window.mozRequestAnimationFrame ||
+                               window.oRequestAnimationFrame ||
+                               window.msRequestAnimationFrame ||
+                               function (callback){
+                                       setTimeout(callback,1000/60);
+                               }
+            })();
+            init();
+            function init(){
+                    css(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}");
+                    attachEvent();
+                    gameloop();
+            }
+            function gameloop(){
+                    for(var i=0;i<hearts.length;i++){
+                        if(hearts[i].alpha <=0){
+                                document.body.removeChild(hearts[i].el);
+                                hearts.splice(i,1);
+                                continue;
+                        }
+                        hearts[i].y--;
+                        hearts[i].scale += 0.004;
+                        hearts[i].alpha -= 0.013;
+                        hearts[i].el.style.cssText = "left:"+hearts[i].x+"px;top:"+hearts[i].y+"px;opacity:"+hearts[i].alpha+";transform:scale("+hearts[i].scale+","+hearts[i].scale+") rotate(45deg);background:"+hearts[i].color+";z-index:99999";
+                }
+                requestAnimationFrame(gameloop);
+            }
+            function attachEvent(){
+                    var old = typeof window.onclick==="function" && window.onclick;
+                    window.onclick = function(event){
+                            old && old();
+                            createHeart(event);
+                    }
+            }
+            function createHeart(event){
+                var d = document.createElement("div");
+                d.className = "heart";
+                hearts.push({
+                        el : d,
+                        x : event.clientX - 5,
+                        y : event.clientY - 5,
+                        scale : 1,
+                        alpha : 1,
+                        color : randomColor()
+                });
+                document.body.appendChild(d);
+        }
+        function css(css){
+                var style = document.createElement("style");
+                    style.type="text/css";
+                    try{
+                        style.appendChild(document.createTextNode(css));
+                    }catch(ex){
+                        style.styleSheet.cssText = css;
+                    }
+                    document.getElementsByTagName('head')[0].appendChild(style);
+        }
+            function randomColor(){
+                    return "rgb("+(~~(Math.random()*255))+","+(~~(Math.random()*255))+","+(~~(Math.random()*255))+")";
+            }
+    })(window,document);
+</script>
+
+
+</body>
+
+</html>

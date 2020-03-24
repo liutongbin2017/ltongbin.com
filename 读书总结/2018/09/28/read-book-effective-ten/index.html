@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <link rel="dns-prefetch" href="//darknights.me">
+    <link rel="dns-prefetch" href="//darknights.cn">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Dark knight's的个人技术博客,专注于web开发,追求前端最完美体验">
+    <meta name="keyword"  content="web,前端开发,网站设计,程序员,java,javascript,nodejs,python,Dark knight's">
+    <link rel="apple-touch-icon" href="https://cdn.darknights.cn/assets/images/desk-icon.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="https://cdn.darknights.cn/assets/images/desk-icon.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="https://cdn.darknights.cn/assets/images/desk-icon.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="https://cdn.darknights.cn/assets/images/desk-icon.png" />
+    <link href="https://cdn.darknights.cn/assets/images/desk-icon.png" rel="icon" sizes="192x192" />
+    <link href="https://cdn.darknights.cn/assets/images/desk-icon.png" rel="icon" sizes="128x128" />
+
+    <link rel="shortcut icon" href="https://cdn.darknights.cn/assets/images/favicon.ico">
+
+    <title>Effective JavaScript (十) - Dark knight's Blog</title>
+
+    <link rel="canonical" href="http://darknights.me/%E8%AF%BB%E4%B9%A6%E6%80%BB%E7%BB%93/2018/09/28/read-book-effective-ten/">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://cdn.darknights.cn/assets/styles/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link href="https://cdn.darknights.cn/assets/styles/animate.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://cdn.darknights.cn/assets/styles/hux-blog.min.css">
+    <!--<link rel="stylesheet" href="http://127.0.0.1:4000/assets/styles/hux-blog.min.css">-->
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="https://cdn.darknights.cn/assets/styles/syntax.css">
+
+    <link href="https://cdn.darknights.cn/assets/styles/jquery.auto-complete.min.css" rel="stylesheet">
+
+    <!--<link href="https://cdn.bootcss.com/jqcloud/1.0.4/jqcloud.css" rel="stylesheet">-->
+
+    <!--语法高亮-->
+    <link rel="stylesheet" href="https://cdn.darknights.cn/assets/styles/monokai-sublime.min.css"   />
+
+
+    <!-- toshiba 自己的样式覆盖 CSS -->
+    <link rel="stylesheet" href="https://cdn.darknights.cn/assets/styles/custom1.css">
+    <!--<link rel="stylesheet" href="http://127.0.0.1:4000/assets/styles/custom.css">-->
+
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <link href="https://cdn.darknights.cn/assets/styles/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <!--<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>-->
+        <script src="https://cdn.darknights.cn/assets/scripts/html5.min.js"></script>
+        <!--<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>-->
+        <script src="https://cdn.darknights.cn/assets/scripts/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" data-spy="scroll" data-target="#toc" data-offset="20">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Dark Knight</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/category">category</a>
+                    </li>
+                    <!--<li>-->
+                        <!--<a href="/tags">tags</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<a href="/essay">essay</a>-->
+                    <!--</li>-->
+                    <li>
+                        <a href="/news">news</a>
+                    </li>
+                    <li>
+                        <a href="/about">about</a>
+                    </li>
+                    <!---->
+                    <!--<li>-->
+                        <!--<a href="/about/">About</a>-->
+                    <!--</li>-->
+                    <!---->
+                    <!--<li>-->
+                        <!--<a href="/category/">category</a>-->
+                    <!--</li>-->
+                    <!---->
+                    <!--<li>-->
+                        <!--<a href="/essay/">ESSAY</a>-->
+                    <!--</li>-->
+                    <!---->
+                    <!--<li>-->
+                        <!--<a href="/news/">NEWS</a>-->
+                    <!--</li>-->
+                    <!---->
+                    <!--<li>-->
+                        <!--<a href="/tags/">Tags</a>-->
+                    <!--</li>-->
+                    <!---->
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Page Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('https://cdn.darknights.cn/assets/images/bg/batman/bat8.jpg ')
+    }
+</style>
+
+
+
+
+
+    <header class="intro-header" >
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                            <a class="tag" href="/tags/#javascript" title="javascript">javascript</a>
+                            
+                            <a class="tag" href="/tags/#读书总结" title="读书总结">读书总结</a>
+                            
+                        </div>
+                        <h1>Effective JavaScript (十)</h1>
+                        
+                        
+                        <h2 class="subheading">并发</h2>
+                        
+                        <span class="meta">Posted by toshiba on September 28, 2018</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container">
+				<h2 id="并发">并发</h2>
+
+<p>JavaScript被设计成一种嵌入式的脚本语言。它不是以单独的应用程序运行，而是作为大型应用程序环境下的脚本运行。典型的例子当然是Web浏览器。
+JavaScript中编写响应多个并发事件的程序的方法非常人性化，而且强大，因为它使用了一个简单的执行模型(有时称为事件队列和事件循环并发)和被称为异步的API.
+奇怪的是，到目前为止，ECMAScript标准从来没有关于并发的说明。我们讨论的都是“约定成俗”的JavaScript特性，并不是官方标准。然而，绝大多数JavaScript的环境都使用相同的并发策略，未来标准的版本很有可能会基于广泛实现的执行模型来标准化。不管标准如何定义，使用事件和异步API是JavaScript编程的基础部分。</p>
+
+<h2 id="不要阻塞io事件队列">不要阻塞I/O事件队列</h2>
+
+<p>JavaScript程序是建立在事件之上的。输入可能来自各种各样的外部源，用户的交互操作，输入的网络数据或定时警报，我们通常会写这样的代码来等待某个特定的输入</p>
+<pre><code>var text = downloadSync("http://example.com/file.txt");
+
+console.log(text);
+</code></pre>
+<p>这样的函数通常被称为同步函数或阻塞函数， 程序会停止工作，等待它的输入。这个例子是等的网络下载文件的结果。</p>
+
+<p>在JavaScript中，大多数的I/O操作都提供了异步的或非阻塞的API, 程序提供一个回调函数，一旦输入完成就可以被系统调用， 而不是将程序阻塞在等待结果的线程上。</p>
+<pre><code>dowanloadAsync("http://example.com/file.txt", function(text) {
+	console.log(text);
+})
+</code></pre>
+
+<p>JavaScript并发的一个重要规则是绝不要在应用程序事件队列中使用阻塞I/O的API。对于Web应用程序的交互性，同步的I/O会导致灾难性的结果，在操作完成之前一直会阻塞用户于页面的交互。</p>
+
+<p>Web平台提供了Workder的API，使得产生大量的并行计算称为可能。不同于传统的线程执行Workders在一个完全隔离的状态下进行，没有获取全局作用域或应用程序主线程Web页面内容的能力。因此它不回妨碍主事件队列中运行的代码的执行。在一个Worker中使用XMLHttpRequest同步的变种很少出问题。下载操作的确会阻塞Worker继续运行，但这并不会组织要么的渲染或事件队列中的事件响应。</p>
+
+<h2 id="在异步序列中使用嵌套或命名的回调函数">在异步序列中使用嵌套或命名的回调函数</h2>
+
+<pre><code>db.lookupAsync("url", function(url) {
+	//	
+});
+
+downloadAsync(url, function(text) {
+	console.log("contents of " + url + " : " + text);
+});
+
+</code></pre>
+<p>两个异步函数第二个的url读取不到，我们可以使用嵌套</p>
+
+<pre><code>db.lookupAsync("url", function(url) {
+	downloadAsync(url, function(text) {
+		console.log("contents of " + url + " : " + text);
+	});
+});
+
+
+</code></pre>
+
+<p>但是回调函数越来越多会变得很笨拙。</p>
+
+<pre><code>db.lookupAsync("url", function(url) {
+	downloadAsync(url, function(text) {
+		downloadAsync("a.txt", function(a) {
+			downloadAsync("b.txt", function(b) {
+				// ...
+			})	
+		})
+	});
+});
+
+
+</code></pre>
+
+<p>减少嵌套的方法之一就是将嵌套的回调函数作为命名的函数。</p>
+
+<pre><code>db.lookupAsync("url", downloadURL);
+
+
+// 仍然有嵌套
+function downloadURL(url) {
+	downloadAsync(url, function(text) {
+		showContents(url, text);
+	});
+}
+
+function showContents(url, text) {
+	console.log("contents of " + url + " : " + text);
+}
+
+</code></pre>
+
+<p>上面的例子中仍然有嵌套，我们可以使用bind方法消除最深层的嵌套回调函数。</p>
+
+<pre><code>db.lookupAsync("url", downloadURL);
+
+
+// 仍然有嵌套
+function downloadURL(url) {
+	downloadAsync(url, showContents.bind(null, url));
+}
+
+function showContents(url, text) {
+	console.log("contents of " + url + " : " + text);
+}
+
+</code></pre>
+
+<p>但是如果层级过多仍然会有问题， 比如</p>
+<pre><code>db.lookupAsync("url", downloadURL);
+
+
+function downloadURL(url) {
+	downloadAsync(url, downloadABC.bind(null, url));
+}
+
+function downloadABC(url, file) {
+	downloasAsync("a.txt", downloadFileBC.bind(null, url, file))
+}
+
+function downloadBC(url, file, a) {
+	downloasAsync("b.txt", downloadFileFinish.bind(null, url, file, a))
+}
+
+function downloadFileFinish(url, file, a, b) {
+	// ...
+}
+
+</code></pre>
+<p>比如尴尬的函数命名，和参数传递。最好的方式还是将两种方式结合。</p>
+
+<pre><code>
+db.lookupAsync("url", function(url) {
+	downloadURLAndFiles(url);
+});
+
+
+function downloadURLAndFiles(url) {
+	downloadAsync(url, downloadFiles.bind(null, url));
+}
+
+function downloadFiles(url, file) {
+	downloadAsync("a.txt", function(a) {
+		downloadAsync("b.txt", function(b) {
+			// ...
+		})	
+	})
+}
+
+</code></pre>
+
+<p>更好的方法是抽象出一个可以下载多个文件的方法</p>
+<pre><code>function downloadFiles(url, file) {
+	downloadAllAsync(["a.txt", "b.txt", "c.txt"], function(all) {
+		var a = all[0], b = all[1], c = all[2];
+	})
+}
+</code></pre>
+
+<h2 id="当心丢弃错误">当心丢弃错误</h2>
+
+<p>同步代码我们可以通过<code>try...catch</code>来捕获所有错误，比如</p>
+<pre><code>try {
+	f();
+	g();
+	h();
+} catch(e) {
+	// handle any error that occured
+}
+
+
+</code></pre>
+<p>但是异步代码根本不可能抛出异常， 通常异步API会有一个额外的回调函数来处理网络错误。</p>
+
+<pre><code>
+downloadAsync("url", function(text) {
+		
+}, function(err) {
+	console.log("Error " + err)	;
+});
+
+多个回调时可以提取公共部分
+
+function onErr(err) {
+	console.log("Error " + err)	;
+}
+
+downloadAsync("url", function(text) {
+		
+}, onErr);
+
+</code></pre>
+
+<p>Node.js 异步处理API的错误处理，我们通过if判断来控制每个回调函数</p>
+
+<pre><code>function onErr(err) {
+	console.log("Error " + err)	;
+}
+
+downloadAsync("url", function(error, text) {
+	if(error) {
+		onError(error);
+		return false;
+	}
+
+	//success
+});
+
+
+更简洁写法
+
+downloadAsync("url", function(error, text) {
+	if(error) return onError(error);
+
+	//success
+});
+
+
+</code></pre>
+
+<h2 id="对异步循环使用递归">对异步循环使用递归</h2>
+
+<p>如果一个函数接受一个URL的数组并尝试下载买每个文件，如果API是同步的很容易实现</p>
+
+<pre><code>function downloadOneSync(urls) {
+	for(var i = 0, n = urls.length; i &lt; n; i++) {
+		try {
+			return downloadSync(urls[i]);
+		} catch(e) {
+
+		}
+	}
+
+	throw new Error("all downloads failed");
+}
+如果调用downloadAsync的话会所有文件一起下载没有顺序，所以我们需要这样做在每个回调结束调用自身
+
+function downloadOneAsync(urls, onsuccess, onfailur) {
+	var n = urls.length;
+
+	function tryNextURL(i) {
+		if(i &gt;= n) {
+			onfailur("all downloads failed");
+			return;
+		}
+
+		downloadAsync(urls[i], onsuccess, function() {
+			tryNextURL(i + 1);
+		})
+	}
+
+	tryNextURL(0)
+}
+</code></pre>
+
+<p>局部函数tryNextURL是一个递归函数。它的实现调用了自身。 目前典型的JavaScript环境中一个递归函数调用自身多次会导致失败。
+因为当一个程序执行有太多的函数调用，它会耗尽栈空间，最终抛出异常。这种情况被称为栈溢出。</p>
+
+<p>该例子调用100000次会产生一个运行时错误。</p>
+<pre><code>
+function countdown(n) {
+	if(n === 0) {
+		return "done";
+	} else {
+		return countdown(n -1);
+	}
+}
+
+</code></pre>
+
+<p>异步操作不需要等待递归回调返回后才返回，调用栈不回有十万个函数在等待。每次有进有出只调用一个。</p>
+
+<ul>
+  <li>循环不能是异步的</li>
+  <li>使用递归函数在事件循环的单独轮次中执行迭代</li>
+  <li>在事件循环的单独轮次中执行递归，并不会导致栈溢出</li>
+</ul>
+
+<h2 id="不要在计算时阻塞事件队列">不要在计算时阻塞事件队列</h2>
+
+<p>如果你的程序需要执行代价高昂的计算你该怎么办，最简单的方法就是使用想Web客户端平台的Worker API这样的并发机制。</p>
+
+<pre><code>
+var ai = new Worker('ai.js');
+
+var userMove = /* *** */;
+
+ai.postMessage(JSON.stringify({
+	userMOve: userMove
+}));
+
+
+ai.onmessage = function(event) {
+	executeMove(JSON.parse(event.data).computerMove);
+}
+</code></pre>
+<p>这样会产生一个新的线程独立的事件队列的并发执行线程。该worker是一个完全隔离的状态–没有任何应用程序对象的直接访问。但是，应用程序于worker之间可以功过发送形式为字符串的message来交互。</p>
+
+<ul>
+  <li>避免在主事件队列中执行代价高昂的计算</li>
+  <li>在支持Worker API的平台，该API可以用来在一个独立的事件队列中运行长计算程序。</li>
+  <li>在Worker API不可用活代价高昂的环境中，考虑将计算程序分解到事件循环的多个轮次中</li>
+</ul>
+
+<h2 id="使用计数器来执行并行操作">使用计数器来执行并行操作</h2>
+
+<pre><code>function downloadAllAsync(urls, onsuccess, onerror) {
+
+	var result = [], length = urls.length;
+
+	if(length === 0) {
+		setTimeout(onsuccess.bind(null, result), 0);
+		return;
+	}
+
+	urls.forEach(function(url) {
+		downloadAsync(url, function(rext) {
+			if(result) {
+				result.push(text);
+				if(result.length === urls.length) {
+					onsuccess(result);
+				}
+			}
+		}, function(error) {
+			if(result) {
+				result = null;
+				onerror(error);
+			}
+		});
+	})
+}
+
+这段代码有个错误
+
+var filenames = [
+	"huge.txt",
+	"tiny.txt",
+	"medium.txt",
+];
+
+downloadAllAsync(filenames, function(files) {
+	console.log("Huge file: " + files[0].length); // tiny
+	console.log("Tiny file: " + files[0].length); // medium
+	console.log("Medium file: " + files[0].length); // huge
+}, function(error) {
+	console.log("Error : " + error);
+});
+
+
+</code></pre>
+<p>这里下载文件的顺序并不可控，因为文件是并行下载的。 调用者无法找出那个结果对应哪个文件， 上面的例子假设结果合输入有相同的顺序其实是错误的</p>
+
+<pre><code>function downloadAllAsync(urls, onsuccess, onerror) {
+
+	var result = [], length = urls.length;
+
+	if(length === 0) {
+		setTimeout(onsuccess.bind(null, result), 0);
+		return;
+	}
+
+	urls.forEach(function(url, i) {
+		downloadAsync(url, function(text) {
+			if(result) {
+				
+				result[i] = text;
+				if(result.length === urls.length) {
+					onsuccess(result);
+				}
+			}
+		}, function(error) {
+			if(result) {
+				result = null;
+				onerror(error);
+			}
+		});
+	})
+}
+
+</code></pre>
+
+<p>这个版本也有问题如果先下载完成的是第三个文件则 result[2] = text; 那么result的长度也是3， 则直接在if条件中返回，用户的success回调函数将被过早调用，其参数为一个不完整的结果数组。</p>
+
+<p>所以正确的方式应该是这样</p>
+<pre><code>
+function downloadAllAsync(urls, onsuccess, onerror) {
+
+	var result = [], pending = urls.length;
+
+	if(pending === 0) {
+		setTimeout(onsuccess.bind(null, result), 0);
+		return;
+	}
+
+	urls.forEach(function(url, i) {
+		downloadAsync(url, function(text) {
+			if(result) {
+			
+				result[i] = text;
+				pending--;
+				if(pending === 0) {
+					onsuccess(result);
+				}
+			}
+		}, function(error) {
+			if(result) {
+				result = null;
+				onerror(error);
+			}
+		});
+	})
+}
+
+</code></pre>
+
+<h2 id="绝不要同步的调用异步的回调函数">绝不要同步的调用异步的回调函数</h2>
+
+<p>加入下载文件的例子有一个缓存</p>
+
+<pre><code>var cache = new Dict();
+
+function downloadCachingAsync(url, onsuccess, onerrur) {
+	if(cache.has(url)) {
+		onsuccess(cache.get(url));  // 同步调用
+	}
+
+	return downloadAsync(url, function(file) {
+		cache.set(url, file);
+		onsuccess(file);
+	}, onerror);
+}
+
+通常情况如果可以回立即提供数据，但这改变了用户预期
+
+downloadAsync("file.txt", function(file) {
+	console.log("finished");
+});
+
+console.log("starting");
+
+这里按照我们预想 可能先返回 "starting" 然后 "finished", 但是由于同步调用了函数，
+这里如果文件有缓存的话 先返回了"finished" 然后才是 "starting"; 这与我们的预想不符。
+所以我们应该这样来使用
+
+if(cache.has(url)) {
+	var cached = cache.get(url);
+	setTimeout(onsuccess.bind(null, cached), 0);
+	return;
+}
+
+</code></pre>
+
+<h2 id="使用promise模式清洁异步逻辑">使用promise模式清洁异步逻辑</h2>
+
+<pre><code>
+downloadAsync("file.txt", function(file) {
+	console.log("file : " + file);
+});
+
+
+相比之下，基于promise的API不接受回调函数作为参数
+
+var p = downloadP("file.txt");
+
+p.then(function(file) {
+	console.log("file: " + file);
+});
+
+promise的返回值是一个新的promise
+
+var fileP = downloadP("file.txt");
+
+var lengthP = fileP.then(function(file) {
+	return file.length;
+});
+
+lengthP.then(function(length) {
+	console.log("length: " + length);
+});
+
+
+</code></pre>
+
+<p>promise通常提供给一个叫做when的工具函数，或者join</p>
+
+<pre><code>var filesP = join(downloadP("file1.txt"),
+				downloadP("file2.txt"),
+				downloadP("file3.txt"));
+
+filesP.then(function(files) {
+	// files[0]
+});
+
+
+var fileP1 = downloadP("file1.txt");
+var fileP2 = downloadP("file2.txt");
+var fileP3 = downloadP("file3.txt");
+
+when([fileP1, fileP2, fileP3], function(files) {
+	console.log("file1: " + files[0]);
+
+})
+
+</code></pre>
+<p>使用select或choose工具函数可以使几个promise彼此竞争。</p>
+
+<pre><code>var filesP = select(downloadP("file1.txt"),
+				downloadP("file2.txt"),
+				downloadP("file3.txt"));
+
+filesP.then(function(file) {
+	//file
+	// 返回值最先完成下载的文件的promise
+});
+
+</code></pre>
+
+<p>select函数的另一个用途是提供超时来终止长时间的操作</p>
+
+<pre><code>var fileP = select(downloadP("file.txt"), timeoutErrorP(2000));
+
+filep.then(function(file) {
+	console.log("file: " + file);
+}, function(error) {
+	console.log("I/O error or timeout: " + error);
+})
+
+</code></pre>
+
+
+                <hr>
+
+                <ul class="pager">
+    
+    <li class="previous">
+        <a href="/%E8%AF%BB%E4%B9%A6%E6%80%BB%E7%BB%93/2018/09/28/read-book-effective-nine/" data-toggle="tooltip" data-placement="top" title="Effective JavaScript (九)">&larr; Previous Post</a>
+    </li>
+    
+    
+    <li class="next">
+        <a href="/%E8%AF%BB%E4%B9%A6%E6%80%BB%E7%BB%93/2018/10/08/read-book-you-known-up-one/" data-toggle="tooltip" data-placement="top" title="你不知道的JavaScript上卷">Next Post &rarr;</a>
+    </li>
+    
+</ul>
+
+
+
+
+<!-- disqus 评论框 start -->
+<div class="comment">
+    <div id="disqus_thread"
+         data-thread-key="/%E8%AF%BB%E4%B9%A6%E6%80%BB%E7%BB%93/2018/09/28/read-book-effective-ten"
+         data-title="Effective JavaScript (十)"
+         data-url="http://darknights.me/%E8%AF%BB%E4%B9%A6%E6%80%BB%E7%BB%93/2018/09/28/read-book-effective-ten/"></div>
+    <script>
+
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        /*
+         var disqus_config = function () {
+         this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+         this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+         };
+         */
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://iori-1.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+<!-- disqus 评论框 end -->
+
+
+
+
+
+
+
+
+
+            </div>
+
+            <!-- Sidebar Container -->
+            
+
+
+
+
+
+<div class="
+                col-lg-3 col-lg-offset-0
+                col-md-3 col-md-offset-0
+                col-sm-12
+                col-xs-12
+                sidebar-container
+                hidden-xs
+                hidden-sm
+            ">
+    <!-- Search Container -->
+    <div class="hidden-xs">
+        <div class="input-group">
+            <input type="text" name="q" autofocus="" class="form-control" id="autocomplete" placeholder="搜索" autocomplete="off">
+            <span class="input-group-btn">
+                <button class="btn  btn-default" id="search-btn" type="submit">Go</button>
+            </span>
+        </div>
+    </div>
+
+    <hr class="hidden-sm hidden-xs">
+    <!--<h5 id="catalog">-->
+        <!--<a class="catalog-toggle" href="#">目录</a>-->
+    <!--</h5>-->
+    <div id="toc"></div>
+
+
+    <!--<ul class="catalog-body">-->
+        <!--<li class="h2_nav"><a href="#多页应用vuepwa" rel="nofollow">多页应用、Vue、PWA？</a></li>-->
+        <!--<li class="h2_nav"><a href="#实现-prpl-模式" rel="nofollow">实现 “PRPL” 模式</a></li>-->
+        <!--<li class="h3_nav active"><a href="#1-pushpreload推送预加载初始-url-路由所需的关键资源" rel="nofollow">1. PUSH/PRELOAD，推送/预加载初始 URL 路由所需的关键资源。</a></li>-->
+    <!--</ul>-->
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+            <!-- 详情底部的友情链接和标签云这里不单独抽离 -->
+            <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                            <a href="/tags/#博客搭建" title="博客搭建" rel="2">
+                                博客搭建
+                            </a>
+        				
+                            <a href="/tags/#JavaScript" title="JavaScript" rel="3">
+                                JavaScript
+                            </a>
+        				
+                            <a href="/tags/#jekyll" title="jekyll" rel="1">
+                                jekyll
+                            </a>
+        				
+                            <a href="/tags/#interview" title="interview" rel="1">
+                                interview
+                            </a>
+        				
+                            <a href="/tags/#工具" title="工具" rel="5">
+                                工具
+                            </a>
+        				
+                            <a href="/tags/#git" title="git" rel="3">
+                                git
+                            </a>
+        				
+                            <a href="/tags/#娱乐" title="娱乐" rel="1">
+                                娱乐
+                            </a>
+        				
+                            <a href="/tags/#html" title="html" rel="1">
+                                html
+                            </a>
+        				
+                            <a href="/tags/#管理系统主题" title="管理系统主题" rel="1">
+                                管理系统主题
+                            </a>
+        				
+                            <a href="/tags/#计算机基础" title="计算机基础" rel="4">
+                                计算机基础
+                            </a>
+        				
+                            <a href="/tags/#javascript" title="javascript" rel="20">
+                                javascript
+                            </a>
+        				
+                            <a href="/tags/#生产工具" title="生产工具" rel="4">
+                                生产工具
+                            </a>
+        				
+                            <a href="/tags/#IDE" title="IDE" rel="4">
+                                IDE
+                            </a>
+        				
+                            <a href="/tags/#Lodash" title="Lodash" rel="1">
+                                Lodash
+                            </a>
+        				
+                            <a href="/tags/#ES6学习笔记" title="ES6学习笔记" rel="1">
+                                ES6学习笔记
+                            </a>
+        				
+                            <a href="/tags/#读书总结" title="读书总结" rel="13">
+                                读书总结
+                            </a>
+        				
+                            <a href="/tags/#Vim" title="Vim" rel="1">
+                                Vim
+                            </a>
+        				
+                            <a href="/tags/#reactjs" title="reactjs" rel="1">
+                                reactjs
+                            </a>
+        				
+                            <a href="/tags/#面试" title="面试" rel="9">
+                                面试
+                            </a>
+        				
+                            <a href="/tags/#CSS" title="CSS" rel="1">
+                                CSS
+                            </a>
+        				
+                            <a href="/tags/#HTML" title="HTML" rel="1">
+                                HTML
+                            </a>
+        				
+                            <a href="/tags/#调试" title="调试" rel="1">
+                                调试
+                            </a>
+        				
+                            <a href="/tags/#脚手架" title="脚手架" rel="1">
+                                脚手架
+                            </a>
+        				
+                            <a href="/tags/#基础" title="基础" rel="6">
+                                基础
+                            </a>
+        				
+                            <a href="/tags/#LeetCode" title="LeetCode" rel="5">
+                                LeetCode
+                            </a>
+        				
+                            <a href="/tags/#HSTS" title="HSTS" rel="1">
+                                HSTS
+                            </a>
+        				
+        			</div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+                    
+                        <li><a href=""></a></li>
+                    
+                        <li><a href="http://www.ruanyifeng.com/blog/">阮一峰的网络日志</a></li>
+                    
+                        <li><a href="http://www.zhangxinxu.com/wordpress/">张鑫旭</a></li>
+                    
+                        <li><a href="http://www.cnblogs.com/TomXu/tag/JavaScript/">汤姆大叔的博客</a></li>
+                    
+                        <li><a href="http://macshuo.com/">MacTalk By 池建强</a></li>
+                    
+                        <li><a href="http://www.barretlee.com/">小胡子哥</a></li>
+                    
+                        <li><a href="https://lifesinger.wordpress.com/">岁月如歌玉伯</a></li>
+                    
+                        <li><a href="https://mritd.me">漠然</a></li>
+                    
+                        <li><a href="http://xtoshiba.me">Hux Blog</a></li>
+                    
+                        <li><a href="http://blog.codingplayboy.com/">熊建刚</a></li>
+                    
+                        <li><a href="https://teddysun.com/">秋水逸冰</a></li>
+                    
+                        <li><a href="http://www.alloyteam.com">AlloyTeam</a></li>
+                    
+                        <li><a href="https://efe.baidu.com">百度EFE</a></li>
+                    
+                        <li><a href="http://eux.baidu.com/">百度EUX</a></li>
+                    
+                        <li><a href="https://fed.taobao.org">淘宝前端团队</a></li>
+                    
+                        <li><a href="https://isux.tencent.com/">腾讯ISUX</a></li>
+                    
+                        <li><a href="https://aotu.io/">凹凸实验室</a></li>
+                    
+                </ul>
+                
+            </div>
+
+
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    
+
+                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+                    
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/sun-dong-zhi/activities">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://weibo.com/2407846257/profile?rightmod=1&wvr=6&mod=personinfo">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+
+                    
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/profile.php?id=100004675021382">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/IORI20091101">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Dark Knight 2020 |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=IORI20091101&repo=IORI20091101.github.io&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<!--<script src="/assets/scripts/jquery.min.js "></script>-->
+<script src="https://cdn.darknights.cn/assets/scripts/jquery.min.js"></script>
+
+<script src="https://cdn.darknights.cn/assets/scripts/jquery.auto-complete.min.js"></script>
+
+<script src="https://cdn.darknights.cn/assets/scripts/highlight.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<!--<script src="/assets/scripts/bootstrap.min.js"></script>-->
+<script src="https://cdn.darknights.cn/assets/scripts/bootstrap.min.js"></script>
+
+
+<!--<script type="text/javascript" color="0,229,238" opacity='0.5' zIndex="-2" count="100" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>-->
+
+
+<!--<script src="https://cdn.bootcss.com/jqcloud/1.0.4/jqcloud-1.0.4.min.js"></script>-->
+<script src="https://cdn.darknights.cn/assets/scripts/fastclick.min.js"></script>
+
+
+<script src="https://cdn.darknights.cn/assets/scripts/jquery.tagcloud.js"></script>
+
+<script src="https://cdn.darknights.cn/assets/scripts/toc.js"></script>
+<script src="https://cdn.darknights.cn/assets/scripts/custom.js"></script>
+
+<!--<script src="http://127.0.0.1:4000/assets/scripts/toc.js"></script>-->
+<!--<script src="http://127.0.0.1:4000/assets/scripts/custom.js"></script>-->
+<!--<script src="http://127.0.0.1:4000/assets/scripts/jquery.nav.js"></script>-->
+
+
+
+<!-- async load function -->
+<!--<script>-->
+    <!--function async(u, c) {-->
+      <!--var d = document, t = 'script',-->
+          <!--o = d.createElement(t),-->
+          <!--s = d.getElementsByTagName(t)[0];-->
+      <!--o.src = u;-->
+      <!--if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }-->
+      <!--s.parentNode.insertBefore(o, s);-->
+    <!--}-->
+<!--</script>-->
+
+
+
+
+<!--
+     Because of the native support for backtick-style fenced code blocks
+     right within the Markdown is landed in Github Pages,
+     From V1.6, There is no need for Highlight.js,
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/
+-->
+
+
+
+
+<!--fastClick.js -->
+
+
+<!-- Google Analytics -->
+
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-107257239-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments)};
+    gtag('js', new Date());
+
+    gtag('config', 'UA-107257239-1');
+</script>
+
+
+
+
+<script>
+        (function(window,document,undefined){
+            var hearts = [];
+            window.requestAnimationFrame = (function(){
+                    return window.requestAnimationFrame ||
+                               window.webkitRequestAnimationFrame ||
+                               window.mozRequestAnimationFrame ||
+                               window.oRequestAnimationFrame ||
+                               window.msRequestAnimationFrame ||
+                               function (callback){
+                                       setTimeout(callback,1000/60);
+                               }
+            })();
+            init();
+            function init(){
+                    css(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}");
+                    attachEvent();
+                    gameloop();
+            }
+            function gameloop(){
+                    for(var i=0;i<hearts.length;i++){
+                        if(hearts[i].alpha <=0){
+                                document.body.removeChild(hearts[i].el);
+                                hearts.splice(i,1);
+                                continue;
+                        }
+                        hearts[i].y--;
+                        hearts[i].scale += 0.004;
+                        hearts[i].alpha -= 0.013;
+                        hearts[i].el.style.cssText = "left:"+hearts[i].x+"px;top:"+hearts[i].y+"px;opacity:"+hearts[i].alpha+";transform:scale("+hearts[i].scale+","+hearts[i].scale+") rotate(45deg);background:"+hearts[i].color+";z-index:99999";
+                }
+                requestAnimationFrame(gameloop);
+            }
+            function attachEvent(){
+                    var old = typeof window.onclick==="function" && window.onclick;
+                    window.onclick = function(event){
+                            old && old();
+                            createHeart(event);
+                    }
+            }
+            function createHeart(event){
+                var d = document.createElement("div");
+                d.className = "heart";
+                hearts.push({
+                        el : d,
+                        x : event.clientX - 5,
+                        y : event.clientY - 5,
+                        scale : 1,
+                        alpha : 1,
+                        color : randomColor()
+                });
+                document.body.appendChild(d);
+        }
+        function css(css){
+                var style = document.createElement("style");
+                    style.type="text/css";
+                    try{
+                        style.appendChild(document.createTextNode(css));
+                    }catch(ex){
+                        style.styleSheet.cssText = css;
+                    }
+                    document.getElementsByTagName('head')[0].appendChild(style);
+        }
+            function randomColor(){
+                    return "rgb("+(~~(Math.random()*255))+","+(~~(Math.random()*255))+","+(~~(Math.random()*255))+")";
+            }
+    })(window,document);
+</script>
+
+
+</body>
+
+</html>

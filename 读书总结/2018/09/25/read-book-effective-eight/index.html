@@ -1,0 +1,1533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <link rel="dns-prefetch" href="//darknights.me">
+    <link rel="dns-prefetch" href="//darknights.cn">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Dark knight's的个人技术博客,专注于web开发,追求前端最完美体验">
+    <meta name="keyword"  content="web,前端开发,网站设计,程序员,java,javascript,nodejs,python,Dark knight's">
+    <link rel="apple-touch-icon" href="https://cdn.darknights.cn/assets/images/desk-icon.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="https://cdn.darknights.cn/assets/images/desk-icon.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="https://cdn.darknights.cn/assets/images/desk-icon.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="https://cdn.darknights.cn/assets/images/desk-icon.png" />
+    <link href="https://cdn.darknights.cn/assets/images/desk-icon.png" rel="icon" sizes="192x192" />
+    <link href="https://cdn.darknights.cn/assets/images/desk-icon.png" rel="icon" sizes="128x128" />
+
+    <link rel="shortcut icon" href="https://cdn.darknights.cn/assets/images/favicon.ico">
+
+    <title>Effective JavaScript (八) - Dark knight's Blog</title>
+
+    <link rel="canonical" href="http://darknights.me/%E8%AF%BB%E4%B9%A6%E6%80%BB%E7%BB%93/2018/09/25/read-book-effective-eight/">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://cdn.darknights.cn/assets/styles/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link href="https://cdn.darknights.cn/assets/styles/animate.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://cdn.darknights.cn/assets/styles/hux-blog.min.css">
+    <!--<link rel="stylesheet" href="http://127.0.0.1:4000/assets/styles/hux-blog.min.css">-->
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="https://cdn.darknights.cn/assets/styles/syntax.css">
+
+    <link href="https://cdn.darknights.cn/assets/styles/jquery.auto-complete.min.css" rel="stylesheet">
+
+    <!--<link href="https://cdn.bootcss.com/jqcloud/1.0.4/jqcloud.css" rel="stylesheet">-->
+
+    <!--语法高亮-->
+    <link rel="stylesheet" href="https://cdn.darknights.cn/assets/styles/monokai-sublime.min.css"   />
+
+
+    <!-- toshiba 自己的样式覆盖 CSS -->
+    <link rel="stylesheet" href="https://cdn.darknights.cn/assets/styles/custom1.css">
+    <!--<link rel="stylesheet" href="http://127.0.0.1:4000/assets/styles/custom.css">-->
+
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <link href="https://cdn.darknights.cn/assets/styles/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <!--<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>-->
+        <script src="https://cdn.darknights.cn/assets/scripts/html5.min.js"></script>
+        <!--<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>-->
+        <script src="https://cdn.darknights.cn/assets/scripts/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" data-spy="scroll" data-target="#toc" data-offset="20">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Dark Knight</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/category">category</a>
+                    </li>
+                    <!--<li>-->
+                        <!--<a href="/tags">tags</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<a href="/essay">essay</a>-->
+                    <!--</li>-->
+                    <li>
+                        <a href="/news">news</a>
+                    </li>
+                    <li>
+                        <a href="/about">about</a>
+                    </li>
+                    <!---->
+                    <!--<li>-->
+                        <!--<a href="/about/">About</a>-->
+                    <!--</li>-->
+                    <!---->
+                    <!--<li>-->
+                        <!--<a href="/category/">category</a>-->
+                    <!--</li>-->
+                    <!---->
+                    <!--<li>-->
+                        <!--<a href="/essay/">ESSAY</a>-->
+                    <!--</li>-->
+                    <!---->
+                    <!--<li>-->
+                        <!--<a href="/news/">NEWS</a>-->
+                    <!--</li>-->
+                    <!---->
+                    <!--<li>-->
+                        <!--<a href="/tags/">Tags</a>-->
+                    <!--</li>-->
+                    <!---->
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Page Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('https://cdn.darknights.cn/assets/images/bg/batman/bat8.jpg ')
+    }
+</style>
+
+
+
+
+
+    <header class="intro-header" >
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                            <a class="tag" href="/tags/#javascript" title="javascript">javascript</a>
+                            
+                            <a class="tag" href="/tags/#读书总结" title="读书总结">读书总结</a>
+                            
+                        </div>
+                        <h1>Effective JavaScript (八)</h1>
+                        
+                        
+                        <h2 class="subheading">数组和字典</h2>
+                        
+                        <span class="meta">Posted by toshiba on September 25, 2018</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container">
+				<h2 id="使用object的直接实例构造轻量级的字典">使用Object的直接实例构造轻量级的字典</h2>
+
+<pre><code>var dict = { alice: 34, bob: 24, chris: 62 };
+
+var people = [];
+
+for(var name in dict) {
+	people.push(name + ": " + dict[name]);
+}
+
+people; // ["alice: 34", "bob: 24", "chris: 62"];
+
+</code></pre>
+
+<p>我们创建一个自定义的字典类会怎样呢</p>
+<pre><code>
+function NaiveDict() {}
+
+NaiveDict.prototype.count = function() {
+	var i = 0;
+	for(var name in this) {
+		i++;
+	}
+
+	return i;
+};
+
+NaiveDict.prototype.toString = function() {
+	return "[object NaiveDict]";
+};
+
+var dict = new NaiveDict();
+
+dict.alice = 34;
+dict.bob = 24;
+dict.chris = 62;
+
+dict.count(); // 5
+
+</code></pre>
+
+<p>这样有一个问题，count会枚举出所有的属性包括了toString 和count,而不仅仅是我们需要的值。</p>
+
+<pre><code>var dict = new Array();
+
+dict.alice = 34;
+dict.bob = 24;
+dict.chris = 62;
+
+</code></pre>
+<p>这样也会有问题，代码对原型污染很脆弱，应用程序的其他库有可能会打猴子补丁，比如</p>
+<blockquote>
+  <p>原型污染是指当枚举字典的条目时，原型对象中的一些属性可能会导致出现一些不期望的属性。</p>
+</blockquote>
+
+<pre><code>Array.prototype.first = function() {
+	return this[0];
+}
+
+Array.prototype.last = function() {
+	return this[1];
+}
+
+var names = [];
+for(var name in dict) {
+	names.push(name);
+}
+
+names; ["alice", "bob", "chris", "first", "last"]
+
+</code></pre>
+<p>使用使用 <code>new Object() </code>可能会面临同样的问题，但是使用 <code>{}</code>的方式会更好, 虽然不能保证对于原型污染时安全的，任何人仍然能增加属性到Object.prototype，但是风险可以降低到仅仅局限于Object.prototype</p>
+
+<ul>
+  <li>坚持使用Object的直接实例原则可以使for…in循环摆脱原型污染的影响</li>
+  <li>使用对象字面量构建轻量级字典</li>
+</ul>
+
+<h2 id="使用null原型以防止原型污染">使用null原型以防止原型污染</h2>
+
+<p>防止原型污染的最简单的方式之一就是一开始就不使用原型。但是ES5发布之前并没有一个标准的方式创建一个空原型的新对象。你可能会这样做</p>
+<pre><code>function C() { }
+
+C.prototype = null;
+
+var o = new C();
+
+Object.getPrototypeOf(o) === null; // false
+Object.getPrototypeOf(o) === Object.prototype // true
+
+
+// ES5之后应该这样做
+var x = Object.create(null);
+
+Object.getPrototypeOf(o) === null; // true
+
+在不支持Object.create的JavaScript环境中特殊对象__proto__提供了对对象内部原型链的读写访问
+
+var x = { __proto__: null };
+
+x instanceof Object;  // false;
+
+</code></pre>
+<p>第二种貌似更方便，但是有了Object.create函数后，Object.create是更值得推荐的方式。</p>
+
+<ul>
+  <li>在ES5中要使用Object.create(null)创建自由原型的空对象是不太容易被污染的。</li>
+  <li>在一些老环境中考虑使用{ <strong>proto</strong>: null }， 但是它既不是标准的也不是可移植的还有可能在未来被删除</li>
+  <li>绝对不要使用__proto__作为字典中的key</li>
+</ul>
+
+<h2 id="使用hasownproperty方法避免原型污染">使用hasOwnProperty方法避免原型污染</h2>
+<p>JavaScript的对象操作总是以继承的方式工作，即使一个空的对象字面量也继承了Object.prototype的大量属性</p>
+<pre><code>var dict = {}
+"alice" in dict; //false;
+"bob" in dict; //false;
+"chris" in dict; //false;
+
+// toString 和valueOf方法继承自Object.prototype
+"toString" in dict; //false;  
+"valueOf" in dict; //false;
+</code></pre>
+<p>幸运的是Object.hasOwnProperty方法可以用来判断属性是否继承自原型对象。</p>
+<pre><code>dict.hasOwnProperty("alice");     // false
+dict.hasOwnProperty("toString");  // false
+dict.hasOwnProperty("valueOf");   // false
+</code></pre>
+<p>不幸的是我们没有完全解决问题，当调用dict.hasOwnProperty时，我们请求调查对象的hasOwnProperty方法，通常情况下，该方法会简单的继承自Object.property对象，然而如果字典中存储一个同名的条目时，那么原型中的hasOwnProperty方法不能再被捕获到。</p>
+
+<pre><code>dict.hasOwnProperty = 10;
+
+dict.hasOwnProperty("alice");
+// error dict.hasOwnProperty is not a function
+</code></pre>
+<p>这是有可能的,最安全的方式就是</p>
+
+<pre><code>var hasOwn = Object.prototype.hasOwnProperty;
+或者
+var hasOwn = {}.hasOwnProperty;
+
+hasOwn.call(dict, "alice");
+</code></pre>
+<p>不管起接收者的hasOwnProperty方法是否被覆盖，该方法都能工作。</p>
+
+<p>我们开始创建一个字典类 版本一</p>
+<pre><code>function Dict(elements) {
+	this.elements = elements || {};
+}
+
+Dict.prototype.has = function(key) {
+	return {}.hasOwnProperty.call(this.elements, key);
+}
+
+Dict.prototype.get = function(key) {
+	return this.has(key) ? this.elements[key] : undefined;
+}
+
+Dict.prototype.set = function(key, val) {
+	this.elements[key] = val;
+}
+
+Dict.prototype.remove = function(key) {
+	delete this.elements[key];
+}
+
+var dict = new Dict({
+	alice: 34,
+	bob: 24,
+	chris: 62
+});
+
+dict.has("alice");    // true
+dict.get("bob");      // 24
+dict.has("valueOf")   //false
+
+</code></pre>
+<p>在一些JavaScript的环境中，特殊的属性名__proto__可能导致自身的污染问题__proto__属性只是简单的继承Object.prototype,所以我们的例子会有一个问题</p>
+<pre><code>var dict = new Dict();
+dict.has("__proto__"); // ?
+
+</code></pre>
+<p>这段代码在不同的环境下可能会有不同的结果，所以为了达到最大的可移植性和安全性，便有了下面更复杂但是更安全的实现
+这里检测到__proto__的可以 重新设置一个新属性作为实例对象的一个属性，随对象而在但是不会去设置对象的__proto__</p>
+<pre><code>function Dict(elements) {
+	this.elements = elements || {};
+	this.hasSpecialProto = false;
+	this.specialProto = undefined;
+}
+
+Dict.prototype.has = function(key) {
+	if(key === "__proto__") { 
+		return this.hasSpecialProto;
+	}
+	return {}.hasOwnProperty.call(this.elements, key);
+}
+
+Dict.prototype.get = function(key) {
+	if(key === "__proto__") { 
+		return this.specialProto;
+	}
+	return this.has(key) ? this.elements[key] : undefined;
+}
+
+Dict.prototype.set = function(key, val) {
+	if(key === "__proto__") {
+		this.hasSpecialProto = true;
+
+		this.specialProto = val;
+	} else {
+		this.elements[key] = val;	
+	}
+	
+}
+
+Dict.prototype.remove = function(key) {
+	if(key === "__proto__") {
+		this.hasSpecialProto = false;
+		this.sepcialProto = undefined;
+	} else {
+		delete this.elements[key];	
+	}
+	
+}
+
+var dict = new Dict({
+	alice: 34,
+	bob: 24,
+	chris: 62
+});
+
+dict.has("alice");    // true
+dict.get("bob");      // 24
+dict.has("valueOf")   //false
+
+</code></pre>
+
+<h2 id="使用数组而不要使用字典来存储有序集合">使用数组而不要使用字典来存储有序集合</h2>
+<p>JavaScript对象是一个无序集合,ECMAScript标准并未规定属性存储的任何特定顺序，甚至对于枚举对象也未涉及。这将会导致一个问题，<code>for...in</code>循环会挑选一个特定顺序来枚举对象属性.比如</p>
+<pre><code>function report(highScores) {
+	var result = "";
+	var i = 1;
+	for(var name in highScores) {
+		result += i + " . " + name + " : " + highScores[name] + '\n';
+
+		i++;
+	}
+
+	return result;
+}
+
+report([{
+		name: "Hank",
+		points: 1110100
+	},{
+		name: "Steve",
+		points: 1064500
+	},{
+		name: "Billy",
+		points: 1052000
+	}]);
+
+由于不同的环境选择不同的顺序来存储和枚举对象属性，所以这个函数得到顺序混乱的“最高分”报表
+</code></pre>
+<p>请记住你的程序是否以来对象枚举的顺序并不总是显而易见的，如果没有在多个JavaScript环境中测试过你的程序，你甚至可能不回注意到程序的行为因为一个for…in循环的确切顺序而被改变，对于上面的例子需要使用数组,那么它完全可以工作在任何JavaScript环境中</p>
+
+<pre><code>function report(highScores) {
+	var result = "";
+	var i = 1;
+	for(var i = 0, n = highScores.length; i &lt; n; i++) {
+		var score = hightScores[i];
+		result += (i + 1) + " . " + score.name + " : " + score.points + '\n';
+
+		i++;
+	}
+
+	return result;
+}
+
+report([{
+		name: "Hank",
+		points: 1110100
+	},{
+		name: "Steve",
+		points: 1064500
+	},{
+		name: "Billy",
+		points: 1052000
+	}]);
+
+</code></pre>
+
+<p>一个微妙的顺序以来的典型例子是浮点运算， 假设一个对象使用<code>for...in</code> 如下</p>
+<pre><code>var ratings = {
+	"Good will Hunting": 0.8,
+	"Mystic River": 0.7,
+	"21": 0.6,
+	"Doubt": 0.9
+};
+
+var total = 0, count = 0;
+for(var key in. ratings) {
+	total += ratings[key];
+	count++;
+}
+
+total /= count;
+
+total; //?
+
+</code></pre>
+<p>事实证明，流行的JavaScrtip环境实际上使用不同的顺序执行这个循环。</p>
+<pre><code>一些环境这样计算
+
+(0.8 + 0.7 + 0.6 + 0.9) / 4  // 0.75
+
+还有一些环境先枚举潜在的数组索引，21恰好是一个可行的数组索引，它首先被枚举，导致如下结果
+
+(0.6 + 0.8 + 0.7 + 0.9) / 4  // 0.7499999999999999
+
+
+更好的表示方法是使用整数值
+
+(8 + 7 + 6 + 9) / 4/ 10.  //0.75
+
+(6 + 8 + 7  + 9) / 4/ 10.  //0.75
+
+</code></pre>
+<p>通常当执行<code>for...in</code> 循环时应当时刻小心，确保操作行为与顺序无关。</p>
+
+<h2 id="绝不要在objectprototype中增加可枚举属性">绝不要在Object.prototype中增加可枚举属性</h2>
+<p><code>for...in</code>非常便利，然而它很容易受到原型污染的影响。目前为止<code>for...in</code>最常见的用法是枚举字典中的元素。这暗示着如果想允许对字典对象使用<code>for...in</code>循环，那么不要在共享的Object.prototype中增加可枚举的属性。</p>
+<pre><code>Object.prototype.allKeys = function() {
+	var result = [];
+	for(var key in this) {
+		result.push(key);
+	}
+
+	return result;
+}
+
+({a: 1, b: 2, c: 3}).allKeys(); // ["allkeys", "a", "b", "c"]  该方法污染了自身
+
+更友好的做法是将allkeys定义为一个函数而不是方法，虽然着稍微有点不方便
+
+function allKeys(obj) {
+	var result = [];
+	for(var key in obj) {
+		result.push(key);
+	}
+
+	return result;
+}
+
+
+
+</code></pre>
+<p>如果你确实想在Object.prototype中增加属性， ES5提供了一个更加友好的机制Object.defineProperty</p>
+<blockquote>
+  <p><code>Object.defineProperty</code>方法可以定义一个对象的属性并制定该属性的元数据。例如，我们可以用与之前完全一样的方法定义上面的属性而通过设置其可枚举属性为false使其在<code>for...in</code>循环中不可见。</p>
+</blockquote>
+
+<pre><code>Object.defineProperty(Object.prototype, "allKeys", {
+	value: function() {
+		var result = [];
+		for(var key in this) {
+			result.push(key);
+		}
+		return result;
+	},
+	writable: true,
+	enumerable: false,
+	configurable: true
+});
+</code></pre>
+
+<p>它不会污染其他所有<code>Object</code>实例的所有<code>for...in</code>循环。每当你需要增加一个不应该出现在<code>for...in</code>循环中出现的属性时，Object.defineProperty便是你的选择</p>
+
+<h2 id="避免在枚举期间修改对象">避免在枚举期间修改对象</h2>
+<pre><code>function Member(name) {
+	this.name = name;
+	this.friends = [];
+}
+
+var a = new Member("Alice"),
+	b = new Member("Bob"),
+	c = new Member("Carol"),
+	d = new Member("Dieter"),
+	e = new Member("Eli"),
+	f = new Member("Fatima");
+
+a.friends.push(b);
+b.friends.push(c);
+c.friends.push(e);
+d.friends.push(b);
+e.friends.push(d,f);
+
+如果我们写了一个方法 在for...in的时候操作对象比如，删除或添加， 在许多JavaScript环境中这段代码根本不能工作。
+
+</code></pre>
+<blockquote>
+  <p>ECMAScript规定了，如果被枚举的对象在枚举期间添加了新的属性，那么在枚举期间并不能保证新添加的属性能够被访问。</p>
+</blockquote>
+
+<p>这个隐式的规范的实际后果是： 如果我们修改了被枚举的对象则不能保证<code>for...in</code>循环行为的可预见性。</p>
+
+<p>我们可以新建一个WorkSet类来追踪当前集合中元素的数量</p>
+<pre><code>function WorkSet() {
+	this.entries = new Dict();
+	this.count = 0;
+}
+
+WorkSet.prototype.isEmpty = function() {
+	return this.count === 0;
+}
+
+WorkSet.prototype.add = function(key, val) {
+	if(this.entries.has(key)) {
+		return;
+	}
+
+	this.entries.set(key, val);
+	this.count++;
+}
+
+WorkSet.prototype.get = function(key) {
+	return this.entries.get(key);
+}
+
+WorkSet.prototype.remove = function(key) {
+	if(!this.entries.had(key)) {
+		return;
+	}
+
+	this.entries.remove(key);
+	this.count--;
+}
+
+WorkSet.prototype.pick = function() {
+	return this.entries.pick();
+}
+
+//这里同时需要给Dict类增加一个pick方法
+
+Dick.prototype.pick = function() {
+	for(var key in this.elements) {
+		if(this.has(key)) {
+			return key;
+		}
+	}
+
+	throw new Error("empty dictionary");
+}
+
+// 现在我们可以实现一个inNetwork的方法
+到最后发现这段代码没什么卵用
+Member.prototype.inNetwork = function(other) {
+	var visited = {};
+	var workset = new WorkSet();
+	workset.add(this.name, this);
+
+	while(!workset.isEmpty()) {
+		var name = = workset.pick();
+		var member = workset.get(name);
+		workset.remove(name);
+		if(name in visited) {
+			continue;
+		}
+
+		visited[name] = member;
+
+		if(member === other) {
+			return true;
+		}
+
+		member.friends.forEach(function(friend) {
+			workset.add(friend.name, friend);
+		})
+	}
+
+	return false;
+}
+
+</code></pre>
+
+<p>以上pick方法是一个不确定性的例子， 不确定性指的是一个操作不能保证使用语言的语意产生一个单一的可预见的结果。这个不确定性来源于这样一个事实，for…in循环可能在不同的JavaScript环境中选择不同的枚举顺序。
+基于这些原因，考虑使用一个确定的工作集算法替代方案是值得的。集工作列表算法Work-list.</p>
+
+<ul>
+  <li>使用for…in循环枚举一个对象属性时，确保不要修改该对象</li>
+  <li>当迭代一个对象时，如果该对象的内容可能会在循环期间被改变，应该使用while循环或经典的for循环代替for…in循环</li>
+  <li>为了在不断变化的数据结构中能够预测枚举，考虑使用一个有序的数据结构，例如数组，而不要使用字典对象</li>
+</ul>
+
+<h2 id="数组迭代优先使用for循环而不是forin">数组迭代优先使用<code>for</code>循环而不是<code>for...in</code></h2>
+
+<p>看下面代码mean的输出值时多少？</p>
+<pre><code>var scores = [98, 74, 85, 77, 93, 100, 89];
+
+var total = 0;
+
+for(score in scores) {
+	total += score;
+}
+
+var mean = total / socres.length;
+
+ mean; // ?  17636.571428571428
+
+
+ 请记住即使是数组的索引属性，对象属性的key始终是字符串
+
+ total = 0 + "0" + "1" + "2" + "3" + "4" + "5" + "6";
+
+ total = "00123456";
+
+
+</code></pre>
+<p>迭代数组内容的正确方式是使用传统的for循环, 建议存储数组长度到一个局部变量中</p>
+<pre><code>var scores = [98, 74, 85, 77, 93, 100, 89];
+var total = 0;
+
+for(var i = 0, n = scores.length; i &lt; n; i++) {
+	total += socres[i];
+}
+
+var mean = toal / scores.length;
+
+mean; // 88
+
+</code></pre>
+
+<h2 id="迭代方法由于循环">迭代方法由于循环</h2>
+<p>一些常见的for循环错误</p>
+<pre><code>for(var i = 0; i &lt;= n; i++) {...}. // 获取最后一项错误
+
+for(var i = 1; i &lt; n; i++) {...}. // 丢失第一项
+
+for(var i = n; i &gt;= 0 ; i--) {...}. // 获取起始值错误
+
+for(var i = n - 1; i &gt; 0 ; i--) {...}. // 丢失最后一项
+
+</code></pre>
+<p>我们面对这样一个事实，搞清楚终止条件是一个累赘。
+幸运的是ES5提供了一些便利的方法。Array.prototype.forEach是其中最简单的一个。例如：</p>
+<pre><code>for(var i = 0, n = players.length; i &lt; n; i++) {
+	players[i].score++;
+}
+可以用下面代码替换
+players.forEach(function(p) {
+	p.socre++;
+})	
+
+</code></pre>
+<p>这段代码不仅更简单可读而且消除了终止条件和任何数组索引。</p>
+
+<p>另一个例子是对数组进行操作后建立一个新的数组我们可以这样实现</p>
+<pre><code>var trimmed = [];
+for(var i = 0, n = input.lenght; i &lt; n; i++) {
+	trimmed.push(input[i].trim());
+}
+
+我们同样可以使用forEach来实现
+
+var trimmed = [];
+input.forEach(function(s) {
+	trimmed.push(s.trim());
+});
+
+
+因为这是一个十分普遍的操作，所以ES5提供了一个更简单优雅的实现Array.prototype.map
+
+var trimmed = input.map(function(s) {
+	return s.trim();	
+})
+
+
+</code></pre>
+
+<p>另外一种常见的模式是计算一个新的数组，该数组只包含现有数组的一部分元素.<code>Array.prototype.filter</code>使其变得简单</p>
+
+<pre><code>
+listings.filter(function(listing) {
+	return listing.price &gt;= min &amp;&amp; listing.price &lt;= max;
+});
+
+</code></pre>
+<p>这些都是ES5的默认方法，我们当然可以实现自己的方法，比如我们需要这样一个模式，提取满足谓词的数组的前几个元素</p>
+<pre><code>function takeWhile(a, pred) {
+	var result = [];
+	for(var i = 0, n = a.length; i &lt; n; i++) {
+		if(!pred(a[i], i)) {
+			break;
+		}
+		result[i] = a[i];
+	}
+
+	return result;
+}
+
+var prefix = taleWhile([1, 2, 4, 8, 16, 32], function(n) {
+	return n &lt; 10;
+});
+
+// [1, 2, 4, 8]
+
+
+</code></pre>
+<p>请注意我们将索引i赋值给了pred, 我们可以选择使用或忽略该索引。事实上标准库中的所有迭代方法包括(forEach, map, filter)都将数组索引传递给了用户自定义函数。</p>
+
+<p>我们也可以将takeWhile加入到Array.prototype中参考猴子补丁的影响</p>
+<pre><code>Array.prototype.takeWhile = function(pred) {
+	var result = [];
+	for(var i = 0, n = this.length; i &lt; n; i++) {
+		if(!pred(this[i], i)) {
+			break;
+		}
+
+		result[i] = this[i];
+	}
+
+	return result;
+}
+
+var prefix = [1, 2, 4, 8, 16, 32].takeWhile(function(n) {
+	return n &lt; 10;
+})
+
+</code></pre>
+
+<blockquote>
+  <p>循环只有一点优于迭代函数，那就是前者有控制流操作，如break 和continue。</p>
+</blockquote>
+
+<p>举例来说</p>
+<pre><code>function takeWhile(a, pred) {
+	var result = [];
+	a.forEach(function(x, i) {
+		if(!pred(x)) {
+			// ?
+		}
+		result[i] = x;
+	});
+
+	return result;
+}
+
+我们可以使用一个内部异常来提前终止该循环，但是这既尴尬又效率低下
+
+function takeWhile(a, pred) {
+	var result = [];
+	var earlyExit = [];
+	try {
+		a.forEach(function(x, i) {
+			if(!pred(x)) {
+				throw earlyExit;
+			}
+
+			result[i] = x;
+		});
+	} catch(e) {
+		if(e !== earlyExit) {
+			throw e;
+		}
+	}
+
+	return result;
+}
+
+</code></pre>
+
+<p>ES5的数组方法some和every可以用于提前终止循环。</p>
+
+<pre><code>[1, 10, 100].some(function(x) {.return x &gt; 5; });  // true
+[1, 10, 100].some(function(x) {.return x &lt; 0; });  // false
+
+[1, 10, 100].every(function(x) {.return x &gt; 0; });  // true
+[1, 10, 100].every(function(x) {.return x &lt; 3; });  // true
+
+</code></pre>
+
+<p>利用这一点我们可以重新实现takeWhile方法</p>
+
+<pre><code>
+function takeWhile(a, pred) {
+	var result = [];
+
+	a.every(function(x, i) {
+		if(!pred(x)) {
+			return false; // break
+		}
+
+		result[i] = x;
+		return true;  // continue
+	});
+
+	return result;
+}
+
+</code></pre>
+
+<ul>
+  <li>使用迭代方法 forEach 和map替换for循环使得代码更可读，并且避免了重复循环控制逻辑</li>
+  <li>使用自定义的迭代函数来抽象未被标准库支持的常见循环模式</li>
+  <li>在需要提前终止循环的情况下， 仍然推荐使用传统的循环。另外，some和every方法也可用于提前退出</li>
+</ul>
+
+<h2 id="在类数组对象上复用通用的数组方法">在类数组对象上复用通用的数组方法</h2>
+<p><code>Array.prototype</code>中的标准方法被设计成其他对象可复用的方法，即使这些对象并没有继承Array,一个很好的例子 函数的arguments对象，它并没有继承Array.prototype，因此我们不能简单的调用arguments.forEach方法来遍历每一个参数。取而代之我们提取forEach方法对象的引用并使用其call方法</p>
+<pre><code>// 同样也可先转化为一个数组 var args = [].slice.call(arguments);
+
+function highlight() {
+	[].forEach.call(arguments, function(widget) {
+		widget.setBackground("yellow");
+	})
+}
+
+</code></pre>
+
+<p>如何使一个对象“看起来像数组”，数组对象的基本契约总共有两个简单规则</p>
+<ul>
+  <li>具有一个范围在0-2^32-1的整型length属性。</li>
+  <li>length属性大于该对象的最大索引。索引的范围是0-2^32-2的整数，它的字符串表示就是该对象的一个key</li>
+</ul>
+
+<p>例子</p>
+
+<pre><code>var arrayLike = {0: "a", 1: "b", 2: "c", length: 3}
+var result = Array.prototype.map.call(arrayLike, function(s) {
+	return s.toUpperCase();
+});
+
+// ["A", "B", "C"]
+</code></pre>
+
+<p>字符串也表现为不可变的数组，因为它们是可索引的， 并且其长度也可以通过length属性获取。因此，Array.prototype中的方法操作字符串不回修改原始数组。</p>
+
+<pre><code>var result = Array.prototype.map.call("abc", function(s) {
+	return s.toUpperCase();	
+});
+
+</code></pre>
+
+<p>对于使用Array.prototype中的方法，在增加或删除索引属性的时候它们都会强制的更新length属性。所有的Array.prototype方法在类数组中可以通用。</p>
+
+<p>只有一个Array方法不是通用的那就是数组连接方法concat。该方法可以由任意的类数组调用但是它会检查其参数的[[Class]]属性，如果是一个真实的数组才会连接，如果不是例子如下</p>
+<pre><code>function nameColum() {
+	return ["Names"].concat(arguments);
+}
+
+namesColumn("Alice","Bob", "Chris");
+
+
+// ["Names", {.0: "Alice", 1: "Bob", 2: "Chris" }]
+
+这种时候我们可以使用数组转换的方法
+function nameColum() {
+	return ["Names"].concat([].slice.call(arguments));
+}
+
+namesColumn("Alice","Bob", "Chris");
+
+// ["Names", "Alice","Bob", "Chris"]
+
+</code></pre>
+
+<h2 id="数组字面量优于数组构造函数">数组字面量优于数组构造函数</h2>
+
+<pre><code>var a = [1, 2, 3, 4, 5];
+
+也可以使用数组构造函数来替代
+
+var a = new Array(1, 2, 3, 4, 5);
+
+
+有这样几个问题
+首先要保证没有人重新包装过Array变量
+function f(Array) {
+	return new Array(1, 2, 3, 4, 5);
+}
+
+f(String);  //  new String(1)
+
+其次要确保没人修改过全局Array变量
+
+Array = String;
+new Array(1, 2, 3, 4, 5); // new String(1)
+
+
+
+还有一个问题 
+
+["hello"] 和 new Array("hello") 行为虽然一致
+
+但是
+
+[17] 和 new Array(17) 行为完全不同了
+
+</code></pre>
+
+<ul>
+  <li>使用数组字面量替代数组构造函数</li>
+</ul>
+
+
+                <hr>
+
+                <ul class="pager">
+    
+    <li class="previous">
+        <a href="/%E8%AF%BB%E4%B9%A6%E6%80%BB%E7%BB%93/2018/09/19/read-book-effective-seven/" data-toggle="tooltip" data-placement="top" title="Effective JavaScript (七)">&larr; Previous Post</a>
+    </li>
+    
+    
+    <li class="next">
+        <a href="/%E8%AF%BB%E4%B9%A6%E6%80%BB%E7%BB%93/2018/09/28/read-book-effective-nine/" data-toggle="tooltip" data-placement="top" title="Effective JavaScript (九)">Next Post &rarr;</a>
+    </li>
+    
+</ul>
+
+
+
+
+<!-- disqus 评论框 start -->
+<div class="comment">
+    <div id="disqus_thread"
+         data-thread-key="/%E8%AF%BB%E4%B9%A6%E6%80%BB%E7%BB%93/2018/09/25/read-book-effective-eight"
+         data-title="Effective JavaScript (八)"
+         data-url="http://darknights.me/%E8%AF%BB%E4%B9%A6%E6%80%BB%E7%BB%93/2018/09/25/read-book-effective-eight/"></div>
+    <script>
+
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        /*
+         var disqus_config = function () {
+         this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+         this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+         };
+         */
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://iori-1.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+<!-- disqus 评论框 end -->
+
+
+
+
+
+
+
+
+
+            </div>
+
+            <!-- Sidebar Container -->
+            
+
+
+
+
+
+<div class="
+                col-lg-3 col-lg-offset-0
+                col-md-3 col-md-offset-0
+                col-sm-12
+                col-xs-12
+                sidebar-container
+                hidden-xs
+                hidden-sm
+            ">
+    <!-- Search Container -->
+    <div class="hidden-xs">
+        <div class="input-group">
+            <input type="text" name="q" autofocus="" class="form-control" id="autocomplete" placeholder="搜索" autocomplete="off">
+            <span class="input-group-btn">
+                <button class="btn  btn-default" id="search-btn" type="submit">Go</button>
+            </span>
+        </div>
+    </div>
+
+    <hr class="hidden-sm hidden-xs">
+    <!--<h5 id="catalog">-->
+        <!--<a class="catalog-toggle" href="#">目录</a>-->
+    <!--</h5>-->
+    <div id="toc"></div>
+
+
+    <!--<ul class="catalog-body">-->
+        <!--<li class="h2_nav"><a href="#多页应用vuepwa" rel="nofollow">多页应用、Vue、PWA？</a></li>-->
+        <!--<li class="h2_nav"><a href="#实现-prpl-模式" rel="nofollow">实现 “PRPL” 模式</a></li>-->
+        <!--<li class="h3_nav active"><a href="#1-pushpreload推送预加载初始-url-路由所需的关键资源" rel="nofollow">1. PUSH/PRELOAD，推送/预加载初始 URL 路由所需的关键资源。</a></li>-->
+    <!--</ul>-->
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+            <!-- 详情底部的友情链接和标签云这里不单独抽离 -->
+            <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                            <a href="/tags/#博客搭建" title="博客搭建" rel="2">
+                                博客搭建
+                            </a>
+        				
+                            <a href="/tags/#JavaScript" title="JavaScript" rel="3">
+                                JavaScript
+                            </a>
+        				
+                            <a href="/tags/#jekyll" title="jekyll" rel="1">
+                                jekyll
+                            </a>
+        				
+                            <a href="/tags/#interview" title="interview" rel="1">
+                                interview
+                            </a>
+        				
+                            <a href="/tags/#工具" title="工具" rel="5">
+                                工具
+                            </a>
+        				
+                            <a href="/tags/#git" title="git" rel="3">
+                                git
+                            </a>
+        				
+                            <a href="/tags/#娱乐" title="娱乐" rel="1">
+                                娱乐
+                            </a>
+        				
+                            <a href="/tags/#html" title="html" rel="1">
+                                html
+                            </a>
+        				
+                            <a href="/tags/#管理系统主题" title="管理系统主题" rel="1">
+                                管理系统主题
+                            </a>
+        				
+                            <a href="/tags/#计算机基础" title="计算机基础" rel="4">
+                                计算机基础
+                            </a>
+        				
+                            <a href="/tags/#javascript" title="javascript" rel="20">
+                                javascript
+                            </a>
+        				
+                            <a href="/tags/#生产工具" title="生产工具" rel="4">
+                                生产工具
+                            </a>
+        				
+                            <a href="/tags/#IDE" title="IDE" rel="4">
+                                IDE
+                            </a>
+        				
+                            <a href="/tags/#Lodash" title="Lodash" rel="1">
+                                Lodash
+                            </a>
+        				
+                            <a href="/tags/#ES6学习笔记" title="ES6学习笔记" rel="1">
+                                ES6学习笔记
+                            </a>
+        				
+                            <a href="/tags/#读书总结" title="读书总结" rel="13">
+                                读书总结
+                            </a>
+        				
+                            <a href="/tags/#Vim" title="Vim" rel="1">
+                                Vim
+                            </a>
+        				
+                            <a href="/tags/#reactjs" title="reactjs" rel="1">
+                                reactjs
+                            </a>
+        				
+                            <a href="/tags/#面试" title="面试" rel="9">
+                                面试
+                            </a>
+        				
+                            <a href="/tags/#CSS" title="CSS" rel="1">
+                                CSS
+                            </a>
+        				
+                            <a href="/tags/#HTML" title="HTML" rel="1">
+                                HTML
+                            </a>
+        				
+                            <a href="/tags/#调试" title="调试" rel="1">
+                                调试
+                            </a>
+        				
+                            <a href="/tags/#脚手架" title="脚手架" rel="1">
+                                脚手架
+                            </a>
+        				
+                            <a href="/tags/#基础" title="基础" rel="6">
+                                基础
+                            </a>
+        				
+                            <a href="/tags/#LeetCode" title="LeetCode" rel="5">
+                                LeetCode
+                            </a>
+        				
+                            <a href="/tags/#HSTS" title="HSTS" rel="1">
+                                HSTS
+                            </a>
+        				
+        			</div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+                    
+                        <li><a href=""></a></li>
+                    
+                        <li><a href="http://www.ruanyifeng.com/blog/">阮一峰的网络日志</a></li>
+                    
+                        <li><a href="http://www.zhangxinxu.com/wordpress/">张鑫旭</a></li>
+                    
+                        <li><a href="http://www.cnblogs.com/TomXu/tag/JavaScript/">汤姆大叔的博客</a></li>
+                    
+                        <li><a href="http://macshuo.com/">MacTalk By 池建强</a></li>
+                    
+                        <li><a href="http://www.barretlee.com/">小胡子哥</a></li>
+                    
+                        <li><a href="https://lifesinger.wordpress.com/">岁月如歌玉伯</a></li>
+                    
+                        <li><a href="https://mritd.me">漠然</a></li>
+                    
+                        <li><a href="http://xtoshiba.me">Hux Blog</a></li>
+                    
+                        <li><a href="http://blog.codingplayboy.com/">熊建刚</a></li>
+                    
+                        <li><a href="https://teddysun.com/">秋水逸冰</a></li>
+                    
+                        <li><a href="http://www.alloyteam.com">AlloyTeam</a></li>
+                    
+                        <li><a href="https://efe.baidu.com">百度EFE</a></li>
+                    
+                        <li><a href="http://eux.baidu.com/">百度EUX</a></li>
+                    
+                        <li><a href="https://fed.taobao.org">淘宝前端团队</a></li>
+                    
+                        <li><a href="https://isux.tencent.com/">腾讯ISUX</a></li>
+                    
+                        <li><a href="https://aotu.io/">凹凸实验室</a></li>
+                    
+                </ul>
+                
+            </div>
+
+
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    
+
+                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+                    
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/sun-dong-zhi/activities">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://weibo.com/2407846257/profile?rightmod=1&wvr=6&mod=personinfo">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+
+                    
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/profile.php?id=100004675021382">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/IORI20091101">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Dark Knight 2020 |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=IORI20091101&repo=IORI20091101.github.io&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<!--<script src="/assets/scripts/jquery.min.js "></script>-->
+<script src="https://cdn.darknights.cn/assets/scripts/jquery.min.js"></script>
+
+<script src="https://cdn.darknights.cn/assets/scripts/jquery.auto-complete.min.js"></script>
+
+<script src="https://cdn.darknights.cn/assets/scripts/highlight.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<!--<script src="/assets/scripts/bootstrap.min.js"></script>-->
+<script src="https://cdn.darknights.cn/assets/scripts/bootstrap.min.js"></script>
+
+
+<!--<script type="text/javascript" color="0,229,238" opacity='0.5' zIndex="-2" count="100" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>-->
+
+
+<!--<script src="https://cdn.bootcss.com/jqcloud/1.0.4/jqcloud-1.0.4.min.js"></script>-->
+<script src="https://cdn.darknights.cn/assets/scripts/fastclick.min.js"></script>
+
+
+<script src="https://cdn.darknights.cn/assets/scripts/jquery.tagcloud.js"></script>
+
+<script src="https://cdn.darknights.cn/assets/scripts/toc.js"></script>
+<script src="https://cdn.darknights.cn/assets/scripts/custom.js"></script>
+
+<!--<script src="http://127.0.0.1:4000/assets/scripts/toc.js"></script>-->
+<!--<script src="http://127.0.0.1:4000/assets/scripts/custom.js"></script>-->
+<!--<script src="http://127.0.0.1:4000/assets/scripts/jquery.nav.js"></script>-->
+
+
+
+<!-- async load function -->
+<!--<script>-->
+    <!--function async(u, c) {-->
+      <!--var d = document, t = 'script',-->
+          <!--o = d.createElement(t),-->
+          <!--s = d.getElementsByTagName(t)[0];-->
+      <!--o.src = u;-->
+      <!--if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }-->
+      <!--s.parentNode.insertBefore(o, s);-->
+    <!--}-->
+<!--</script>-->
+
+
+
+
+<!--
+     Because of the native support for backtick-style fenced code blocks
+     right within the Markdown is landed in Github Pages,
+     From V1.6, There is no need for Highlight.js,
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/
+-->
+
+
+
+
+<!--fastClick.js -->
+
+
+<!-- Google Analytics -->
+
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-107257239-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments)};
+    gtag('js', new Date());
+
+    gtag('config', 'UA-107257239-1');
+</script>
+
+
+
+
+<script>
+        (function(window,document,undefined){
+            var hearts = [];
+            window.requestAnimationFrame = (function(){
+                    return window.requestAnimationFrame ||
+                               window.webkitRequestAnimationFrame ||
+                               window.mozRequestAnimationFrame ||
+                               window.oRequestAnimationFrame ||
+                               window.msRequestAnimationFrame ||
+                               function (callback){
+                                       setTimeout(callback,1000/60);
+                               }
+            })();
+            init();
+            function init(){
+                    css(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}");
+                    attachEvent();
+                    gameloop();
+            }
+            function gameloop(){
+                    for(var i=0;i<hearts.length;i++){
+                        if(hearts[i].alpha <=0){
+                                document.body.removeChild(hearts[i].el);
+                                hearts.splice(i,1);
+                                continue;
+                        }
+                        hearts[i].y--;
+                        hearts[i].scale += 0.004;
+                        hearts[i].alpha -= 0.013;
+                        hearts[i].el.style.cssText = "left:"+hearts[i].x+"px;top:"+hearts[i].y+"px;opacity:"+hearts[i].alpha+";transform:scale("+hearts[i].scale+","+hearts[i].scale+") rotate(45deg);background:"+hearts[i].color+";z-index:99999";
+                }
+                requestAnimationFrame(gameloop);
+            }
+            function attachEvent(){
+                    var old = typeof window.onclick==="function" && window.onclick;
+                    window.onclick = function(event){
+                            old && old();
+                            createHeart(event);
+                    }
+            }
+            function createHeart(event){
+                var d = document.createElement("div");
+                d.className = "heart";
+                hearts.push({
+                        el : d,
+                        x : event.clientX - 5,
+                        y : event.clientY - 5,
+                        scale : 1,
+                        alpha : 1,
+                        color : randomColor()
+                });
+                document.body.appendChild(d);
+        }
+        function css(css){
+                var style = document.createElement("style");
+                    style.type="text/css";
+                    try{
+                        style.appendChild(document.createTextNode(css));
+                    }catch(ex){
+                        style.styleSheet.cssText = css;
+                    }
+                    document.getElementsByTagName('head')[0].appendChild(style);
+        }
+            function randomColor(){
+                    return "rgb("+(~~(Math.random()*255))+","+(~~(Math.random()*255))+","+(~~(Math.random()*255))+")";
+            }
+    })(window,document);
+</script>
+
+
+</body>
+
+</html>

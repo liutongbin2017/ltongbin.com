@@ -22,7 +22,7 @@
 
     <title>Dark knight's Blog</title>
 
-    <link rel="canonical" href="http://darknights.me/">
+    <link rel="canonical" href="http://darknights.me/page5/">
 
     <!-- Bootstrap Core CSS -->
     <link href="https://cdn.darknights.cn/assets/styles/bootstrap.min.css" rel="stylesheet">
@@ -218,228 +218,299 @@
             ">
             
 <div class="post-preview">
-    <a href="/js%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2019/11/12/js-array/">
+    <a href="/%E7%94%9F%E4%BA%A7%E5%B7%A5%E5%85%B7/2017/11/15/quick-key/">
         <h2 class="post-title">
-            JavaScript内置对象之数组
+            Visual Studio快捷键
         </h2>
         
         <h3 class="post-subtitle">
-            JavaScript内置对象之数组
+            工欲善其事必先利其器快捷键总结
         </h3>
         
         <div class="post-content-preview">
-            本文为了详细记录JavaScript内置对象中的一些方法
+            工欲善其事必先利其器快捷键总结
 
+项目相关的快捷键
+
+Ctrl + Shift + B = 生成项目
+
+Ctrl + Alt + L = 显示Solution Explorer（解决方案资源管理器）
+
+Shift + Alt+ C = 添加新类
+
+Shift + Alt + A = 添加新项目到项目
+
+编辑相关的键盘快捷键
+
+Ctrl + Enter = 在当前行插入空行
+
+Ctrl + S...
         </div>
     </a>
     <p class="post-meta">
-        Posted by toshiba on 2019-11-12
+        Posted by toshiba on 2017-11-15
     </p>
-    <!--<p class="post-meta"></p>November 12, 2019-->
+    <!--<p class="post-meta"></p>November 15, 2017-->
 </div>
 <hr>
 
 <div class="post-preview">
-    <a href="/%E9%9D%A2%E8%AF%95/2019/09/16/browser-input-all/">
+    <a href="/js%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2017/11/01/js-base-number/">
         <h2 class="post-title">
-            在浏览器输入 URL 回车之后发生了什么
+            javascript的的最大安全数
         </h2>
         
         <h3 class="post-subtitle">
-            在浏览器输入 URL 回车之后的一系列流程解析
+            javascript基础知识
         </h3>
         
         <div class="post-content-preview">
-            不久前看了一篇文章在浏览器输入 URL 回车之后发生了什么, 感觉讲的实在很好所以在此我也想总结一下,当自己被问到这个问题的时候会如何回答呢?
+            JS 中的最大安全整数
+JS中所有的数字类型存储都是双精度浮点数浮点数并不是能够精确表示范围内的所有数的， 虽然 double 浮点型的范围看上去很大: 2.23x10^(-308) ~ 1.79x10^308。 可以表示的最大整数可以很大，但能够精确表示，使用算数运算的并没有这么大。
 
-在浏览器输入 URL 回车之后发生了什么？
-大致流程如下
-
-
-  1.URL解析
-  2.DNS查询；
-  3.建立TCP连接；
-  4.发送HTTP请求；
-  5.服务器处理请求；
-  6.返回响应结果；
-  7.关闭TCP连接；
-  8.浏览器...
+例如下面会报错
+console.log(0.1 + 0.2)
+//output: 0.300000000...
         </div>
     </a>
     <p class="post-meta">
-        Posted by toshiba on 2019-09-16
+        Posted by toshiba on 2017-11-01
     </p>
-    <!--<p class="post-meta"></p>September 16, 2019-->
+    <!--<p class="post-meta"></p>November 1, 2017-->
 </div>
 <hr>
 
 <div class="post-preview">
-    <a href="/leetcode/2019/09/08/leetcode-five/">
+    <a href="/js%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2017/11/01/bin-operate/">
         <h2 class="post-title">
-            LeetCode刷题总结(简单版五)
+            javascript的位操作
         </h2>
         
         <h3 class="post-subtitle">
-            对LeetCode刷过的题目进行整理总结，方便后期查阅复习。
+            在javascript中的位操作涉及二进制的处理
         </h3>
         
         <div class="post-content-preview">
-            本文将LeetCode刷过的题目进行简单的总结和记录，便于自己进行复习，同时将看到的解题思路进行汇总让其他的小伙伴能够理解。
+            关于javascript中的~操作
 
-1.两个数组的交集
-两个数组的交集：
-给定两个数组，编写一个函数来计算它们的交集。
+参考文章中有一道面试题,尽管文章已经有了一部分解释但是还有一些点不够明确在此在进行一次分析
 
-示例 1:
 
-输入: nums1 = [1,2,2,1], nums2 = [2,2]
-输出: [2]
-示例 2:
+  !~location.href.search(‘abc’)
 
-输入: nums1 = [4,9,5], nums2 = [9...
+
+首先再次回顾一下js中的位运算
+
+
+  &amp; 与
+  | 或
+  ~ 非
+  ^ 异或
+  &lt;&lt; 左移
+  &gt;&gt; 算数右移(有符号右移)
+  &gt;&gt;&g...
         </div>
     </a>
     <p class="post-meta">
-        Posted by toshiba on 2019-09-08
+        Posted by toshiba on 2017-11-01
     </p>
-    <!--<p class="post-meta"></p>September 8, 2019-->
+    <!--<p class="post-meta"></p>November 1, 2017-->
 </div>
 <hr>
 
 <div class="post-preview">
-    <a href="/leetcode/2019/09/07/leetcode-four/">
+    <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/2017/10/31/bin-calculate/">
         <h2 class="post-title">
-            LeetCode刷题总结(简单版四)
+            原码, 反码, 补码 详解
         </h2>
         
         <h3 class="post-subtitle">
-            对LeetCode刷过的题目进行整理总结，方便后期查阅复习。
+            原码, 反码, 补码的基础概念和计算方法.
         </h3>
         
         <div class="post-content-preview">
-            本文将LeetCode刷过的题目进行简单的总结和记录，便于自己进行复习，同时将看到的解题思路进行汇总让其他的小伙伴能够理解。
+            机器数和真值
+在学习原码, 反码和补码之前, 需要先了解机器数和真值的概念.
 
-1.反转字符串中的单词 III
-反转字符串中的单词 III：
-给定一个字符串，你需要反转字符串中每个单词的字符顺序，同时仍保留空格和单词的初始顺序。
+机器数
+一个数在计算机中的二进制表示形式,  叫做这个数的机器数。机器数是带符号的，在计算机用一个数的最高位存放符号, 正数为0, 负数为1.
 
-注意：在字符串中，每个单词由单个空格分隔，并且字符串中不会有任何额外的空格。
+比如，十进制中的数 +3 ，计算机字长为8位，转换成二进制就是00000011。如果是 -3 ，就是 10000011 。
 
-示例 1:
-
-输入: "Let's...
+那么，这里的 00000011 和 100...
         </div>
     </a>
     <p class="post-meta">
-        Posted by toshiba on 2019-09-07
+        Posted by toshiba on 2017-10-31
     </p>
-    <!--<p class="post-meta"></p>September 7, 2019-->
+    <!--<p class="post-meta"></p>October 31, 2017-->
 </div>
 <hr>
 
 <div class="post-preview">
-    <a href="/leetcode/2019/09/05/leetcode-three/">
+    <a href="/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/2017/10/31/admin-theme/">
         <h2 class="post-title">
-            LeetCode刷题总结(简单版三)
+            常用的后台管理主题模板
         </h2>
         
         <h3 class="post-subtitle">
-            对LeetCode刷过的题目进行整理总结，方便后期查阅复习。
+            推荐一些常用主题,后台模板可以直接套用
         </h3>
         
         <div class="post-content-preview">
-            本文将LeetCode刷过的题目进行简单的总结和记录，便于自己进行复习，同时将看到的解题思路进行汇总让其他的小伙伴能够理解。
+            前端ui框架排名
 
-1.自除数
-自除数：
-自除数 是指可以被它包含的每一位数除尽的数。
-例如，128 是一个自除数，因为 128 % 1 == 0，128 % 2 == 0，128 % 8 == 0。
-还有，自除数不允许包含 0 。
-给定上边界和下边界数字，输出一个列表，列表的元素是边...
+常用后台管理主题推荐
+
+
+  jQuey: Bootstrap
+  React: ant.design
+  Vue: Element
+  
+    Angular Material UI
+  
+  Mint-ui
+
+
+门户网站ui框架
+
+  Foundation
+
+
+个人ui框架
+
+  iviewui
+  vux
+
+
+移动端ui框架
+
+  
+    sui
+  
+  
+ ...
         </div>
     </a>
     <p class="post-meta">
-        Posted by toshiba on 2019-09-05
+        Posted by toshiba on 2017-10-31
     </p>
-    <!--<p class="post-meta"></p>September 5, 2019-->
+    <!--<p class="post-meta"></p>October 31, 2017-->
 </div>
 <hr>
 
 <div class="post-preview">
-    <a href="/leetcode/2019/09/04/leetcode-two/">
+    <a href="/%E5%A8%B1%E4%B9%90/2017/10/29/entertainment/">
         <h2 class="post-title">
-            LeetCode刷题总结(简单版二)
+            娱乐
         </h2>
         
         <h3 class="post-subtitle">
-            对LeetCode刷过的题目进行整理总结，方便后期查阅复习。
+            just fun
         </h3>
         
         <div class="post-content-preview">
-            本文将LeetCode刷过的题目进行简单的总结和记录，便于自己进行复习，同时将看到的解题思路进行汇总让其他的小伙伴能够理解。
+            #
 
-1.有趣的电影
-有趣的电影：
-某城市开了一家新的电影院，吸引了很多人过来看电影。该电影院特别注意用户体验，专门有个 LED显示板做电影推荐，上面公布着影评和相关电影描述。
-作为该电影院的信息部主管，您需要编写一个 SQL查询，找出所有影片描述为非 boring (不...
+
+  
+    海盗湾
+  
+  
+    kickass-top.org
+  
+  
+    BT电影天堂
+  
+  
+    壁纸
+  
+  
+    壁纸2
+  
+  
+    原型发布与管理工具
+  
+  
+    2018最好的vps推荐，带测试链接
+  
+  
+    少数派-关于下载
+  
+  
+    用Hopper搞定迅雷会员
+  
+  
+    http://dy0...
         </div>
     </a>
     <p class="post-meta">
-        Posted by toshiba on 2019-09-04
+        Posted by toshiba on 2017-10-29
     </p>
-    <!--<p class="post-meta"></p>September 4, 2019-->
+    <!--<p class="post-meta"></p>October 29, 2017-->
 </div>
 <hr>
 
 <div class="post-preview">
-    <a href="/leetcode/2019/09/03/leetcode-one/">
+    <a href="/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/2017/10/22/git-senior/">
         <h2 class="post-title">
-            LeetCode刷题总结(简单版一)
+            git的使用教程(三)
         </h2>
         
         <h3 class="post-subtitle">
-            对LeetCode刷过的题目进行整理总结，方便后期查阅复习。
+            git的高级教程以及正规开发中的工作流程
         </h3>
         
         <div class="post-content-preview">
-            本文将LeetCode刷过的题目进行简单的总结和记录，便于自己进行复习，同时将看到的解题思路进行汇总让其他的小伙伴能够理解。
+            git的高级使用教程
 
-1.宝石与石头
-宝石与石头：
-给定字符串J 代表石头中宝石的类型，和字符串 S代表你拥有的石头。 S 中每个字符代表了一种你拥有的石头的类型，你想知道你拥有的石头中有多少是宝石。
-J 中的字母不重复，J 和 S中的所有字符都是字母。字母区分大小写，因此”a”和”A”...
+记录一些git的高级用法
+
+修改tag代码
+在项目中我们会有这样的要求，发布了一个tag v1.0现在这个tag有bug需要修复应该如何操作呢
+tag其实是一个快照是不能修改代码的但是可以基于tag新建一个分支来修改，这样修改完毕基于新的分支再打tag即可得到修复后的tag
+$ git fetch origin v1.0
+
+$ git checkout -b bran...
         </div>
     </a>
     <p class="post-meta">
-        Posted by toshiba on 2019-09-03
+        Posted by toshiba on 2017-10-22
     </p>
-    <!--<p class="post-meta"></p>September 3, 2019-->
+    <!--<p class="post-meta"></p>October 22, 2017-->
 </div>
 <hr>
 
 <div class="post-preview">
-    <a href="/%E8%84%9A%E6%89%8B%E6%9E%B6/2018/10/21/scaffold-front-www/">
+    <a href="/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/2017/10/21/git-medium/">
         <h2 class="post-title">
-            搭建门户网站技术选型
+            git的使用教程(二)
         </h2>
         
         <h3 class="post-subtitle">
-            从零开始搭建门户网站
+            git的中级教程(其他常用操作)
         </h3>
         
         <div class="post-content-preview">
-            起因
-工作多年，项目越来越多，总是要做一些重复性的工作开进行开发，每次东配置西配置一大堆，效率很低无法直接投入生产。
-通过这篇文章梳理一下自己的知识点，将一些常用技术做一些总结归纳和复习。并且基于此开发一套模版，用于以后网站开发直接套用，不做重复性的工作（这里的网站主要针对pc）。
+            git的中级使用教程
 
-开始
-从前端的角度来说，如何从零开始开发一个门户网站呢？ 首先是要有一些基础知识包括JavaScript, ...
+记录一些使用率中等的git命令
+
+设置用户名和邮箱
+$ git config --global user.name "Your Name"
+$ git config --global user.email "email@example.com"
+
+
+
+配置别名
+使用git status 太长了怎么破
+$ git config --global alias.st sta...
         </div>
     </a>
     <p class="post-meta">
-        Posted by toshiba on 2018-10-21
+        Posted by toshiba on 2017-10-21
     </p>
-    <!--<p class="post-meta"></p>October 21, 2018-->
+    <!--<p class="post-meta"></p>October 21, 2017-->
 </div>
 <hr>
 
@@ -448,9 +519,13 @@ J 中的字母不重复，J 和 S中的所有字符都是字母。字母区�
 
 <ul class="pager">
     
+    <li class="previous">
+        <a href="/page4">&larr; Newer Posts</a>
+    </li>
+    
     
     <li class="next">
-        <a href="/page2">Older Posts &rarr;</a>
+        <a href="/page6">Older Posts &rarr;</a>
     </li>
     
 </ul>

@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <link rel="dns-prefetch" href="//darknights.me">
+    <link rel="dns-prefetch" href="//darknights.cn">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Dark knight's的个人技术博客,专注于web开发,追求前端最完美体验">
+    <meta name="keyword"  content="web,前端开发,网站设计,程序员,java,javascript,nodejs,python,Dark knight's">
+    <link rel="apple-touch-icon" href="https://cdn.darknights.cn/assets/images/desk-icon.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="https://cdn.darknights.cn/assets/images/desk-icon.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="https://cdn.darknights.cn/assets/images/desk-icon.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="https://cdn.darknights.cn/assets/images/desk-icon.png" />
+    <link href="https://cdn.darknights.cn/assets/images/desk-icon.png" rel="icon" sizes="192x192" />
+    <link href="https://cdn.darknights.cn/assets/images/desk-icon.png" rel="icon" sizes="128x128" />
+
+    <link rel="shortcut icon" href="https://cdn.darknights.cn/assets/images/favicon.ico">
+
+    <title>SublimeText快捷键 - Dark knight's Blog</title>
+
+    <link rel="canonical" href="http://darknights.me/%E7%94%9F%E4%BA%A7%E5%B7%A5%E5%85%B7/2017/11/15/sublime-quick/">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://cdn.darknights.cn/assets/styles/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link href="https://cdn.darknights.cn/assets/styles/animate.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://cdn.darknights.cn/assets/styles/hux-blog.min.css">
+    <!--<link rel="stylesheet" href="http://127.0.0.1:4000/assets/styles/hux-blog.min.css">-->
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="https://cdn.darknights.cn/assets/styles/syntax.css">
+
+    <link href="https://cdn.darknights.cn/assets/styles/jquery.auto-complete.min.css" rel="stylesheet">
+
+    <!--<link href="https://cdn.bootcss.com/jqcloud/1.0.4/jqcloud.css" rel="stylesheet">-->
+
+    <!--语法高亮-->
+    <link rel="stylesheet" href="https://cdn.darknights.cn/assets/styles/monokai-sublime.min.css"   />
+
+
+    <!-- toshiba 自己的样式覆盖 CSS -->
+    <link rel="stylesheet" href="https://cdn.darknights.cn/assets/styles/custom1.css">
+    <!--<link rel="stylesheet" href="http://127.0.0.1:4000/assets/styles/custom.css">-->
+
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <link href="https://cdn.darknights.cn/assets/styles/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <!--<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>-->
+        <script src="https://cdn.darknights.cn/assets/scripts/html5.min.js"></script>
+        <!--<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>-->
+        <script src="https://cdn.darknights.cn/assets/scripts/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" data-spy="scroll" data-target="#toc" data-offset="20">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Dark Knight</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/category">category</a>
+                    </li>
+                    <!--<li>-->
+                        <!--<a href="/tags">tags</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<a href="/essay">essay</a>-->
+                    <!--</li>-->
+                    <li>
+                        <a href="/news">news</a>
+                    </li>
+                    <li>
+                        <a href="/about">about</a>
+                    </li>
+                    <!---->
+                    <!--<li>-->
+                        <!--<a href="/about/">About</a>-->
+                    <!--</li>-->
+                    <!---->
+                    <!--<li>-->
+                        <!--<a href="/category/">category</a>-->
+                    <!--</li>-->
+                    <!---->
+                    <!--<li>-->
+                        <!--<a href="/essay/">ESSAY</a>-->
+                    <!--</li>-->
+                    <!---->
+                    <!--<li>-->
+                        <!--<a href="/news/">NEWS</a>-->
+                    <!--</li>-->
+                    <!---->
+                    <!--<li>-->
+                        <!--<a href="/tags/">Tags</a>-->
+                    <!--</li>-->
+                    <!---->
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Page Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('https://cdn.darknights.cn/assets/images/bg/batman/bat1.jpg ')
+    }
+</style>
+
+
+
+
+
+    <header class="intro-header" >
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                            <a class="tag" href="/tags/#生产工具" title="生产工具">生产工具</a>
+                            
+                            <a class="tag" href="/tags/#IDE" title="IDE">IDE</a>
+                            
+                        </div>
+                        <h1>SublimeText快捷键</h1>
+                        
+                        
+                        <h2 class="subheading">SublimeText快捷键总结工欲善其事必先利其器快捷键总结</h2>
+                        
+                        <span class="meta">Posted by toshiba on November 15, 2017</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container">
+				<h2 id="sublime-text-2---实用快捷键-mac-os-x">Sublime Text 2 - 实用快捷键 (Mac OS X)</h2>
+
+<h3 id="打开前往">打开/前往</h3>
+
+<table>
+  <tbody>
+    <tr>
+      <td><em>⌘T</em></td>
+      <td>前往文件</td>
+    </tr>
+    <tr>
+      <td><em>⌘⌃P</em></td>
+      <td>前往项目</td>
+    </tr>
+    <tr>
+      <td><em>⌘R</em></td>
+      <td>前往 method</td>
+    </tr>
+    <tr>
+      <td><em>⌘⇧P</em></td>
+      <td>命令提示</td>
+    </tr>
+    <tr>
+      <td><em>⌃G</em></td>
+      <td>前往行</td>
+    </tr>
+    <tr>
+      <td><em>⌃ `</em></td>
+      <td>python 控制台</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="编辑">编辑</h3>
+
+<table>
+  <tbody>
+    <tr>
+      <td><em>⌘L</em></td>
+      <td>选择行 (重复按下将下一行加入选择)</td>
+    </tr>
+    <tr>
+      <td><em>⌘D</em></td>
+      <td>选择词 (重复按下时多重选择相同的词进行多重编辑)</td>
+    </tr>
+    <tr>
+      <td><em>⌃⇧M</em></td>
+      <td>选择括号内的内容</td>
+    </tr>
+    <tr>
+      <td><em>⌘⇧↩</em></td>
+      <td>在当前行前插入新行</td>
+    </tr>
+    <tr>
+      <td><em>⌘↩</em></td>
+      <td>在当前行后插入新行</td>
+    </tr>
+    <tr>
+      <td><em>⌃⇧K</em></td>
+      <td>删除行</td>
+    </tr>
+    <tr>
+      <td><em>⌘KK</em></td>
+      <td>从光标处删除至行尾</td>
+    </tr>
+    <tr>
+      <td><em>⌘K⌫</em></td>
+      <td>从光标处删除至行首</td>
+    </tr>
+    <tr>
+      <td><em>⌘⇧D</em></td>
+      <td>复制(多)行</td>
+    </tr>
+    <tr>
+      <td><em>⌘J</em></td>
+      <td>合并(多)行</td>
+    </tr>
+    <tr>
+      <td><em>⌘KU</em></td>
+      <td>改为大写</td>
+    </tr>
+    <tr>
+      <td><em>⌘KL</em></td>
+      <td>改为小写</td>
+    </tr>
+    <tr>
+      <td><em>⌘ /</em></td>
+      <td>注释</td>
+    </tr>
+    <tr>
+      <td><em>⌘⌥ /</em></td>
+      <td>块注释</td>
+    </tr>
+    <tr>
+      <td><em>⌘Y</em></td>
+      <td>恢复或重复</td>
+    </tr>
+    <tr>
+      <td><em>⌘⇧V</em></td>
+      <td>粘贴并自动缩进</td>
+    </tr>
+    <tr>
+      <td><em>⌃ space</em></td>
+      <td>自动完成(重复按下选择下一个提示)</td>
+    </tr>
+    <tr>
+      <td><em>⌃M</em></td>
+      <td>跳转至对应的括号</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="xmlhtml">XML/HTML</h3>
+
+<table>
+  <tbody>
+    <tr>
+      <td><em>⌘⇧A</em></td>
+      <td>选择标签内的内容</td>
+    </tr>
+    <tr>
+      <td><em>⌘⌥ .</em></td>
+      <td>闭合当前标签</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="查找替换">查找/替换</h3>
+
+<table>
+  <tbody>
+    <tr>
+      <td><em>⌘F</em></td>
+      <td>查找</td>
+    </tr>
+    <tr>
+      <td><em>⌘⌥F</em></td>
+      <td>替换</td>
+    </tr>
+    <tr>
+      <td><em>⌘⌥G</em></td>
+      <td>查找下一个符合当前所选的内容</td>
+    </tr>
+    <tr>
+      <td><em>⌘⌃G</em></td>
+      <td>查找所有符合当前所选的内容进行多重编辑</td>
+    </tr>
+    <tr>
+      <td><em>⌘⇧F</em></td>
+      <td>在所有打开的文件中进行查找</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="拆分窗口标签页">拆分窗口/标签页</h3>
+
+<table>
+  <tbody>
+    <tr>
+      <td><em>⌘⌥1</em></td>
+      <td>单列</td>
+    </tr>
+    <tr>
+      <td><em>⌘⌥2</em></td>
+      <td>双列</td>
+    </tr>
+    <tr>
+      <td><em>⌘⌥5</em></td>
+      <td>网格 (4组)</td>
+    </tr>
+    <tr>
+      <td><em>⌃[1,2,3,4]</em></td>
+      <td>焦点移动至相应组</td>
+    </tr>
+    <tr>
+      <td><em>⌃⇧[1,2,3,4]</em></td>
+      <td>将当前文件移动至相应组</td>
+    </tr>
+    <tr>
+      <td><em>⌘[1,2,3…]</em></td>
+      <td>选择相应标签页</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="书签">书签</h3>
+
+<table>
+  <tbody>
+    <tr>
+      <td><em>⌘F2</em></td>
+      <td>添加/去除书签</td>
+    </tr>
+    <tr>
+      <td><em>F2</em></td>
+      <td>下一个书签</td>
+    </tr>
+    <tr>
+      <td><em>⇧F2</em></td>
+      <td>前一个书签</td>
+    </tr>
+    <tr>
+      <td><em>⌘⇧F2</em></td>
+      <td>清除书签</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="标记">标记</h3>
+
+<table>
+  <tbody>
+    <tr>
+      <td><em>⌘K space</em></td>
+      <td>设置标记</td>
+    </tr>
+    <tr>
+      <td><em>⌘KW</em></td>
+      <td>从光标位置删除至标记</td>
+    </tr>
+    <tr>
+      <td><em>⌘KA</em></td>
+      <td>从光标位置选择至标记</td>
+    </tr>
+    <tr>
+      <td><em>⌘KG</em></td>
+      <td>清除标记</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+                <hr>
+
+                <ul class="pager">
+    
+    <li class="previous">
+        <a href="/%E7%94%9F%E4%BA%A7%E5%B7%A5%E5%85%B7/2017/11/15/idea-quick/" data-toggle="tooltip" data-placement="top" title="IDEA快捷键">&larr; Previous Post</a>
+    </li>
+    
+    
+    <li class="next">
+        <a href="/js%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2017/11/16/lodash-one/" data-toggle="tooltip" data-placement="top" title="Lodash.js源码阅读分析（一）">Next Post &rarr;</a>
+    </li>
+    
+</ul>
+
+
+
+
+<!-- disqus 评论框 start -->
+<div class="comment">
+    <div id="disqus_thread"
+         data-thread-key="/%E7%94%9F%E4%BA%A7%E5%B7%A5%E5%85%B7/2017/11/15/sublime-quick"
+         data-title="SublimeText快捷键"
+         data-url="http://darknights.me/%E7%94%9F%E4%BA%A7%E5%B7%A5%E5%85%B7/2017/11/15/sublime-quick/"></div>
+    <script>
+
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        /*
+         var disqus_config = function () {
+         this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+         this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+         };
+         */
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://iori-1.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+<!-- disqus 评论框 end -->
+
+
+
+
+
+
+
+
+
+            </div>
+
+            <!-- Sidebar Container -->
+            
+
+
+
+
+
+<div class="
+                col-lg-3 col-lg-offset-0
+                col-md-3 col-md-offset-0
+                col-sm-12
+                col-xs-12
+                sidebar-container
+                hidden-xs
+                hidden-sm
+            ">
+    <!-- Search Container -->
+    <div class="hidden-xs">
+        <div class="input-group">
+            <input type="text" name="q" autofocus="" class="form-control" id="autocomplete" placeholder="搜索" autocomplete="off">
+            <span class="input-group-btn">
+                <button class="btn  btn-default" id="search-btn" type="submit">Go</button>
+            </span>
+        </div>
+    </div>
+
+    <hr class="hidden-sm hidden-xs">
+    <!--<h5 id="catalog">-->
+        <!--<a class="catalog-toggle" href="#">目录</a>-->
+    <!--</h5>-->
+    <div id="toc"></div>
+
+
+    <!--<ul class="catalog-body">-->
+        <!--<li class="h2_nav"><a href="#多页应用vuepwa" rel="nofollow">多页应用、Vue、PWA？</a></li>-->
+        <!--<li class="h2_nav"><a href="#实现-prpl-模式" rel="nofollow">实现 “PRPL” 模式</a></li>-->
+        <!--<li class="h3_nav active"><a href="#1-pushpreload推送预加载初始-url-路由所需的关键资源" rel="nofollow">1. PUSH/PRELOAD，推送/预加载初始 URL 路由所需的关键资源。</a></li>-->
+    <!--</ul>-->
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+            <!-- 详情底部的友情链接和标签云这里不单独抽离 -->
+            <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                            <a href="/tags/#博客搭建" title="博客搭建" rel="2">
+                                博客搭建
+                            </a>
+        				
+                            <a href="/tags/#JavaScript" title="JavaScript" rel="3">
+                                JavaScript
+                            </a>
+        				
+                            <a href="/tags/#jekyll" title="jekyll" rel="1">
+                                jekyll
+                            </a>
+        				
+                            <a href="/tags/#interview" title="interview" rel="1">
+                                interview
+                            </a>
+        				
+                            <a href="/tags/#工具" title="工具" rel="5">
+                                工具
+                            </a>
+        				
+                            <a href="/tags/#git" title="git" rel="3">
+                                git
+                            </a>
+        				
+                            <a href="/tags/#娱乐" title="娱乐" rel="1">
+                                娱乐
+                            </a>
+        				
+                            <a href="/tags/#html" title="html" rel="1">
+                                html
+                            </a>
+        				
+                            <a href="/tags/#管理系统主题" title="管理系统主题" rel="1">
+                                管理系统主题
+                            </a>
+        				
+                            <a href="/tags/#计算机基础" title="计算机基础" rel="4">
+                                计算机基础
+                            </a>
+        				
+                            <a href="/tags/#javascript" title="javascript" rel="20">
+                                javascript
+                            </a>
+        				
+                            <a href="/tags/#生产工具" title="生产工具" rel="4">
+                                生产工具
+                            </a>
+        				
+                            <a href="/tags/#IDE" title="IDE" rel="4">
+                                IDE
+                            </a>
+        				
+                            <a href="/tags/#Lodash" title="Lodash" rel="1">
+                                Lodash
+                            </a>
+        				
+                            <a href="/tags/#ES6学习笔记" title="ES6学习笔记" rel="1">
+                                ES6学习笔记
+                            </a>
+        				
+                            <a href="/tags/#读书总结" title="读书总结" rel="13">
+                                读书总结
+                            </a>
+        				
+                            <a href="/tags/#Vim" title="Vim" rel="1">
+                                Vim
+                            </a>
+        				
+                            <a href="/tags/#reactjs" title="reactjs" rel="1">
+                                reactjs
+                            </a>
+        				
+                            <a href="/tags/#面试" title="面试" rel="9">
+                                面试
+                            </a>
+        				
+                            <a href="/tags/#CSS" title="CSS" rel="1">
+                                CSS
+                            </a>
+        				
+                            <a href="/tags/#HTML" title="HTML" rel="1">
+                                HTML
+                            </a>
+        				
+                            <a href="/tags/#调试" title="调试" rel="1">
+                                调试
+                            </a>
+        				
+                            <a href="/tags/#脚手架" title="脚手架" rel="1">
+                                脚手架
+                            </a>
+        				
+                            <a href="/tags/#基础" title="基础" rel="6">
+                                基础
+                            </a>
+        				
+                            <a href="/tags/#LeetCode" title="LeetCode" rel="5">
+                                LeetCode
+                            </a>
+        				
+                            <a href="/tags/#HSTS" title="HSTS" rel="1">
+                                HSTS
+                            </a>
+        				
+        			</div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+                    
+                        <li><a href=""></a></li>
+                    
+                        <li><a href="http://www.ruanyifeng.com/blog/">阮一峰的网络日志</a></li>
+                    
+                        <li><a href="http://www.zhangxinxu.com/wordpress/">张鑫旭</a></li>
+                    
+                        <li><a href="http://www.cnblogs.com/TomXu/tag/JavaScript/">汤姆大叔的博客</a></li>
+                    
+                        <li><a href="http://macshuo.com/">MacTalk By 池建强</a></li>
+                    
+                        <li><a href="http://www.barretlee.com/">小胡子哥</a></li>
+                    
+                        <li><a href="https://lifesinger.wordpress.com/">岁月如歌玉伯</a></li>
+                    
+                        <li><a href="https://mritd.me">漠然</a></li>
+                    
+                        <li><a href="http://xtoshiba.me">Hux Blog</a></li>
+                    
+                        <li><a href="http://blog.codingplayboy.com/">熊建刚</a></li>
+                    
+                        <li><a href="https://teddysun.com/">秋水逸冰</a></li>
+                    
+                        <li><a href="http://www.alloyteam.com">AlloyTeam</a></li>
+                    
+                        <li><a href="https://efe.baidu.com">百度EFE</a></li>
+                    
+                        <li><a href="http://eux.baidu.com/">百度EUX</a></li>
+                    
+                        <li><a href="https://fed.taobao.org">淘宝前端团队</a></li>
+                    
+                        <li><a href="https://isux.tencent.com/">腾讯ISUX</a></li>
+                    
+                        <li><a href="https://aotu.io/">凹凸实验室</a></li>
+                    
+                </ul>
+                
+            </div>
+
+
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    
+
+                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+                    
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/sun-dong-zhi/activities">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://weibo.com/2407846257/profile?rightmod=1&wvr=6&mod=personinfo">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+
+                    
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/profile.php?id=100004675021382">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/IORI20091101">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Dark Knight 2020 |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=IORI20091101&repo=IORI20091101.github.io&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<!--<script src="/assets/scripts/jquery.min.js "></script>-->
+<script src="https://cdn.darknights.cn/assets/scripts/jquery.min.js"></script>
+
+<script src="https://cdn.darknights.cn/assets/scripts/jquery.auto-complete.min.js"></script>
+
+<script src="https://cdn.darknights.cn/assets/scripts/highlight.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<!--<script src="/assets/scripts/bootstrap.min.js"></script>-->
+<script src="https://cdn.darknights.cn/assets/scripts/bootstrap.min.js"></script>
+
+
+<!--<script type="text/javascript" color="0,229,238" opacity='0.5' zIndex="-2" count="100" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>-->
+
+
+<!--<script src="https://cdn.bootcss.com/jqcloud/1.0.4/jqcloud-1.0.4.min.js"></script>-->
+<script src="https://cdn.darknights.cn/assets/scripts/fastclick.min.js"></script>
+
+
+<script src="https://cdn.darknights.cn/assets/scripts/jquery.tagcloud.js"></script>
+
+<script src="https://cdn.darknights.cn/assets/scripts/toc.js"></script>
+<script src="https://cdn.darknights.cn/assets/scripts/custom.js"></script>
+
+<!--<script src="http://127.0.0.1:4000/assets/scripts/toc.js"></script>-->
+<!--<script src="http://127.0.0.1:4000/assets/scripts/custom.js"></script>-->
+<!--<script src="http://127.0.0.1:4000/assets/scripts/jquery.nav.js"></script>-->
+
+
+
+<!-- async load function -->
+<!--<script>-->
+    <!--function async(u, c) {-->
+      <!--var d = document, t = 'script',-->
+          <!--o = d.createElement(t),-->
+          <!--s = d.getElementsByTagName(t)[0];-->
+      <!--o.src = u;-->
+      <!--if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }-->
+      <!--s.parentNode.insertBefore(o, s);-->
+    <!--}-->
+<!--</script>-->
+
+
+
+
+<!--
+     Because of the native support for backtick-style fenced code blocks
+     right within the Markdown is landed in Github Pages,
+     From V1.6, There is no need for Highlight.js,
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/
+-->
+
+
+
+
+<!--fastClick.js -->
+
+
+<!-- Google Analytics -->
+
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-107257239-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments)};
+    gtag('js', new Date());
+
+    gtag('config', 'UA-107257239-1');
+</script>
+
+
+
+
+<script>
+        (function(window,document,undefined){
+            var hearts = [];
+            window.requestAnimationFrame = (function(){
+                    return window.requestAnimationFrame ||
+                               window.webkitRequestAnimationFrame ||
+                               window.mozRequestAnimationFrame ||
+                               window.oRequestAnimationFrame ||
+                               window.msRequestAnimationFrame ||
+                               function (callback){
+                                       setTimeout(callback,1000/60);
+                               }
+            })();
+            init();
+            function init(){
+                    css(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}");
+                    attachEvent();
+                    gameloop();
+            }
+            function gameloop(){
+                    for(var i=0;i<hearts.length;i++){
+                        if(hearts[i].alpha <=0){
+                                document.body.removeChild(hearts[i].el);
+                                hearts.splice(i,1);
+                                continue;
+                        }
+                        hearts[i].y--;
+                        hearts[i].scale += 0.004;
+                        hearts[i].alpha -= 0.013;
+                        hearts[i].el.style.cssText = "left:"+hearts[i].x+"px;top:"+hearts[i].y+"px;opacity:"+hearts[i].alpha+";transform:scale("+hearts[i].scale+","+hearts[i].scale+") rotate(45deg);background:"+hearts[i].color+";z-index:99999";
+                }
+                requestAnimationFrame(gameloop);
+            }
+            function attachEvent(){
+                    var old = typeof window.onclick==="function" && window.onclick;
+                    window.onclick = function(event){
+                            old && old();
+                            createHeart(event);
+                    }
+            }
+            function createHeart(event){
+                var d = document.createElement("div");
+                d.className = "heart";
+                hearts.push({
+                        el : d,
+                        x : event.clientX - 5,
+                        y : event.clientY - 5,
+                        scale : 1,
+                        alpha : 1,
+                        color : randomColor()
+                });
+                document.body.appendChild(d);
+        }
+        function css(css){
+                var style = document.createElement("style");
+                    style.type="text/css";
+                    try{
+                        style.appendChild(document.createTextNode(css));
+                    }catch(ex){
+                        style.styleSheet.cssText = css;
+                    }
+                    document.getElementsByTagName('head')[0].appendChild(style);
+        }
+            function randomColor(){
+                    return "rgb("+(~~(Math.random()*255))+","+(~~(Math.random()*255))+","+(~~(Math.random()*255))+")";
+            }
+    })(window,document);
+</script>
+
+
+</body>
+
+</html>

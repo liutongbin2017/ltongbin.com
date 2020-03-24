@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <link rel="dns-prefetch" href="//darknights.me">
+    <link rel="dns-prefetch" href="//darknights.cn">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Dark knight's的个人技术博客,专注于web开发,追求前端最完美体验">
+    <meta name="keyword"  content="web,前端开发,网站设计,程序员,java,javascript,nodejs,python,Dark knight's">
+    <link rel="apple-touch-icon" href="https://cdn.darknights.cn/assets/images/desk-icon.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="https://cdn.darknights.cn/assets/images/desk-icon.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="https://cdn.darknights.cn/assets/images/desk-icon.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="https://cdn.darknights.cn/assets/images/desk-icon.png" />
+    <link href="https://cdn.darknights.cn/assets/images/desk-icon.png" rel="icon" sizes="192x192" />
+    <link href="https://cdn.darknights.cn/assets/images/desk-icon.png" rel="icon" sizes="128x128" />
+
+    <link rel="shortcut icon" href="https://cdn.darknights.cn/assets/images/favicon.ico">
+
+    <title>LeetCode刷题总结(简单版二) - Dark knight's Blog</title>
+
+    <link rel="canonical" href="http://darknights.me/leetcode/2019/09/04/leetcode-two/">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://cdn.darknights.cn/assets/styles/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link href="https://cdn.darknights.cn/assets/styles/animate.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://cdn.darknights.cn/assets/styles/hux-blog.min.css">
+    <!--<link rel="stylesheet" href="http://127.0.0.1:4000/assets/styles/hux-blog.min.css">-->
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="https://cdn.darknights.cn/assets/styles/syntax.css">
+
+    <link href="https://cdn.darknights.cn/assets/styles/jquery.auto-complete.min.css" rel="stylesheet">
+
+    <!--<link href="https://cdn.bootcss.com/jqcloud/1.0.4/jqcloud.css" rel="stylesheet">-->
+
+    <!--语法高亮-->
+    <link rel="stylesheet" href="https://cdn.darknights.cn/assets/styles/monokai-sublime.min.css"   />
+
+
+    <!-- toshiba 自己的样式覆盖 CSS -->
+    <link rel="stylesheet" href="https://cdn.darknights.cn/assets/styles/custom1.css">
+    <!--<link rel="stylesheet" href="http://127.0.0.1:4000/assets/styles/custom.css">-->
+
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <link href="https://cdn.darknights.cn/assets/styles/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <!--<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>-->
+        <script src="https://cdn.darknights.cn/assets/scripts/html5.min.js"></script>
+        <!--<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>-->
+        <script src="https://cdn.darknights.cn/assets/scripts/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" data-spy="scroll" data-target="#toc" data-offset="20">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Dark Knight</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/category">category</a>
+                    </li>
+                    <!--<li>-->
+                        <!--<a href="/tags">tags</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<a href="/essay">essay</a>-->
+                    <!--</li>-->
+                    <li>
+                        <a href="/news">news</a>
+                    </li>
+                    <li>
+                        <a href="/about">about</a>
+                    </li>
+                    <!---->
+                    <!--<li>-->
+                        <!--<a href="/about/">About</a>-->
+                    <!--</li>-->
+                    <!---->
+                    <!--<li>-->
+                        <!--<a href="/category/">category</a>-->
+                    <!--</li>-->
+                    <!---->
+                    <!--<li>-->
+                        <!--<a href="/essay/">ESSAY</a>-->
+                    <!--</li>-->
+                    <!---->
+                    <!--<li>-->
+                        <!--<a href="/news/">NEWS</a>-->
+                    <!--</li>-->
+                    <!---->
+                    <!--<li>-->
+                        <!--<a href="/tags/">Tags</a>-->
+                    <!--</li>-->
+                    <!---->
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Page Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('https://cdn.darknights.cn/assets/images/bg/batman/bat8.jpg ')
+    }
+</style>
+
+
+
+
+
+    <header class="intro-header" >
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                            <a class="tag" href="/tags/#面试" title="面试">面试</a>
+                            
+                            <a class="tag" href="/tags/#基础" title="基础">基础</a>
+                            
+                            <a class="tag" href="/tags/#LeetCode" title="LeetCode">LeetCode</a>
+                            
+                        </div>
+                        <h1>LeetCode刷题总结(简单版二)</h1>
+                        
+                        
+                        <h2 class="subheading">对LeetCode刷过的题目进行整理总结，方便后期查阅复习。</h2>
+                        
+                        <span class="meta">Posted by toshiba on September 4, 2019</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container">
+				<p>本文将LeetCode刷过的题目进行简单的总结和记录，便于自己进行复习，同时将看到的解题思路进行汇总让其他的小伙伴能够理解。</p>
+
+<h3 id="1有趣的电影">1.有趣的电影</h3>
+<p><a href="https://leetcode-cn.com/problems/not-boring-movies/">有趣的电影</a>：
+某城市开了一家新的电影院，吸引了很多人过来看电影。该电影院特别注意用户体验，专门有个 LED显示板做电影推荐，上面公布着影评和相关电影描述。
+作为该电影院的信息部主管，您需要编写一个 SQL查询，找出所有影片描述为非 boring (不无聊) 的并且 id 为奇数 的影片，结果请按等级 rating 排列。</p>
+
+<pre><code>例如，下表 cinema:
+
++---------+-----------+--------------+-----------+
+|   id    | movie     |  description |  rating   |
++---------+-----------+--------------+-----------+
+|   1     | War       |   great 3D   |   8.9     |
+|   2     | Science   |   fiction    |   8.5     |
+|   3     | irish     |   boring     |   6.2     |
+|   4     | Ice song  |   Fantacy    |   8.6     |
+|   5     | House card|   Interesting|   9.1     |
++---------+-----------+--------------+-----------+
+对于上面的例子，则正确的输出是为：
+
++---------+-----------+--------------+-----------+
+|   id    | movie     |  description |  rating   |
++---------+-----------+--------------+-----------+
+|   5     | House card|   Interesting|   9.1     |
+|   1     | War       |   great 3D   |   8.9     |
++---------+-----------+--------------+-----------+
+
+</code></pre>
+
+<h4 id="答案一">答案一：</h4>
+<p>我们可以使用 mod(id,2)=1 来确定奇数 id，然后添加 description != ‘boring’ 来解决问题。
+官方题解：</p>
+
+<pre><code class="language-MySQL">select * 
+from cinema
+where mod(id,2) != 0 and description != 'boring'
+order by rating desc
+;
+</code></pre>
+
+<h4 id="答案二">答案二：</h4>
+<p>如何确定奇数除了使用mod函数还有一个比较巧妙的方法， id&amp;1按位与,该操作会将数字转为32位的二进制进行比较</p>
+<pre><code class="language-javascript">//id=1
+0001
+0001
+
+0001 结果为1
+
+//id=2
+0010
+0001 
+
+0000 结果为0
+
+//id=3
+0011
+0001
+
+0001 结果为1
+
+//id=4
+0010
+0001
+
+0000 结果为0
+
+</code></pre>
+<p>因为1的前31位都是0，跟0进行与操作肯定是0，主要在于最后一位如果是奇数肯定能得到1，如果是0肯定是0
+所以答案也可以写成这样</p>
+<pre><code>select * 
+from cinema 
+where description&lt;&gt;'boring' and id&amp;1 
+order by rating desc
+;
+</code></pre>
+
+<h3 id="2汉明距离">2.汉明距离</h3>
+<p><a href="https://leetcode-cn.com/problems/hamming-distance/">汉明距离</a>:
+两个整数之间的汉明距离指的是这两个数字对应二进制位不同的位置的数目。
+给出两个整数 x 和 y，计算它们之间的汉明距离。
+注意：
+0 ≤ x, y &lt; 231.</p>
+
+<pre><code>示例:
+
+输入: x = 1, y = 4
+
+输出: 2
+
+解释:
+1   (0 0 0 1)
+4   (0 1 0 0)
+       ↑   ↑
+
+上面的箭头指出了对应二进制位不同的位置。
+</code></pre>
+<h4 id="答案一-1">答案一：</h4>
+<p>分析其实本题的意图就是将x，y转为二进制后，记录对应位置值不相同的位置数量， 所以我们就想到了按位异或。x^y后得到一个数值，需要将这个值转为二进制再去统计数量。</p>
+<pre><code>/**
+ * @param {number} x
+ * @param {number} y
+ * @return {number}
+ */
+var hammingDistance = function(x, y) {
+  let z = x^y;
+  let num = 0;
+  let bin = z.toString(2);
+  for(let i = 0; i &lt; bin.length; i++) {
+      if(bin.charAt(i) === '1') {
+          num++;
+      }
+  }
+    
+    return num;
+};
+
+</code></pre>
+
+<h3 id="3翻转二叉树">3.翻转二叉树</h3>
+<p><a href="https://leetcode-cn.com/problems/invert-binary-tree/">翻转二叉树</a>:
+翻转一棵二叉树。</p>
+
+<pre><code>示例：
+
+输入：
+
+     4
+   /   \
+  2     7
+ / \   / \
+1   3 6   9
+输出：
+
+     4
+   /   \
+  7     2
+ / \   / \
+9   6 3   1
+
+</code></pre>
+
+<h4 id="答案一-2">答案一</h4>
+<pre><code class="language-java">
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public TreeNode invertTree(TreeNode root) {
+        if(root == null) {
+            return null;
+        }
+        
+        TreeNode right = invertTree(root.right);
+        TreeNode left = invertTree(root.left);
+        
+        root.left = right;
+        root.right = left;
+        return root;
+    }
+}
+</code></pre>
+
+<h4 id="答案二-1">答案二</h4>
+
+<pre><code class="language-javascript">/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {TreeNode}
+ */
+var invertTree = function(root) {
+    if(root !== null) {
+        [root.left, root.right] = [invertTree(root.right), invertTree(root.left)]
+    }
+    return root;
+};
+
+</code></pre>
+
+<h3 id="4机器人能否返回原点">4.机器人能否返回原点</h3>
+<p><a href="https://leetcode-cn.com/problems/robot-return-to-origin/">机器人能否返回原点</a>：
+在二维平面上，有一个机器人从原点 (0, 0) 开始。给出它的移动顺序，判断这个机器人在完成移动后是否在 (0, 0) 处结束。
+移动顺序由字符串表示。字符 move[i] 表示其第 i 次移动。机器人的有效动作有 R（右），L（左），U（上）和 D（下）。如果机器人在完成所有动作后返回原点，则返回 true。否则，返回 false。
+注意：机器人“面朝”的方向无关紧要。 “R” 将始终使机器人向右移动一次，“L” 将始终向左移动等。此外，假设每次移动机器人的移动幅度相同。</p>
+
+<pre><code>示例 1:
+
+输入: "UD"
+输出: true
+解释：机器人向上移动一次，然后向下移动一次。所有动作都具有相同的幅度，因此它最终回到它开始的原点。因此，我们返回 true。
+示例 2:
+
+输入: "LL"
+输出: false
+解释：机器人向左移动两次。它最终位于原点的左侧，距原点有两次 “移动” 的距离。我们返回 false，因为它在移动结束时没有返回原点。
+</code></pre>
+
+<h4 id="答案一-3">答案一</h4>
+<p>分析：是否回到原点，取决于上下移动的步数相等，左右移动的步数相等。
+所以最简单的方法就是去计数</p>
+<pre><code class="language-javascript">/**
+ * @param {string} moves
+ * @return {boolean}
+ */
+var judgeCircle = function(moves) {
+     let u = 0;
+        let d = 0;
+        let r = 0;
+        let l = 0;
+        let movesArr = moves.split("");
+        
+        movesArr.forEach(function(val) {
+            if(val === 'U') {
+                u++;
+            }
+            if(val === 'D') {
+                d++;
+            }
+            if(val === 'L') {
+                l++;
+            }
+            if(val === 'R') {
+                r++;
+            }
+            
+        });
+        return u === d &amp;&amp; r === l;
+};
+</code></pre>
+
+<h4 id="答案二-2">答案二</h4>
+<p>比第一个方法要巧妙一些，不去计数了但是还是要判断步数相等，通过切割关键点来得到数组，如果关键点数量一样数组的长度相同。</p>
+<pre><code class="language-javascript">
+/**
+ * @param {string} moves
+ * @return {boolean}
+ */
+var judgeCircle = function(moves) {
+  return moves.split('L').length === moves.split('R').length &amp;&amp; moves.split('U').length === moves.split('D').length
+};
+</code></pre>
+
+<h3 id="5高度检查器">5.高度检查器</h3>
+<p><a href="https://leetcode-cn.com/problems/height-checker/">高度检查器</a>:
+学校在拍年度纪念照时，一般要求学生按照 非递减 的高度顺序排列。
+请你返回至少有多少个学生没有站在正确位置数量。该人数指的是：能让所有学生以 非递减 高度排列的必要移动人数。</p>
+
+<p>提示：</p>
+<ul>
+  <li>1 &lt;= heights.length &lt;= 100</li>
+  <li>1 &lt;= heights[i] &lt;= 100</li>
+</ul>
+
+<pre><code>示例：
+
+输入：[1,1,4,2,1,3]
+输出：3
+解释：
+高度为 4、3 和最后一个 1 的学生，没有站在正确的位置。
+</code></pre>
+
+<h4 id="答案一-4">答案一</h4>
+<p>分析：将数组重新排序后得到新的数组去判断同一个位置的值是否相等，不想等计数+1.</p>
+<pre><code class="language-javascript">/**
+ * @param {number[]} heights
+ * @return {number}
+ */
+var heightChecker = function(heights) {    
+    var temp = heights.concat().sort((a, b) =&gt; (a - b) );
+    var count = 0;
+
+    for(var i = 0; i &lt; heights.length; i++) {
+        if(heights[i] != temp[i]) {
+            count++;   
+        }
+    }
+    
+    return count;
+};
+</code></pre>
+
+<h3 id="6二叉树的最大深度">6.二叉树的最大深度</h3>
+<p><a href="https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/">二叉树的最大深度</a>:
+给定一个二叉树，找出其最大深度。
+二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。
+说明: 叶子节点是指没有子节点的节点。</p>
+
+<pre><code>示例：
+给定二叉树 [3,9,20,null,null,15,7]，
+
+    3
+   / \
+  9  20
+    /  \
+   15   7
+
+返回它的最大深度 3 。
+
+</code></pre>
+
+<h4 id="答案一-5">答案一</h4>
+<pre><code class="language-javascript">/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number}
+ */
+var maxDepth = function(root) {
+    if(root == null) {
+        return 0;
+    } else {
+        let left = maxDepth(root.left);
+        let right = maxDepth(root.right);
+        return Math.max(left, right) + 1;
+    }
+    
+};
+</code></pre>
+
+<h3 id="7交换工资">7.交换工资</h3>
+<p><a href="https://leetcode-cn.com/problems/swap-salary/">交换工资</a>
+给定一个 salary 表，如下所示，有 m = 男性 和 f = 女性 的值。交换所有的 f 和 m 值（例如，将所有 f 值更改为 m，反之亦然）。要求只使用一个更新（Update）语句，并且没有中间的临时表。
+注意，您必只能写一个 Update 语句，请不要编写任何 Select 语句。</p>
+<pre><code>
+
+例如：
+
+| id | name | sex | salary |
+|----|------|-----|--------|
+| 1  | A    | m   | 2500   |
+| 2  | B    | f   | 1500   |
+| 3  | C    | m   | 5500   |
+| 4  | D    | f   | 500    |
+运行你所编写的更新语句之后，将会得到以下表:
+
+| id | name | sex | salary |
+|----|------|-----|--------|
+| 1  | A    | f   | 2500   |
+| 2  | B    | m   | 1500   |
+| 3  | C    | f   | 5500   |
+| 4  | D    | m   | 500    |
+
+</code></pre>
+<h4 id="答案一-6">答案一</h4>
+<pre><code class="language-mysql">UPDATE salary 
+SET sex = CASE sex
+        WHEN 'm' THEN 'f'
+        ELSE 'm'
+    END;
+
+</code></pre>
+
+<h3 id="8有序数组的平方">8.有序数组的平方</h3>
+<p><a href="https://leetcode-cn.com/problems/squares-of-a-sorted-array/">有序数组的平方</a>:
+给定一个按非递减顺序排序的整数数组 A，返回每个数字的平方组成的新数组，要求也按非递减顺序排序。</p>
+
+<p>提示：</p>
+
+<ul>
+  <li>1 &lt;= A.length &lt;= 10000</li>
+  <li>-10000 &lt;= A[i] &lt;= 10000</li>
+  <li>A 已按非递减顺序排序。</li>
+</ul>
+
+<pre><code>示例 1：
+
+输入：[-4,-1,0,3,10]
+输出：[0,1,9,16,100]
+示例 2：
+
+输入：[-7,-3,2,3,11]
+输出：[4,9,9,49,121]
+
+</code></pre>
+
+<h4 id="答案一-7">答案一</h4>
+<p>分析：因为是从小打大，其中可以包含负数，所以取平方后两头应该最大。之所以使用<code>unshift</code>是因为双向指针来获取，拿到的一开始的值肯定是最大的后面越来越小</p>
+
+<pre><code class="language-javascript">
+/**
+ * @param {number[]} A
+ * @return {number[]}
+ */
+var sortedSquares = function(A) {
+    let count = A.length;
+    let result = [];
+    let i = 0;
+    let j = count -1;
+    
+    while(i &lt;= j) {
+        let left = Math.pow(A[i], 2);
+        let right = Math.pow(A[j], 2);
+        
+        if(left &gt; right) {
+            result.unshift(left);
+            i++;
+        } else {
+            result.unshift(right);
+            j--;
+        }
+        
+    }
+
+    return result;
+    
+};
+
+</code></pre>
+
+<h3 id="9增减字符串匹配">9.增减字符串匹配</h3>
+<p><a href="https://leetcode-cn.com/problems/di-string-match/">增减字符串匹配</a>:
+给定只含 ”I”（增大）或 “D”（减小）的字符串 S ，令 N = S.length。
+返回 [0, 1, …, N] 的任意排列 A 使得对于所有 i = 0, …, N-1，都有：
+如果 S[i] == “I”，那么 A[i] &lt; A[i+1]
+如果 S[i] == “D”，那么 A[i] &gt; A[i+1]</p>
+
+<pre><code class="language-javascript">示例 1：
+
+输出："IDID"
+输出：[0,4,1,3,2]
+示例 2：
+
+输出："III"
+输出：[0,1,2,3]
+示例 3：
+
+输出："DDI"
+输出：[3,2,0,1]
+
+</code></pre>
+
+<h4 id="答案一-8">答案一</h4>
+<p>分析：根据结果的分析是所有的I从0开始依次递增，所有D从N开始依次递减</p>
+<pre><code class="language-javascript">
+/**
+ * @param {string} S
+ * @return {number[]}
+ */
+var diStringMatch = function(S) {
+    let len = S.length;
+    let imin = 0, dmax = len;
+    let result = new Array(len + 1);
+    for(let i = 0; i &lt;= len; i++) {
+        if(S.charAt(i) === 'I') {
+            result[i] = imin;
+            imin++;
+        } else {
+            result[i] = dmax;
+            dmax--;
+        }
+    }
+    
+    return result;
+    
+};
+</code></pre>
+
+<h4 id="答案二-3">答案二</h4>
+<pre><code class="language-javascript">分析：乍一看这个一行的解法不是特别明白，但是分析示例答案可以看出无论给出的字符串是什么样的最后都可以补充一位，可以补I也可以补D,对于结果是没有影响的
+所以先不补位置。然后逢I加一 逢D减一。
+var diStringMatch = function(S) {
+    let a = 0,b = S.length;
+    return (S+S[S.length - 1]).split('').map((x) =&gt; x=='I'?a++:b--)
+}
+</code></pre>
+
+<h3 id="10组合两个表">10.组合两个表</h3>
+<p><a href="https://leetcode-cn.com/problems/combine-two-tables/">组合两个表</a></p>
+<pre><code>表1: Person
+
++-------------+---------+
+| 列名         | 类型     |
++-------------+---------+
+| PersonId    | int     |
+| FirstName   | varchar |
+| LastName    | varchar |
++-------------+---------+
+PersonId 是上表主键
+
+
+表2: Address
+
++-------------+---------+
+| 列名         | 类型    |
++-------------+---------+
+| AddressId   | int     |
+| PersonId    | int     |
+| City        | varchar |
+| State       | varchar |
++-------------+---------+
+AddressId 是上表主键
+
+
+编写一个 SQL 查询，满足条件：无论 person 是否有地址信息，都需要基于上述两表提供 person 的以下信息：
+FirstName, LastName, City, State
+</code></pre>
+
+<h4 id="答案一-9">答案一</h4>
+<p>因为表 Address 中的 personId 是表 Person 的外关键字，所以我们可以连接这两个表来获取一个人的地址信息。
+考虑到可能不是每个人都有地址信息，我们应该使用 outer join 而不是默认的 inner join。</p>
+
+<pre><code>select FirstName, LastName, City, State
+from Person left join Address
+on Person.PersonId = Address.PersonId
+;
+</code></pre>
+
+
+                <hr>
+
+                <ul class="pager">
+    
+    <li class="previous">
+        <a href="/leetcode/2019/09/03/leetcode-one/" data-toggle="tooltip" data-placement="top" title="LeetCode刷题总结(简单版一)">&larr; Previous Post</a>
+    </li>
+    
+    
+    <li class="next">
+        <a href="/leetcode/2019/09/05/leetcode-three/" data-toggle="tooltip" data-placement="top" title="LeetCode刷题总结(简单版三)">Next Post &rarr;</a>
+    </li>
+    
+</ul>
+
+
+
+
+<!-- disqus 评论框 start -->
+<div class="comment">
+    <div id="disqus_thread"
+         data-thread-key="/leetcode/2019/09/04/leetcode-two"
+         data-title="LeetCode刷题总结(简单版二)"
+         data-url="http://darknights.me/leetcode/2019/09/04/leetcode-two/"></div>
+    <script>
+
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        /*
+         var disqus_config = function () {
+         this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+         this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+         };
+         */
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://iori-1.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+<!-- disqus 评论框 end -->
+
+
+
+
+
+
+
+
+
+            </div>
+
+            <!-- Sidebar Container -->
+            
+
+
+
+
+
+<div class="
+                col-lg-3 col-lg-offset-0
+                col-md-3 col-md-offset-0
+                col-sm-12
+                col-xs-12
+                sidebar-container
+                hidden-xs
+                hidden-sm
+            ">
+    <!-- Search Container -->
+    <div class="hidden-xs">
+        <div class="input-group">
+            <input type="text" name="q" autofocus="" class="form-control" id="autocomplete" placeholder="搜索" autocomplete="off">
+            <span class="input-group-btn">
+                <button class="btn  btn-default" id="search-btn" type="submit">Go</button>
+            </span>
+        </div>
+    </div>
+
+    <hr class="hidden-sm hidden-xs">
+    <!--<h5 id="catalog">-->
+        <!--<a class="catalog-toggle" href="#">目录</a>-->
+    <!--</h5>-->
+    <div id="toc"></div>
+
+
+    <!--<ul class="catalog-body">-->
+        <!--<li class="h2_nav"><a href="#多页应用vuepwa" rel="nofollow">多页应用、Vue、PWA？</a></li>-->
+        <!--<li class="h2_nav"><a href="#实现-prpl-模式" rel="nofollow">实现 “PRPL” 模式</a></li>-->
+        <!--<li class="h3_nav active"><a href="#1-pushpreload推送预加载初始-url-路由所需的关键资源" rel="nofollow">1. PUSH/PRELOAD，推送/预加载初始 URL 路由所需的关键资源。</a></li>-->
+    <!--</ul>-->
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+            <!-- 详情底部的友情链接和标签云这里不单独抽离 -->
+            <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                            <a href="/tags/#博客搭建" title="博客搭建" rel="2">
+                                博客搭建
+                            </a>
+        				
+                            <a href="/tags/#JavaScript" title="JavaScript" rel="3">
+                                JavaScript
+                            </a>
+        				
+                            <a href="/tags/#jekyll" title="jekyll" rel="1">
+                                jekyll
+                            </a>
+        				
+                            <a href="/tags/#interview" title="interview" rel="1">
+                                interview
+                            </a>
+        				
+                            <a href="/tags/#工具" title="工具" rel="5">
+                                工具
+                            </a>
+        				
+                            <a href="/tags/#git" title="git" rel="3">
+                                git
+                            </a>
+        				
+                            <a href="/tags/#娱乐" title="娱乐" rel="1">
+                                娱乐
+                            </a>
+        				
+                            <a href="/tags/#html" title="html" rel="1">
+                                html
+                            </a>
+        				
+                            <a href="/tags/#管理系统主题" title="管理系统主题" rel="1">
+                                管理系统主题
+                            </a>
+        				
+                            <a href="/tags/#计算机基础" title="计算机基础" rel="4">
+                                计算机基础
+                            </a>
+        				
+                            <a href="/tags/#javascript" title="javascript" rel="20">
+                                javascript
+                            </a>
+        				
+                            <a href="/tags/#生产工具" title="生产工具" rel="4">
+                                生产工具
+                            </a>
+        				
+                            <a href="/tags/#IDE" title="IDE" rel="4">
+                                IDE
+                            </a>
+        				
+                            <a href="/tags/#Lodash" title="Lodash" rel="1">
+                                Lodash
+                            </a>
+        				
+                            <a href="/tags/#ES6学习笔记" title="ES6学习笔记" rel="1">
+                                ES6学习笔记
+                            </a>
+        				
+                            <a href="/tags/#读书总结" title="读书总结" rel="13">
+                                读书总结
+                            </a>
+        				
+                            <a href="/tags/#Vim" title="Vim" rel="1">
+                                Vim
+                            </a>
+        				
+                            <a href="/tags/#reactjs" title="reactjs" rel="1">
+                                reactjs
+                            </a>
+        				
+                            <a href="/tags/#面试" title="面试" rel="9">
+                                面试
+                            </a>
+        				
+                            <a href="/tags/#CSS" title="CSS" rel="1">
+                                CSS
+                            </a>
+        				
+                            <a href="/tags/#HTML" title="HTML" rel="1">
+                                HTML
+                            </a>
+        				
+                            <a href="/tags/#调试" title="调试" rel="1">
+                                调试
+                            </a>
+        				
+                            <a href="/tags/#脚手架" title="脚手架" rel="1">
+                                脚手架
+                            </a>
+        				
+                            <a href="/tags/#基础" title="基础" rel="6">
+                                基础
+                            </a>
+        				
+                            <a href="/tags/#LeetCode" title="LeetCode" rel="5">
+                                LeetCode
+                            </a>
+        				
+                            <a href="/tags/#HSTS" title="HSTS" rel="1">
+                                HSTS
+                            </a>
+        				
+        			</div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+                    
+                        <li><a href=""></a></li>
+                    
+                        <li><a href="http://www.ruanyifeng.com/blog/">阮一峰的网络日志</a></li>
+                    
+                        <li><a href="http://www.zhangxinxu.com/wordpress/">张鑫旭</a></li>
+                    
+                        <li><a href="http://www.cnblogs.com/TomXu/tag/JavaScript/">汤姆大叔的博客</a></li>
+                    
+                        <li><a href="http://macshuo.com/">MacTalk By 池建强</a></li>
+                    
+                        <li><a href="http://www.barretlee.com/">小胡子哥</a></li>
+                    
+                        <li><a href="https://lifesinger.wordpress.com/">岁月如歌玉伯</a></li>
+                    
+                        <li><a href="https://mritd.me">漠然</a></li>
+                    
+                        <li><a href="http://xtoshiba.me">Hux Blog</a></li>
+                    
+                        <li><a href="http://blog.codingplayboy.com/">熊建刚</a></li>
+                    
+                        <li><a href="https://teddysun.com/">秋水逸冰</a></li>
+                    
+                        <li><a href="http://www.alloyteam.com">AlloyTeam</a></li>
+                    
+                        <li><a href="https://efe.baidu.com">百度EFE</a></li>
+                    
+                        <li><a href="http://eux.baidu.com/">百度EUX</a></li>
+                    
+                        <li><a href="https://fed.taobao.org">淘宝前端团队</a></li>
+                    
+                        <li><a href="https://isux.tencent.com/">腾讯ISUX</a></li>
+                    
+                        <li><a href="https://aotu.io/">凹凸实验室</a></li>
+                    
+                </ul>
+                
+            </div>
+
+
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    
+
+                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+                    
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/sun-dong-zhi/activities">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://weibo.com/2407846257/profile?rightmod=1&wvr=6&mod=personinfo">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+
+                    
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/profile.php?id=100004675021382">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/IORI20091101">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Dark Knight 2020 |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=IORI20091101&repo=IORI20091101.github.io&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<!--<script src="/assets/scripts/jquery.min.js "></script>-->
+<script src="https://cdn.darknights.cn/assets/scripts/jquery.min.js"></script>
+
+<script src="https://cdn.darknights.cn/assets/scripts/jquery.auto-complete.min.js"></script>
+
+<script src="https://cdn.darknights.cn/assets/scripts/highlight.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<!--<script src="/assets/scripts/bootstrap.min.js"></script>-->
+<script src="https://cdn.darknights.cn/assets/scripts/bootstrap.min.js"></script>
+
+
+<!--<script type="text/javascript" color="0,229,238" opacity='0.5' zIndex="-2" count="100" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>-->
+
+
+<!--<script src="https://cdn.bootcss.com/jqcloud/1.0.4/jqcloud-1.0.4.min.js"></script>-->
+<script src="https://cdn.darknights.cn/assets/scripts/fastclick.min.js"></script>
+
+
+<script src="https://cdn.darknights.cn/assets/scripts/jquery.tagcloud.js"></script>
+
+<script src="https://cdn.darknights.cn/assets/scripts/toc.js"></script>
+<script src="https://cdn.darknights.cn/assets/scripts/custom.js"></script>
+
+<!--<script src="http://127.0.0.1:4000/assets/scripts/toc.js"></script>-->
+<!--<script src="http://127.0.0.1:4000/assets/scripts/custom.js"></script>-->
+<!--<script src="http://127.0.0.1:4000/assets/scripts/jquery.nav.js"></script>-->
+
+
+
+<!-- async load function -->
+<!--<script>-->
+    <!--function async(u, c) {-->
+      <!--var d = document, t = 'script',-->
+          <!--o = d.createElement(t),-->
+          <!--s = d.getElementsByTagName(t)[0];-->
+      <!--o.src = u;-->
+      <!--if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }-->
+      <!--s.parentNode.insertBefore(o, s);-->
+    <!--}-->
+<!--</script>-->
+
+
+
+
+<!--
+     Because of the native support for backtick-style fenced code blocks
+     right within the Markdown is landed in Github Pages,
+     From V1.6, There is no need for Highlight.js,
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/
+-->
+
+
+
+
+<!--fastClick.js -->
+
+
+<!-- Google Analytics -->
+
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-107257239-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments)};
+    gtag('js', new Date());
+
+    gtag('config', 'UA-107257239-1');
+</script>
+
+
+
+
+<script>
+        (function(window,document,undefined){
+            var hearts = [];
+            window.requestAnimationFrame = (function(){
+                    return window.requestAnimationFrame ||
+                               window.webkitRequestAnimationFrame ||
+                               window.mozRequestAnimationFrame ||
+                               window.oRequestAnimationFrame ||
+                               window.msRequestAnimationFrame ||
+                               function (callback){
+                                       setTimeout(callback,1000/60);
+                               }
+            })();
+            init();
+            function init(){
+                    css(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}");
+                    attachEvent();
+                    gameloop();
+            }
+            function gameloop(){
+                    for(var i=0;i<hearts.length;i++){
+                        if(hearts[i].alpha <=0){
+                                document.body.removeChild(hearts[i].el);
+                                hearts.splice(i,1);
+                                continue;
+                        }
+                        hearts[i].y--;
+                        hearts[i].scale += 0.004;
+                        hearts[i].alpha -= 0.013;
+                        hearts[i].el.style.cssText = "left:"+hearts[i].x+"px;top:"+hearts[i].y+"px;opacity:"+hearts[i].alpha+";transform:scale("+hearts[i].scale+","+hearts[i].scale+") rotate(45deg);background:"+hearts[i].color+";z-index:99999";
+                }
+                requestAnimationFrame(gameloop);
+            }
+            function attachEvent(){
+                    var old = typeof window.onclick==="function" && window.onclick;
+                    window.onclick = function(event){
+                            old && old();
+                            createHeart(event);
+                    }
+            }
+            function createHeart(event){
+                var d = document.createElement("div");
+                d.className = "heart";
+                hearts.push({
+                        el : d,
+                        x : event.clientX - 5,
+                        y : event.clientY - 5,
+                        scale : 1,
+                        alpha : 1,
+                        color : randomColor()
+                });
+                document.body.appendChild(d);
+        }
+        function css(css){
+                var style = document.createElement("style");
+                    style.type="text/css";
+                    try{
+                        style.appendChild(document.createTextNode(css));
+                    }catch(ex){
+                        style.styleSheet.cssText = css;
+                    }
+                    document.getElementsByTagName('head')[0].appendChild(style);
+        }
+            function randomColor(){
+                    return "rgb("+(~~(Math.random()*255))+","+(~~(Math.random()*255))+","+(~~(Math.random()*255))+")";
+            }
+    })(window,document);
+</script>
+
+
+</body>
+
+</html>

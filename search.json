@@ -1,19 +1,444 @@
----
-layout: null
----
 {
   "code" : 200 ,
   "data" : [
-    {% for post in site.posts %}
+    
       {
-      "value" : "{{post.title| escape}}",
-      "subtitle": "{{post.subtitle | escape}}",
-      "data" : "{{post.url}}",
-      "date": "{{post.date | date_to_utc | date: '%Y-%m-%d'}}"
+      "value" : "JavaScript内置对象之数组",
+      "subtitle": "JavaScript内置对象之数组",
+      "data" : "/js%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2019/11/12/js-array/",
+      "date": "2019-11-12"
       }
-      {% if forloop.last == false %}
+      
         ,
-      {% endif %}
-    {% endfor %}
+      
+    
+      {
+      "value" : "在浏览器输入 URL 回车之后发生了什么",
+      "subtitle": "在浏览器输入 URL 回车之后的一系列流程解析",
+      "data" : "/%E9%9D%A2%E8%AF%95/2019/09/16/browser-input-all/",
+      "date": "2019-09-16"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "LeetCode刷题总结(简单版五)",
+      "subtitle": "对LeetCode刷过的题目进行整理总结，方便后期查阅复习。",
+      "data" : "/leetcode/2019/09/08/leetcode-five/",
+      "date": "2019-09-08"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "LeetCode刷题总结(简单版四)",
+      "subtitle": "对LeetCode刷过的题目进行整理总结，方便后期查阅复习。",
+      "data" : "/leetcode/2019/09/07/leetcode-four/",
+      "date": "2019-09-07"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "LeetCode刷题总结(简单版三)",
+      "subtitle": "对LeetCode刷过的题目进行整理总结，方便后期查阅复习。",
+      "data" : "/leetcode/2019/09/05/leetcode-three/",
+      "date": "2019-09-05"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "LeetCode刷题总结(简单版二)",
+      "subtitle": "对LeetCode刷过的题目进行整理总结，方便后期查阅复习。",
+      "data" : "/leetcode/2019/09/04/leetcode-two/",
+      "date": "2019-09-04"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "LeetCode刷题总结(简单版一)",
+      "subtitle": "对LeetCode刷过的题目进行整理总结，方便后期查阅复习。",
+      "data" : "/leetcode/2019/09/03/leetcode-one/",
+      "date": "2019-09-03"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "搭建门户网站技术选型",
+      "subtitle": "从零开始搭建门户网站",
+      "data" : "/%E8%84%9A%E6%89%8B%E6%9E%B6/2018/10/21/scaffold-front-www/",
+      "date": "2018-10-21"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "安卓和IOS前端页面调试",
+      "subtitle": "调试客户端的webview",
+      "data" : "/%E8%B0%83%E8%AF%95/2018/10/20/debug-webview/",
+      "date": "2018-10-20"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "你不知道的JavaScript中卷(一)",
+      "subtitle": "你不知道的JavaScript",
+      "data" : "/%E8%AF%BB%E4%B9%A6%E6%80%BB%E7%BB%93/2018/10/18/read-book-you-known-middle-one/",
+      "date": "2018-10-18"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "你不知道的JavaScript上卷",
+      "subtitle": "你不知道的JavaScript上卷-基础篇",
+      "data" : "/%E8%AF%BB%E4%B9%A6%E6%80%BB%E7%BB%93/2018/10/08/read-book-you-known-up-one/",
+      "date": "2018-10-08"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "Effective JavaScript (十)",
+      "subtitle": "并发",
+      "data" : "/%E8%AF%BB%E4%B9%A6%E6%80%BB%E7%BB%93/2018/09/28/read-book-effective-ten/",
+      "date": "2018-09-28"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "Effective JavaScript (九)",
+      "subtitle": "库和API设计",
+      "data" : "/%E8%AF%BB%E4%B9%A6%E6%80%BB%E7%BB%93/2018/09/28/read-book-effective-nine/",
+      "date": "2018-09-28"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "Effective JavaScript (八)",
+      "subtitle": "数组和字典",
+      "data" : "/%E8%AF%BB%E4%B9%A6%E6%80%BB%E7%BB%93/2018/09/25/read-book-effective-eight/",
+      "date": "2018-09-25"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "Effective JavaScript (七)",
+      "subtitle": "对象和原型",
+      "data" : "/%E8%AF%BB%E4%B9%A6%E6%80%BB%E7%BB%93/2018/09/19/read-book-effective-seven/",
+      "date": "2018-09-19"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "函数柯里化",
+      "subtitle": "浅析函数柯里化",
+      "data" : "/js%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2018/09/17/js-base-currying/",
+      "date": "2018-09-17"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "Effective JavaScript (六)",
+      "subtitle": "使用函数",
+      "data" : "/%E8%AF%BB%E4%B9%A6%E6%80%BB%E7%BB%93/2018/09/11/read-book-effective-six/",
+      "date": "2018-09-11"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "Effective JavaScript (五)",
+      "subtitle": "理解变量提升",
+      "data" : "/%E8%AF%BB%E4%B9%A6%E6%80%BB%E7%BB%93/2018/09/11/read-book-effective-five/",
+      "date": "2018-09-11"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "JavaScript面试题",
+      "subtitle": "一些好的JavaScript面试题总结",
+      "data" : "/%E9%9D%A2%E8%AF%95/2018/09/11/inverview-js/",
+      "date": "2018-09-11"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "HTML面试题",
+      "subtitle": "一些常见HTML面试题总结",
+      "data" : "/%E9%9D%A2%E8%AF%95/2018/09/11/inverview-html/",
+      "date": "2018-09-11"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "CSS面试题",
+      "subtitle": "一些常见CSS面试题总结",
+      "data" : "/%E9%9D%A2%E8%AF%95/2018/09/11/inverview-css/",
+      "date": "2018-09-11"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "Effective JavaScript (四)",
+      "subtitle": "了解分号插入的局限性",
+      "data" : "/%E8%AF%BB%E4%B9%A6%E6%80%BB%E7%BB%93/2018/06/27/read-book-effective-four/",
+      "date": "2018-06-27"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "Effective JavaScript (三)",
+      "subtitle": "当心隐式的强制转换",
+      "data" : "/%E8%AF%BB%E4%B9%A6%E6%80%BB%E7%BB%93/2018/06/22/read-book-effective-three/",
+      "date": "2018-06-22"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "Effective JavaScript (二)",
+      "subtitle": "理解JavaScript的浮点数",
+      "data" : "/%E8%AF%BB%E4%B9%A6%E6%80%BB%E7%BB%93/2018/06/21/read-book-effective-two/",
+      "date": "2018-06-21"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "Effective JavaScript(一)",
+      "subtitle": "了解你使用的JavaScript版本",
+      "data" : "/%E8%AF%BB%E4%B9%A6%E6%80%BB%E7%BB%93/2018/06/19/read-book-effective-one/",
+      "date": "2018-06-19"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "React初步学习",
+      "subtitle": "React重点总结",
+      "data" : "/reactjs/2018/06/19/react-lesson-one/",
+      "date": "2018-06-19"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "vim快捷键和配置",
+      "subtitle": "熟悉vim快捷键和配置欲善其事必先利其器快捷键总结",
+      "data" : "/%E7%94%9F%E4%BA%A7%E5%B7%A5%E5%85%B7/2018/03/15/vim-config/",
+      "date": "2018-03-15"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "高性能网站建设指南",
+      "subtitle": "读书《高性能网站建设指南》总结",
+      "data" : "/%E8%AF%BB%E4%B9%A6%E6%80%BB%E7%BB%93/2017/12/20/read-book-web/",
+      "date": "2017-12-20"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "Generator函数的含义和用法",
+      "subtitle": "ES6重点记录",
+      "data" : "/js%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2017/11/20/js-generator/",
+      "date": "2017-11-20"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "Lodash.js源码阅读分析（一）",
+      "subtitle": "对于lodash的源码进行分析解读",
+      "data" : "/js%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2017/11/16/lodash-one/",
+      "date": "2017-11-16"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "SublimeText快捷键",
+      "subtitle": "SublimeText快捷键总结工欲善其事必先利其器快捷键总结",
+      "data" : "/%E7%94%9F%E4%BA%A7%E5%B7%A5%E5%85%B7/2017/11/15/sublime-quick/",
+      "date": "2017-11-15"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "IDEA快捷键",
+      "subtitle": "熟悉IDEA快捷键工欲善其事必先利其器快捷键总结Mac版",
+      "data" : "/%E7%94%9F%E4%BA%A7%E5%B7%A5%E5%85%B7/2017/11/15/idea-quick/",
+      "date": "2017-11-15"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "Visual Studio快捷键",
+      "subtitle": "工欲善其事必先利其器快捷键总结",
+      "data" : "/%E7%94%9F%E4%BA%A7%E5%B7%A5%E5%85%B7/2017/11/15/quick-key/",
+      "date": "2017-11-15"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "javascript的的最大安全数",
+      "subtitle": "javascript基础知识",
+      "data" : "/js%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2017/11/01/js-base-number/",
+      "date": "2017-11-01"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "javascript的位操作",
+      "subtitle": "在javascript中的位操作涉及二进制的处理",
+      "data" : "/js%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2017/11/01/bin-operate/",
+      "date": "2017-11-01"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "原码, 反码, 补码 详解",
+      "subtitle": "原码, 反码, 补码的基础概念和计算方法.",
+      "data" : "/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/2017/10/31/bin-calculate/",
+      "date": "2017-10-31"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "常用的后台管理主题模板",
+      "subtitle": "推荐一些常用主题,后台模板可以直接套用",
+      "data" : "/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/2017/10/31/admin-theme/",
+      "date": "2017-10-31"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "娱乐",
+      "subtitle": "just fun",
+      "data" : "/%E5%A8%B1%E4%B9%90/2017/10/29/entertainment/",
+      "date": "2017-10-29"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "git的使用教程(三)",
+      "subtitle": "git的高级教程以及正规开发中的工作流程",
+      "data" : "/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/2017/10/22/git-senior/",
+      "date": "2017-10-22"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "git的使用教程(二)",
+      "subtitle": "git的中级教程(其他常用操作)",
+      "data" : "/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/2017/10/21/git-medium/",
+      "date": "2017-10-21"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "git的使用教程(一)",
+      "subtitle": "git的初级教程(简明指南)",
+      "data" : "/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/2017/10/12/git-base/",
+      "date": "2017-10-12"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "LeetCode,LintCode,Hihocoder刷题指南",
+      "subtitle": "通过题目训练来提升自己的编程能力",
+      "data" : "/%E5%B7%A5%E4%BD%9C%E9%9D%A2%E8%AF%95/2017/10/12/interview/",
+      "date": "2017-10-12"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "使用travis-ci集成项目,自动部署博客站点",
+      "subtitle": "travis集成注意点和操作步骤",
+      "data" : "/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/2017/09/05/blog-static-nginx/",
+      "date": "2017-09-05"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "搭建jekyll 博客流程记录",
+      "subtitle": "如何搭建个人博客以及注意点",
+      "data" : "/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/2017/09/05/jekyll-site/",
+      "date": "2017-09-05"
+      }
+      
+    
   ]
 }
