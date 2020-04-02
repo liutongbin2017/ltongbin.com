@@ -3,6 +3,16 @@
   "data" : [
     
       {
+      "value" : "example",
+      "subtitle": "增加blog文章的测试版",
+      "data" : "/%E9%9D%A2%E8%AF%95/2020/04/01/text/",
+      "date": "2020-04-01"
+      }
+      
+        ,
+      
+    
+      {
       "value" : "JavaScript内置对象之数组",
       "subtitle": "JavaScript内置对象之数组",
       "data" : "/js%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2019/11/12/js-array/",
