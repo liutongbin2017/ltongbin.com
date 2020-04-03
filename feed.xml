@@ -1,4 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2020-04-02T14:04:34+08:00</updated><id>/</id><subtitle>Dark knight's的个人技术博客,专注于web开发,追求前端最完美体验</subtitle><entry><title type="html">example</title><link href="/%E9%9D%A2%E8%AF%95/2020/04/01/text/" rel="alternate" type="text/html" title="example" /><published>2020-04-01T00:00:00+08:00</published><updated>2020-04-01T00:00:00+08:00</updated><id>/%E9%9D%A2%E8%AF%95/2020/04/01/text</id><content type="html" xml:base="/%E9%9D%A2%E8%AF%95/2020/04/01/text/">&lt;p&gt;这是我新加的内容&lt;/p&gt;</content><author><name>binn</name></author><category term="基础" /><category term="面试" /><category term="HSTS" /><summary type="html">这是我新加的内容</summary></entry><entry><title type="html">JavaScript内置对象之数组</title><link href="/js%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2019/11/12/js-array/" rel="alternate" type="text/html" title="JavaScript内置对象之数组" /><published>2019-11-12T00:00:00+08:00</published><updated>2019-11-12T00:00:00+08:00</updated><id>/js%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2019/11/12/js-array</id><content type="html" xml:base="/js%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2019/11/12/js-array/">&lt;p&gt;本文为了详细记录JavaScript内置对象中的一些方法&lt;/p&gt;</content><author><name>binn</name></author><category term="javascript" /><summary type="html">本文为了详细记录JavaScript内置对象中的一些方法</summary></entry><entry><title type="html">在浏览器输入 URL 回车之后发生了什么</title><link href="/%E9%9D%A2%E8%AF%95/2019/09/16/browser-input-all/" rel="alternate" type="text/html" title="在浏览器输入 URL 回车之后发生了什么" /><published>2019-09-16T00:00:00+08:00</published><updated>2019-09-16T00:00:00+08:00</updated><id>/%E9%9D%A2%E8%AF%95/2019/09/16/browser-input-all</id><content type="html" xml:base="/%E9%9D%A2%E8%AF%95/2019/09/16/browser-input-all/">&lt;p&gt;不久前看了一篇文章&lt;a href=&quot;https://4ark.me/post/b6c7c0a2.html&quot;&gt;在浏览器输入 URL 回车之后发生了什么&lt;/a&gt;, 感觉讲的实在很好所以在此我也想总结一下,当自己被问到这个问题的时候会如何回答呢?&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2020-04-03T17:11:54+08:00</updated><id>/</id><subtitle>Dark knight's的个人技术博客,专注于web开发,追求前端最完美体验</subtitle><entry><title type="html">interview</title><link href="/%E9%9D%A2%E8%AF%95/2020/04/03/interview/" rel="alternate" type="text/html" title="interview" /><published>2020-04-03T00:00:00+08:00</published><updated>2020-04-03T00:00:00+08:00</updated><id>/%E9%9D%A2%E8%AF%95/2020/04/03/interview</id><content type="html" xml:base="/%E9%9D%A2%E8%AF%95/2020/04/03/interview/">&lt;h3 id=&quot;http与https的区别与作用&quot;&gt;http与https的区别与作用：&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;https数据传输期间对信息进行加密；&lt;/li&gt;
+  &lt;li&gt;使用https可以提高seo，提高搜索排名；&lt;/li&gt;
+  &lt;li&gt;https是使用TLS/SSL加密的http协议；&lt;/li&gt;
+  &lt;li&gt;http的端口是80，https是433，https需要ca申请证书，一般免费证书很少，需要交费；&lt;/li&gt;
+  &lt;li&gt;http协议是Hyper Text Transfer Protocol(超文本传输协议)的缩写，是用于从万维网(wwww:World Wide Web)服务器传输超文本到本地浏览器的传送协议。http是一个基于TCP/IP通信协议来传递数据(HTML文件，图片，查询结果等)。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;闭包&quot;&gt;闭包：&lt;/h3&gt;
+&lt;p&gt;闭包就是能够读取其他函数内部变量的函数，例如在js中，只有函数内部的自函数才能读取局部变量，所以闭包可以理解成“定义在一个函数内部的函数”。在本质上，闭包是将函数内部和函数外部连接起来的桥梁。&lt;br /&gt;
+&lt;a href=&quot;https://blog.csdn.net/weixin_43586120/article/details/89456183&quot;&gt;详解&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;react与vue区别&quot;&gt;react与vue区别：&lt;/h3&gt;
+&lt;h4 id=&quot;react优点&quot;&gt;react优点：&lt;/h4&gt;
+&lt;p&gt;虚拟DOM，丰富的js库；&lt;/p&gt;
+&lt;h4 id=&quot;react缺点&quot;&gt;react缺点：&lt;/h4&gt;
+&lt;p&gt;react只是一个库，并不是完整的框架，需要配合react-router及redux或者dva；&lt;/p&gt;
+&lt;h4 id=&quot;vue优点&quot;&gt;vue优点：&lt;/h4&gt;
+&lt;p&gt;易于上手，占用空间小；&lt;/p&gt;
+&lt;h4 id=&quot;vue缺点&quot;&gt;vue缺点：&lt;/h4&gt;
+&lt;p&gt;框架市场份额小。&lt;/p&gt;
+&lt;h4 id=&quot;正式比较&quot;&gt;正式比较：&lt;/h4&gt;
+&lt;p&gt;react使用的是jsx，vue使用的是html，react提供了一种Flux/Redux架构的创新解决方案，单向数据流，替代了传统的&lt;a href=&quot;https://www.runoob.com/design-pattern/mvc-pattern.html&quot;&gt;&lt;em&gt;MVC&lt;/em&gt;&lt;/a&gt;框架；vue使用的是vuex的架构，架构不一样；react使用Create React App脚手架工具，vue使用vue-cli&lt;/p&gt;</content><author><name>binn</name></author><category term="基础" /><category term="面试" /><category term="HSTS" /><summary type="html">http与https的区别与作用： https数据传输期间对信息进行加密； 使用https可以提高seo，提高搜索排名； https是使用TLS/SSL加密的http协议； http的端口是80，https是433，https需要ca申请证书，一般免费证书很少，需要交费； http协议是Hyper Text Transfer Protocol(超文本传输协议)的缩写，是用于从万维网(wwww:World Wide Web)服务器传输超文本到本地浏览器的传送协议。http是一个基于TCP/IP通信协议来传递数据(HTML文件，图片，查询结果等)。</summary></entry><entry><title type="html">es6常见问题</title><link href="/%E9%9D%A2%E8%AF%95/2020/04/01/text/" rel="alternate" type="text/html" title="es6常见问题" /><published>2020-04-01T00:00:00+08:00</published><updated>2020-04-01T00:00:00+08:00</updated><id>/%E9%9D%A2%E8%AF%95/2020/04/01/text</id><content type="html" xml:base="/%E9%9D%A2%E8%AF%95/2020/04/01/text/">&lt;h3 id=&quot;es6的promise&quot;&gt;es6的promise：&lt;/h3&gt;
+&lt;p&gt;看似同步的代码，解决异步问题，跳出回调地狱；一个promise是一个等待被执行的对象，当他执行完毕之后，其状态会变成resolved或者rejected;promise是同步的，then是异步的；&lt;/p&gt;
+
+&lt;p&gt;es6处理异步的请求：promise和async-await&lt;/p&gt;
+&lt;h3 id=&quot;es6的symbol&quot;&gt;es6的symbol：&lt;/h3&gt;
+&lt;p&gt;这是一种新的数据类型，他的值是唯一的不可变的，是独一无二的值；&lt;br /&gt;
+&lt;a href=&quot;http://es6.ruanyifeng.com/#docs/symbol&quot;&gt;&lt;em&gt;详解&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;</content><author><name>binn</name></author><category term="基础" /><category term="面试" /><category term="HSTS" /><summary type="html">es6的promise： 看似同步的代码，解决异步问题，跳出回调地狱；一个promise是一个等待被执行的对象，当他执行完毕之后，其状态会变成resolved或者rejected;promise是同步的，then是异步的；</summary></entry><entry><title type="html">JavaScript内置对象之数组</title><link href="/js%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2019/11/12/js-array/" rel="alternate" type="text/html" title="JavaScript内置对象之数组" /><published>2019-11-12T00:00:00+08:00</published><updated>2019-11-12T00:00:00+08:00</updated><id>/js%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2019/11/12/js-array</id><content type="html" xml:base="/js%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2019/11/12/js-array/">&lt;p&gt;本文为了详细记录JavaScript内置对象中的一些方法&lt;/p&gt;</content><author><name>binn</name></author><category term="javascript" /><summary type="html">本文为了详细记录JavaScript内置对象中的一些方法</summary></entry><entry><title type="html">在浏览器输入 URL 回车之后发生了什么</title><link href="/%E9%9D%A2%E8%AF%95/2019/09/16/browser-input-all/" rel="alternate" type="text/html" title="在浏览器输入 URL 回车之后发生了什么" /><published>2019-09-16T00:00:00+08:00</published><updated>2019-09-16T00:00:00+08:00</updated><id>/%E9%9D%A2%E8%AF%95/2019/09/16/browser-input-all</id><content type="html" xml:base="/%E9%9D%A2%E8%AF%95/2019/09/16/browser-input-all/">&lt;p&gt;不久前看了一篇文章&lt;a href=&quot;https://4ark.me/post/b6c7c0a2.html&quot;&gt;在浏览器输入 URL 回车之后发生了什么&lt;/a&gt;, 感觉讲的实在很好所以在此我也想总结一下,当自己被问到这个问题的时候会如何回答呢?&lt;/p&gt;
 
 &lt;p&gt;在浏览器输入 URL 回车之后发生了什么？
 大致流程如下&lt;/p&gt;
@@ -3328,191 +3357,4 @@ var flipAndInvertImage = function(A) {
 我推荐使用其中更为广泛的&lt;a href=&quot;https://github.com/airbnb/javascript&quot;&gt;Airbnb Standard&lt;/a&gt; 比&lt;a href=&quot;https://github.com/standard/standard&quot;&gt;JavaScript Standard Style&lt;/a&gt; 更多的star。&lt;/p&gt;
 
 &lt;h2 id=&quot;搭建&quot;&gt;搭建&lt;/h2&gt;
-&lt;p&gt;好了前期准备工作已经完成现在我们开始正式开始&lt;/p&gt;</content><author><name>binn</name></author><category term="工具" /><category term="脚手架" /><summary type="html">起因 工作多年，项目越来越多，总是要做一些重复性的工作开进行开发，每次东配置西配置一大堆，效率很低无法直接投入生产。 通过这篇文章梳理一下自己的知识点，将一些常用技术做一些总结归纳和复习。并且基于此开发一套模版，用于以后网站开发直接套用，不做重复性的工作（这里的网站主要针对pc）。</summary></entry><entry><title type="html">安卓和IOS前端页面调试</title><link href="/%E8%B0%83%E8%AF%95/2018/10/20/debug-webview/" rel="alternate" type="text/html" title="安卓和IOS前端页面调试" /><published>2018-10-20T00:00:00+08:00</published><updated>2018-10-20T00:00:00+08:00</updated><id>/%E8%B0%83%E8%AF%95/2018/10/20/debug-webview</id><content type="html" xml:base="/%E8%B0%83%E8%AF%95/2018/10/20/debug-webview/">&lt;h2 id=&quot;场景&quot;&gt;场景&lt;/h2&gt;
-
-&lt;p&gt;我们通常会有这样的开发场景， 开发了一些前端页面，可能在手机浏览器打开，也可能在客户端的webview打开，对应不同的场景我们可能需要不通的手段来进行调试。
-对于简单的页面我们一般可以通过chrome的开发工具来调试或者通过safari来直接对手机打开的页面直接进行调试。 但是对于复杂webview我们可能需要一些特殊手段来进行debug.&lt;/p&gt;
-
-&lt;p&gt;在本文将总结一部分调试技巧&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;方法分类&lt;/th&gt;
-      &lt;th style=&quot;text-align: right&quot;&gt;难度&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;调试目标&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;调试效果&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;优先级&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Chrome自带模拟器&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;简单&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;所有&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;模拟效果，基本能调试 UI 及标准 JS 所有问题&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;极高&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;chrome://inspect&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;简单&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;安卓的自带浏览器+webview&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;真机调试效果显著&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;高&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;spy-debugger&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;一般&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;所有页面不管是否是webview&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;效果可以&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;高&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;safari开发模式&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;简单&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;手机safari的所有页面&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;真机调试效果显著&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;高&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;xcode的iPhone模拟器&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;较难&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;webview和手机浏览器&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;调试效果显著&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;中等&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;weinre&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;一般&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;所有页面不管是否是webview&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;需要注入代码效果一般&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;低&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;微信开发者工具&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;一般&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;模拟手机&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;低&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;TBS Studio&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;一般&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;模拟手机&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;未测试&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Browsersync&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;一般&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;模拟手机&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;未测试&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;抓包&quot;&gt;抓包&lt;/h2&gt;
-&lt;p&gt;对于抓包有很多工具比如 mac上面有 charles，wireShark， windows上面有fiddler 等等。
-我常用的一个抓包工具叫 &lt;a href=&quot;https://mitmproxy.org/&quot;&gt;mitmproxy&lt;/a&gt;, 在github已经一万多star了，使用起来比较简单。 一条命令 &lt;code&gt;mitmproxy -p 4000 --set console_mouse=false&lt;/code&gt;, 启动后 手机手动代理到 ip+端口就可以开始抓包了，对于https可能需要&lt;a href=&quot;http://mitm.it/&quot;&gt;安装证书&lt;/a&gt;.至于安装过程就不重复了，官网已有&lt;a href=&quot;https://docs.mitmproxy.org/stable/&quot;&gt;教程&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;charles抓包请查看&lt;a href=&quot;https://www.jianshu.com/p/fdd7c681929c&quot;&gt;这篇教程&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;安卓的webview页面&quot;&gt;安卓的webview页面&lt;/h2&gt;
-&lt;p&gt;现在的安卓应用内的页面进行调试是真的方便。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;首先打开手机的usb调试，连接到电脑。&lt;/li&gt;
-  &lt;li&gt;第二在chrome输入 &lt;code&gt;chrome://inspect/#devices&lt;/code&gt; （开发环境安卓桌面版Chrome32+ 并且 Android 系统高于 4.4）&lt;/li&gt;
-  &lt;li&gt;第三 选择app中的页面进行调试即可&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;safari调试iphone页面&quot;&gt;safari调试iPhone页面&lt;/h2&gt;
-&lt;p&gt;这种方式适合手机上面的浏览器页面
-需要几步配置&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;首先打开电脑的safari
-&lt;img src=&quot;https://cdn.darknights.cn/assets/images/in-post/debug-webview/Safari设置.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;然后打开iPhone进行设置
-&lt;img src=&quot;https://cdn.darknights.cn/assets/images/in-post/debug-webview/iPhone设置.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;最后通过电脑的safari打开进行调试
-&lt;img src=&quot;https://cdn.darknights.cn/assets/images/in-post/debug-webview/开启调试.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;调试iphone的webview&quot;&gt;调试iPhone的webview&lt;/h2&gt;
-&lt;p&gt;iPhone的webview可行的方法就是下载xcode，然后跟客户端开发借来一个xxx.app然后用模拟器打开，这样调试页面的时候可以调试各种情况下的页面，包括safari和应用内的页面。
-这是目前唯一靠谱的调试方案。 还有一些 &lt;a href=&quot;https://github.com/google/ios-webkit-debug-proxy&quot;&gt;ios-webkit-debug-proxy&lt;/a&gt; 和 &lt;a href=&quot;https://github.com/RemoteDebug/remotedebug-ios-webkit-adapter&quot;&gt;remotedebug-ios-webkit-adapter&lt;/a&gt; 类似方案， 这些方案只能够调试手机的safari 对于app中的webview就无能为力了，而且经过本人实践效果并不理想，如果只是为了调试safari那还不如直接usb连接方便快捷，而且安装过程会有很多坑，因此不推荐使用。&lt;/p&gt;
-
-&lt;p&gt;简化方案&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;//打开首页
-xcrun simctl openurl booted taobao://h5.m.taobao.com/guang/index.html
-// 打开模拟器
-open -a &quot;Simulator.app&quot; --args -CurrentDeviceUDID &quot;FCE2CFE8-64C3-4DBE-906B-B9BF4180DE49&quot;
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;前提是安装了xcode， 本地需要一个sdk与测试网站进行交互方便获取app和执行本地shell命令
-根据&lt;a href=&quot;http://taobaofed.org/blog/2015/11/13/web-debug-in-ios/&quot;&gt;此文章&lt;/a&gt;, 后期开发一个测试环境用的本地调试网站。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://taobaofed.org/blog/2015/11/13/web-debug-in-ios/&quot;&gt;http://taobaofed.org/blog/2015/11/13/web-debug-in-ios/&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;weinre&quot;&gt;weinre&lt;/h2&gt;
-
-&lt;p&gt;Weinre 是一款较老的远程调试工具，功能与 Chrome DevTools 相似，需要在页面中插入一段 JS 脚本来实时调试页面 DOM 结构、样式、JS 等，另外它使用的是代理的方式，所以兼容性很好，无论是新老设备系统通吃，但对于样式调试不友善，缺少断点调试及 Profiles 等常用功能。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;安装 Weinre
-    &lt;pre&gt;&lt;code&gt;$ sudo npm -g install weinre
-&lt;/code&gt;&lt;/pre&gt;
-  &lt;/li&gt;
-  &lt;li&gt;启动Weinre监听服务
-    &lt;pre&gt;&lt;code&gt;$ weinre --boundHost 10.10.2.144 --httpPort 8090 
-&lt;/code&gt;&lt;/pre&gt;
-  &lt;/li&gt;
-  &lt;li&gt;使用chrome访问
-&lt;a href=&quot;http://10.10.2.144:8090&quot;&gt;http://10.10.2.144:8090&lt;/a&gt;, 然后将一段 JS 脚本 &lt;script src=&quot;http://10.10.2.144:8090/target/target-script-min.js#anonymous&quot;&gt;&lt;/script&gt; 插入到需要调试的页面中，插入代码后手机访问调试页面。
-&lt;img src=&quot;https://cdn.darknights.cn/assets/images/in-post/debug-webview/weinre.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;到这里还不算完，因为手动插入js不够优雅，所以这里采用js脚本注入
-Tools –&amp;gt; Rewrite 选中Enable Rewrite
-这里我们需要使用到的是 Body，它的作用是对请求或响应内容进行匹配替换，按照下图的配置，通过将匹配到的响应内容 &amp;lt;/body&amp;gt; 标签替换成需要插入到页面中的 JS 脚本，从而实现动态插入。
-&lt;img src=&quot;https://cdn.darknights.cn/assets/images/in-post/debug-webview/Charles_Rewrite.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://cdn.darknights.cn/assets/images/in-post/debug-webview/Charles_Rewrite_Rule.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;spy-debugger&quot;&gt;spy-debugger&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/wuchangming/spy-debugger&quot;&gt;spy-debugger&lt;/a&gt;跟微信开发这工具都在weinre的基础上简化了给页面添加js的步骤，它还对HTTPS的支持&lt;/p&gt;
-
-&lt;p&gt;安装spy-debugger
-spy-debugger内部集成了&lt;a href=&quot;http://people.apache.org/~pmuellr/weinre/docs/latest/Home.html&quot;&gt;weinre&lt;/a&gt;、&lt;a href=&quot;https://github.com/wuchangming/node-mitmproxy&quot;&gt;node-mitmproxy&lt;/a&gt;、&lt;a href=&quot;https://github.com/alibaba/anyproxy&quot;&gt;AnyProxy&lt;/a&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$  sudo npm install spy-debugger -g
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;安装https证书包括手机和PC。
-执行启动特别酸爽&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ spy-debugger -p 8888
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;tbs-studio&quot;&gt;TBS Studio&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://x5.tencent.com/guide/debug.html&quot;&gt;TBS Studio&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;微信-webview-调试&quot;&gt;微信 WebView 调试&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://x5.tencent.com/tbs/guide/debug/season1.html&quot;&gt;https://x5.tencent.com/tbs/guide/debug/season1.html&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;browsersync&quot;&gt;browserSync&lt;/h2&gt;
-
-&lt;h2 id=&quot;参考文档&quot;&gt;参考文档&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://75team.com/post/webview-debug.html&quot;&gt;前端 WebView 指南之调试篇&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://elevenbeans.github.io/2017/06/06/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%B5%8F%E8%A7%88%E5%99%A8%E8%B0%83%E8%AF%95%E6%96%B9%E6%B3%95%E6%B1%87%E6%80%BB/&quot;&gt;移动端浏览器调试方法汇总&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://aotu.io/notes/2017/02/24/Mobile-debug/index.html&quot;&gt;移动端真机调试指南&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/riskers/blog/issues/11&quot;&gt;打造最舒适的webview调试环境&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://yujiangshui.com/multidevice-frontend-debug/&quot;&gt;移动端前端开发调试&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>binn</name></author><category term="工具" /><category term="调试" /><summary type="html">场景</summary></entry></feed>
+&lt;p&gt;好了前期准备工作已经完成现在我们开始正式开始&lt;/p&gt;</content><author><name>binn</name></author><category term="工具" /><category term="脚手架" /><summary type="html">起因 工作多年，项目越来越多，总是要做一些重复性的工作开进行开发，每次东配置西配置一大堆，效率很低无法直接投入生产。 通过这篇文章梳理一下自己的知识点，将一些常用技术做一些总结归纳和复习。并且基于此开发一套模版，用于以后网站开发直接套用，不做重复性的工作（这里的网站主要针对pc）。</summary></entry></feed>

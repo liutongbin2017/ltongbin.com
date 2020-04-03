@@ -3,8 +3,18 @@
   "data" : [
     
       {
-      "value" : "example",
-      "subtitle": "增加blog文章的测试版",
+      "value" : "interview",
+      "subtitle": "面试中遇到的一些问题总结",
+      "data" : "/%E9%9D%A2%E8%AF%95/2020/04/03/interview/",
+      "date": "2020-04-03"
+      }
+      
+        ,
+      
+    
+      {
+      "value" : "es6常见问题",
+      "subtitle": "es6增加了一些新的方法与类型",
       "data" : "/%E9%9D%A2%E8%AF%95/2020/04/01/text/",
       "date": "2020-04-01"
       }
