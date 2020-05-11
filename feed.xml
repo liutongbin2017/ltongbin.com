@@ -1,7 +1,35 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2020-05-11T16:38:00+08:00</updated><id>/</id><subtitle>Dark knight's的个人技术博客,专注于web开发,追求前端最完美体验</subtitle><entry><title type="html">interview</title><link href="/%E9%9D%A2%E8%AF%95/2020/04/03/interview/" rel="alternate" type="text/html" title="interview" /><published>2020-04-03T00:00:00+08:00</published><updated>2020-04-03T00:00:00+08:00</updated><id>/%E9%9D%A2%E8%AF%95/2020/04/03/interview</id><content type="html" xml:base="/%E9%9D%A2%E8%AF%95/2020/04/03/interview/">&lt;h3 id=&quot;http与https的区别与作用&quot;&gt;http与https的区别与作用：&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2020-05-11T19:16:32+08:00</updated><id>/</id><subtitle>Dark knight's的个人技术博客,专注于web开发,追求前端最完美体验</subtitle><entry><title type="html">REACT</title><link href="/2020/05/11/react/" rel="alternate" type="text/html" title="REACT" /><published>2020-05-11T00:00:00+08:00</published><updated>2020-05-11T00:00:00+08:00</updated><id>/2020/05/11/react</id><content type="html" xml:base="/2020/05/11/react/">&lt;h3 id=&quot;react的extends的含义&quot;&gt;react的extends的含义：&lt;/h3&gt;
+&lt;p&gt;es6形式的extends React.Component定义的组件&lt;/p&gt;
+
+&lt;h3 id=&quot;react的redux&quot;&gt;react的redux&lt;/h3&gt;
+&lt;p&gt;action：要想更新state重的数据，需要发起一个action；action就是一个普通的javascript对象；
+reducer：为了把action和state串起来，开发了一些函数(reducer)，reducer只是一个接收state和action，并返回新的state函数&lt;/p&gt;
+
+&lt;h3 id=&quot;redux三大基本原则&quot;&gt;redux三大基本原则&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;单一数据源：整个应用的state被存储在一棵object tree中，并且这个object tree只存在于唯一一个store中；&lt;/li&gt;
+  &lt;li&gt;state是只读的，唯一改变state的方法是action；&lt;/li&gt;
+  &lt;li&gt;使用纯函数来修改数据&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;redux基础&quot;&gt;redux基础&lt;/h3&gt;
+&lt;p&gt;action-reducer-store-数据流&lt;/p&gt;
+
+&lt;h3 id=&quot;store职责&quot;&gt;store职责&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;维持应用的state；&lt;/li&gt;
+  &lt;li&gt;提供getState()方法获取state；&lt;/li&gt;
+  &lt;li&gt;提供dispatch(action)方法更新state；&lt;/li&gt;
+  &lt;li&gt;通过subscribe(listener)注册监听器；&lt;/li&gt;
+  &lt;li&gt;通过subScribe(listener)返回的函数注销监听器&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;实现容器组件&quot;&gt;实现容器组件&lt;/h3&gt;
+&lt;p&gt;技术上讲，容器组件就是使用store.subscribe()从redux state树中读取部分数据，并通过props来把这些数据提供给要渲染的组件，可以手工开发容器组件，但建议使用react redux库的connect()方法来生成，这个方法做了性能优化来避免不必要的重复渲染。（这样你就不必为了性能而手动实现 React 性能优化建议 中的 shouldComponentUpdate 方法。）&lt;/p&gt;</content><author><name>binn</name></author><category term="基础" /><category term="面试" /><summary type="html">react的extends的含义： es6形式的extends React.Component定义的组件</summary></entry><entry><title type="html">interview</title><link href="/%E9%9D%A2%E8%AF%95/2020/04/03/interview/" rel="alternate" type="text/html" title="interview" /><published>2020-04-03T00:00:00+08:00</published><updated>2020-04-03T00:00:00+08:00</updated><id>/%E9%9D%A2%E8%AF%95/2020/04/03/interview</id><content type="html" xml:base="/%E9%9D%A2%E8%AF%95/2020/04/03/interview/">&lt;h3 id=&quot;http与https的区别与作用&quot;&gt;http与https的区别与作用：&lt;/h3&gt;
 &lt;ol&gt;
   &lt;li&gt;https数据传输期间对信息进行加密；&lt;/li&gt;
-  &lt;li&gt;使用https可以提高seo，提高搜索排名；&lt;/li&gt;
+  &lt;li&gt;使用https可以提高seo，提高搜索排名； 
+&lt;a href=&quot;http://www.dede58.com/web/17553.html&quot;&gt;为何会提高seo&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;https是使用TLS/SSL加密的http协议；&lt;/li&gt;
   &lt;li&gt;http的端口是80，https是433，https需要ca申请证书，一般免费证书很少，需要交费；&lt;/li&gt;
   &lt;li&gt;http协议是Hyper Text Transfer Protocol(超文本传输协议)的缩写，是用于从万维网(wwww:World Wide Web)服务器传输超文本到本地浏览器的传送协议。http是一个基于TCP/IP通信协议来传递数据(HTML文件，图片，查询结果等)。&lt;/li&gt;
@@ -21,7 +49,7 @@
 &lt;h4 id=&quot;vue缺点&quot;&gt;vue缺点：&lt;/h4&gt;
 &lt;p&gt;框架市场份额小。&lt;/p&gt;
 &lt;h4 id=&quot;正式比较&quot;&gt;正式比较：&lt;/h4&gt;
-&lt;p&gt;react使用的是jsx，vue使用的是html，react提供了一种Flux/Redux架构的创新解决方案，单向数据流，替代了传统的&lt;a href=&quot;https://www.runoob.com/design-pattern/mvc-pattern.html&quot;&gt;&lt;em&gt;MVC&lt;/em&gt;&lt;/a&gt;框架；vue使用的是vuex的架构，架构不一样；react使用Create React App脚手架工具，vue使用vue-cli&lt;/p&gt;</content><author><name>binn</name></author><category term="基础" /><category term="面试" /><category term="HSTS" /><summary type="html">http与https的区别与作用： https数据传输期间对信息进行加密； 使用https可以提高seo，提高搜索排名； https是使用TLS/SSL加密的http协议； http的端口是80，https是433，https需要ca申请证书，一般免费证书很少，需要交费； http协议是Hyper Text Transfer Protocol(超文本传输协议)的缩写，是用于从万维网(wwww:World Wide Web)服务器传输超文本到本地浏览器的传送协议。http是一个基于TCP/IP通信协议来传递数据(HTML文件，图片，查询结果等)。</summary></entry><entry><title type="html">es6常见问题</title><link href="/%E9%9D%A2%E8%AF%95/2020/04/01/text/" rel="alternate" type="text/html" title="es6常见问题" /><published>2020-04-01T00:00:00+08:00</published><updated>2020-04-01T00:00:00+08:00</updated><id>/%E9%9D%A2%E8%AF%95/2020/04/01/text</id><content type="html" xml:base="/%E9%9D%A2%E8%AF%95/2020/04/01/text/">&lt;h3 id=&quot;es6的promise&quot;&gt;es6的promise：&lt;/h3&gt;
+&lt;p&gt;react使用的是jsx，vue使用的是html，react提供了一种Flux/Redux架构的创新解决方案，单向数据流，替代了传统的&lt;a href=&quot;https://www.runoob.com/design-pattern/mvc-pattern.html&quot;&gt;&lt;em&gt;MVC&lt;/em&gt;&lt;/a&gt;框架；vue使用的是vuex的架构，架构不一样；react使用Create React App脚手架工具，vue使用vue-cli&lt;/p&gt;</content><author><name>binn</name></author><category term="基础" /><category term="面试" /><category term="HSTS" /><summary type="html">http与https的区别与作用： https数据传输期间对信息进行加密； 使用https可以提高seo，提高搜索排名； 为何会提高seo https是使用TLS/SSL加密的http协议； http的端口是80，https是433，https需要ca申请证书，一般免费证书很少，需要交费； http协议是Hyper Text Transfer Protocol(超文本传输协议)的缩写，是用于从万维网(wwww:World Wide Web)服务器传输超文本到本地浏览器的传送协议。http是一个基于TCP/IP通信协议来传递数据(HTML文件，图片，查询结果等)。</summary></entry><entry><title type="html">es6常见问题</title><link href="/%E9%9D%A2%E8%AF%95/2020/04/01/text/" rel="alternate" type="text/html" title="es6常见问题" /><published>2020-04-01T00:00:00+08:00</published><updated>2020-04-01T00:00:00+08:00</updated><id>/%E9%9D%A2%E8%AF%95/2020/04/01/text</id><content type="html" xml:base="/%E9%9D%A2%E8%AF%95/2020/04/01/text/">&lt;h3 id=&quot;es6的promise&quot;&gt;es6的promise：&lt;/h3&gt;
 &lt;p&gt;看似同步的代码，解决异步问题，跳出回调地狱；一个promise是一个等待被执行的对象，当他执行完毕之后，其状态会变成resolved或者rejected;promise是同步的，then是异步的；&lt;/p&gt;
 
 &lt;p&gt;es6处理异步的请求：promise和async-await&lt;/p&gt;
@@ -3313,48 +3341,4 @@ var flipAndInvertImage = function(A) {
     }
     return A;
 };
-&lt;/code&gt;&lt;/pre&gt;</content><author><name>binn</name></author><category term="面试" /><category term="基础" /><category term="LeetCode" /><summary type="html">本文将LeetCode刷过的题目进行简单的总结和记录，便于自己进行复习，同时将看到的解题思路进行汇总让其他的小伙伴能够理解。</summary></entry><entry><title type="html">搭建门户网站技术选型</title><link href="/%E8%84%9A%E6%89%8B%E6%9E%B6/2018/10/21/scaffold-front-www/" rel="alternate" type="text/html" title="搭建门户网站技术选型" /><published>2018-10-21T00:00:00+08:00</published><updated>2018-10-21T00:00:00+08:00</updated><id>/%E8%84%9A%E6%89%8B%E6%9E%B6/2018/10/21/scaffold-front-www</id><content type="html" xml:base="/%E8%84%9A%E6%89%8B%E6%9E%B6/2018/10/21/scaffold-front-www/">&lt;h2 id=&quot;起因&quot;&gt;起因&lt;/h2&gt;
-&lt;p&gt;工作多年，项目越来越多，总是要做一些重复性的工作开进行开发，每次东配置西配置一大堆，效率很低无法直接投入生产。
-通过这篇文章梳理一下自己的知识点，将一些常用技术做一些总结归纳和复习。并且基于此开发一套模版，用于以后网站开发直接套用，不做重复性的工作（这里的网站主要针对pc）。&lt;/p&gt;
-
-&lt;h2 id=&quot;开始&quot;&gt;开始&lt;/h2&gt;
-&lt;p&gt;从前端的角度来说，如何从零开始开发一个门户网站呢？ 首先是要有一些基础知识包括&lt;code&gt;JavaScript&lt;/code&gt;, &lt;code&gt;css&lt;/code&gt;, &lt;code&gt;html&lt;/code&gt;。&lt;/p&gt;
-
-&lt;h2 id=&quot;html&quot;&gt;html&lt;/h2&gt;
-&lt;p&gt;关于&lt;code&gt;html&lt;/code&gt;需要了解的是，语义化的标签，还有html模版。一个html应该有什么呢，我们通过一个html模版来看下&lt;a href=&quot;https://github.com/h5bp/html5-boilerplate&quot;&gt;html5-boilerplate&lt;/a&gt;, 这是一个专业的前端模版html。 由于篇幅问题就不再这里展开大家可以去github仓库中的dist文件夹查看index.html。
-我们简单介绍下其中用到的东西&lt;/p&gt;
-
-&lt;p&gt;首先是通用的html5的头&lt;code&gt;&amp;lt;!doctype html&amp;gt;&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;在HTML中，doctype是所有文档顶部所需的“ 序言“。其唯一目的是防止浏览器在呈现文档时转换成所谓的“怪异”模式; 也就是说，doctype确保浏览器尽力尝试遵循相关规范，而不是使用与某些规范不兼容的不同渲染模式。DOCTYPE用来告知 Web 浏览器页面使用了哪种 HTML 版本,只有确定了一个正确的文档类型，HTML或XHTML中的标签和层叠样式表才能生效，甚至对JavaScript脚本都会有所影响。&lt;/p&gt;
-
-&lt;p&gt;还有这个Meta标签，如果您需要支持IE9或IE8，那么建议使用该标签， 如果支持最新的IE11或Edge则考虑删除此标签&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt; &amp;lt;meta http-equiv=&quot;x-ua-compatible&quot; content=&quot;ie=edge&quot;&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;这个X-UA标记允许web作者选择呈现页面的Internet Explore版本，具体解释请看&lt;a href=&quot;https://stackoverflow.com/questions/6771258/what-does-meta-http-equiv-x-ua-compatible-content-ie-edge-do&quot;&gt;这篇文章&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;然后这里还用到了&lt;a href=&quot;https://necolas.github.io/normalize.css/&quot;&gt;normalize.css&lt;/a&gt;,来消除不通浏览器之间的样式差异。
-还使用了&lt;a href=&quot;https://modernizr.com/&quot;&gt;modernizr&lt;/a&gt;，来进行浏览器功能检查。
-以及大家最熟悉的jQuery(如果只兼容IE9+则可以放心使用最新版本，如果需要支持IE8则需要使用2.0以下的版本)&lt;/p&gt;
-
-&lt;h2 id=&quot;css&quot;&gt;css&lt;/h2&gt;
-&lt;p&gt;css我们先前在模版中已经引入了&lt;a href=&quot;https://necolas.github.io/normalize.css/&quot;&gt;normalize.css&lt;/a&gt;, 其余css基础知识的获取就需要大家自行补充了，建议读一下《css权威指南》，算是css内功方面的书籍了，再就是了解css的布局包括栅格布局，flex布局， 还有更早期的双飞翼布局，圣杯布局等等。&lt;/p&gt;
-
-&lt;p&gt;除了这些基础实战中我们通常会用到css预处理器，&lt;a href=&quot;https://sass-lang.com/&quot;&gt;Sass&lt;/a&gt;、&lt;a href=&quot;http://lesscss.org/&quot;&gt;Less&lt;/a&gt;和&lt;a href=&quot;http://stylus-lang.com/&quot;&gt;Stylus&lt;/a&gt;. 最开始我使用的是sass，但是这个的npm包经常会被墙下载不下来，相关依赖感觉也比较重。至于选哪种看大家喜好了，我推荐使用stylus，语法自由度很高，代码非常简洁。&lt;/p&gt;
-
-&lt;h2 id=&quot;javascript&quot;&gt;JavaScript&lt;/h2&gt;
-&lt;p&gt;什么是最轻量的JavaScript框架,那就是&lt;a href=&quot;http://vanilla-js.com/&quot;&gt;vanilla-js&lt;/a&gt; 来自&lt;a href=&quot;https://segmentfault.com/a/1190000000355277&quot;&gt; Vanilla JS——世界上最轻量的JavaScript框架（没有之一）&lt;/a&gt;,这里是个玩笑，因为这里说的框架其实就是原生Js。
-大型网站的开发还是需要依赖各种js的库或者框架。这里简单列几种，&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;jQuery，虽然有些人抵触，但是为了保证代码兼容性，我还是愿意引入jQuery的&lt;/li&gt;
-  &lt;li&gt;Backbone， 一款轻量级的框架，不过需要配合underscore或者lodash使用&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/wycats/handlebars.js&quot;&gt;Handlebars&lt;/a&gt;, js模版用来处理html代码片段&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;具体代码可以考虑使用ES5如果这样的话需要引入&lt;a href=&quot;https://babeljs.io/&quot;&gt;babeljs&lt;/a&gt;,做转换这样就可以愉快的使用新语法了，除此之外我们的选择还有&lt;a href=&quot;https://coffeescript.org/&quot;&gt;CoffeeScript&lt;/a&gt;, 和&lt;a href=&quot;https://www.typescriptlang.org/&quot;&gt;TypeScript&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;代码规范可以可以参考&lt;a href=&quot;https://codeburst.io/5-javascript-style-guides-including-airbnb-github-google-88cbc6b2b7aa&quot;&gt;这篇文章&lt;/a&gt;
-我推荐使用其中更为广泛的&lt;a href=&quot;https://github.com/airbnb/javascript&quot;&gt;Airbnb Standard&lt;/a&gt; 比&lt;a href=&quot;https://github.com/standard/standard&quot;&gt;JavaScript Standard Style&lt;/a&gt; 更多的star。&lt;/p&gt;
-
-&lt;h2 id=&quot;搭建&quot;&gt;搭建&lt;/h2&gt;
-&lt;p&gt;好了前期准备工作已经完成现在我们开始正式开始&lt;/p&gt;</content><author><name>binn</name></author><category term="工具" /><category term="脚手架" /><summary type="html">起因 工作多年，项目越来越多，总是要做一些重复性的工作开进行开发，每次东配置西配置一大堆，效率很低无法直接投入生产。 通过这篇文章梳理一下自己的知识点，将一些常用技术做一些总结归纳和复习。并且基于此开发一套模版，用于以后网站开发直接套用，不做重复性的工作（这里的网站主要针对pc）。</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;</content><author><name>binn</name></author><category term="面试" /><category term="基础" /><category term="LeetCode" /><summary type="html">本文将LeetCode刷过的题目进行简单的总结和记录，便于自己进行复习，同时将看到的解题思路进行汇总让其他的小伙伴能够理解。</summary></entry></feed>
