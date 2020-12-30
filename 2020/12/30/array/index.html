@@ -20,9 +20,9 @@
 
     <link rel="shortcut icon" href="https://i.loli.net/2020/04/03/H3sMaG5EJktCv6o.jpg">
 
-    <title>React初步学习 - Binn's Blog</title>
+    <title>JAVASCRIPT - Binn's Blog</title>
 
-    <link rel="canonical" href="https://ltongbin.com/reactjs/2018/06/19/react-lesson-one/">
+    <link rel="canonical" href="https://ltongbin.com/2020/12/30/array/">
 
     <!-- Bootstrap Core CSS -->
     <link href="https://cdn.darknights.cn/assets/styles/bootstrap.min.css" rel="stylesheet">
@@ -199,17 +199,15 @@
                     <div class="post-heading">
                         <div class="tags">
                             
-                            <a class="tag" href="/tags/#javascript" title="javascript">javascript</a>
-                            
-                            <a class="tag" href="/tags/#reactjs" title="reactjs">reactjs</a>
+                            <a class="tag" href="/tags/#基础" title="基础">基础</a>
                             
                         </div>
-                        <h1>React初步学习</h1>
+                        <h1>JAVASCRIPT</h1>
                         
                         
-                        <h2 class="subheading">React重点总结</h2>
+                        <h2 class="subheading">array相关</h2>
                         
-                        <span class="meta">Posted by binn on June 19, 2018</span>
+                        <span class="meta">Posted by binn on December 30, 2020</span>
                     </div>
                 </div>
             </div>
@@ -231,91 +229,90 @@
                 col-sm-12
                 col-xs-12
                 post-container">
-				<h1 id="react">React</h1>
-<p><a href="https://doc.react-china.org/docs/handling-events.html">react中文文档</a></p>
+				<h3 id="from">from()</h3>
+<p>从类数组对象或者可迭代对象中创建一个新的数组实例,属于潜拷贝
+<img src="https://i.loli.net/2020/12/30/VOjgEySdAHcbkMZ.png" alt="image.png" /></p>
 
-<h1 id="事件处理">事件处理</h1>
-<p>你必须谨慎对待 JSX 回调函数中的 this，类的方法默认是不会绑定 this 的。如果你忘记绑定 this.handleClick 并把它传入 onClick, 当你调用这个函数的时候 this 的值会是 undefined。
-这并不是 React 的特殊行为；它是函数如何在 JavaScript 中运行的一部分。通常情况下，如果你没有在方法后面添加 () ，例如 onClick={this.handleClick}，你应该为这个方法绑定 this。</p>
+<h3 id="fill">fill()</h3>
+<p>用一个固定值填充一个数组中从起始索引到终止索引内的全部元素
+<code>array.fill(value,start,end)</code></p>
+<ol>
+  <li>Value:用来填充数数组元素的值；</li>
+  <li>Start：起始索引，默认是0；可选</li>
+  <li>End：终止索引，默认为this.length 可选
+<img src="https://i.loli.net/2020/12/30/59wjCzL8MyVKFip.png" alt="image.png" /></li>
+</ol>
 
-<pre><code class="language-javascript">class Toggle extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {isToggleOn: true};
+<h3 id="filter">filter()</h3>
+<p>创建一个新的数组，其包含通过所提供函数实现的测试的所有元素,不会	改变原数组</p>
 
-    // This binding is necessary to make `this` work in the callback
-    this.handleClick1 = this.handleClick1.bind(this);
-  }
-    //推荐方法一
-  handleClick1() {
-    this.setState(prevState =&gt; ({
-      isToggleOn: !prevState.isToggleOn
-    }));
-  }
+<p><code>const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];</code></p>
 
-  //推荐方法二
-   handleClick2 = () =&gt; {
-    console.log('this is:', this);
-  }
+<p><code>const result = words.filter(word =&gt; word.length &gt; 6);</code></p>
 
+<p><code>console.log(result);</code></p>
 
-  render() {
-    return (
-      &lt;button onClick={this.handleClick1}&gt;
-        {this.state.isToggleOn ? 'ON' : 'OFF'}
-      &lt;/button&gt;
-       &lt;button onClick={this.handleClick2}&gt;
-        Click me
-      &lt;/button&gt;
-      &lt;!-- 方法三不推荐 --&gt;
-      &lt;button onClick={(e) =&gt; this.handleClick3(e)}&gt;
-        Click me
-      &lt;/button&gt;
-    );
-  }
-}
+<p><code>// expected output: Array ["exuberant", "destruction", "present"]</code></p>
 
-ReactDOM.render(
-  &lt;Toggle /&gt;,
-  document.getElementById('root')
-);
-</code></pre>
+<h3 id="find">find()</h3>
+<p>返回数组中满足提供的测试函数的第一个元素的值，不会改变原数组
+<img src="https://i.loli.net/2020/12/30/2EX4h73K9zVd86o.png" alt="image.png" /></p>
 
-<h3 id="方法三不推荐的原因">方法三不推荐的原因：</h3>
-<blockquote>
-  <p>使用这个语法有个问题就是每次 LoggingButton 渲染的时候都会创建一个不同的回调函数。在大多数情况下，这没有问题。然而如果这个回调函数作为一个属性值传入低阶组件，这些组件可能会进行额外的重新渲染。我们通常建议在构造函数中绑定或使用属性初始化器语法来避免这类性能问题。
-在render方法中使用Function.prototype.bind会在每次组件渲染时创建一个新的函数，可能会影响性能（参见下文）</p>
-</blockquote>
+<h3 id="findindex">findIndex()</h3>
+<p>返回数组中满足提供的测试函数的第一个元素的索引，若没有找到对应元素则返回-1</p>
+<h4 id="应用场景检索元素是否存在用-1来做判断">应用场景：检索元素是否存在，用-1来做判断</h4>
+<p><img src="https://i.loli.net/2020/12/30/TDzyRx9jIGPhHoW.png" alt="image.png" /></p>
 
-<h3 id="向事件处理程序传递参数">向事件处理程序传递参数</h3>
-<p>通常我们会为事件处理程序传递额外的参数。例如，若是 id 是你要删除那一行的 id，以下两种方式都可以向事件处理程序传递参数：</p>
+<h3 id="flat">flat()</h3>
+<p>用于将嵌套的数组拉平，组成一个新数组
+<code>var newArray = arr.flat([depth]),depth:指定要提取嵌套数组的结构深度，默认	值是1 ,(Infinity，比较特殊，无论嵌套多少层都会转换成1维数组i)</code>
+<img src="https://i.loli.net/2020/12/30/bQjTGXu4gypzswB.png" alt="image.png" />
+<img src="https://i.loli.net/2020/12/30/peyzKoLlY2arbhs.png" alt="image.png" /></p>
 
-<pre><code class="language-javascript">&lt;button onClick={(e) =&gt; this.deleteRow(id, e)}&gt;Delete Row&lt;/button&gt;
-&lt;button onClick={this.deleteRow.bind(this, id)}&gt;Delete Row&lt;/button&gt;
+<h3 id="flatmap">flatMap()</h3>
+<p>对原数组的每个成员执行一个函数，对返回值组成的数组执行一次flat方法，flatMap只能展开一层数组
+<img src="https://i.loli.net/2020/12/30/idKQn3jqceUk9LA.png" alt="image.png" />
+<img src="https://i.loli.net/2020/12/30/YMwXKvxda6CBTAo.png" alt="image.png" /></p>
 
+<h3 id="includes">includes()</h3>
+<p>判断一个数组中是否包含一个指定的值
+<img src="https://i.loli.net/2020/12/30/yLaEHZGeDx2onVc.png" alt="image.png" /></p>
 
-class Popper extends React.Component{
-    constructor(){
-        super();
-        this.state = {name:'Hello world!'};
-    }
+<h3 id="indexof">indexOf()</h3>
+<p>返回在数组中可以找到一个给定元素的第一个索引，如果不存在，返回(-1)
+<img src="https://i.loli.net/2020/12/30/3Xn9blSyMvNi7he.png" alt="image.png" /></p>
 
-    preventPop(name, e){    //事件对象e要放在最后
-        e.preventDefault();
-        alert(name);
-    }
+<h3 id="lastindexof">lastIndexOf()</h3>
+<p>返回指定元素在数组中的最后一个的索引，如果不存在返回-1
+<img src="https://i.loli.net/2020/12/30/aBQb6d42YsWxqJC.png" alt="image.png" /></p>
 
-    render(){
-        return (
-            &lt;div&gt;
-                &lt;p&gt;hello&lt;/p&gt;
-                {/* Pass params via bind() method. */}
-                &lt;a href="https://reactjs.org" onClick={this.preventPop.bind(this,this.state.name)}&gt;Click&lt;/a&gt;
-            &lt;/div&gt;
-        );
-    }
-}
-</code></pre>
+<h3 id="join">join()</h3>
+<p>将一个数组的所有元素连接成一个字符串并返回这个字符串
+<img src="https://i.loli.net/2020/12/30/bPeCYqxMAUZ9QrE.png" alt="image.png" /></p>
+
+<h3 id="pop">pop()</h3>
+<p>从一个数组中删除并返回最后一个元素，原数组会被改变
+<img src="https://i.loli.net/2020/12/30/3jlyprzK6OYxhCs.png" alt="image.png" /></p>
+
+<h3 id="reduce">reduce()</h3>
+<p>对数组中的每个元素执行一个由您提供的reducer函数，将其结果汇总为单个返回值
+<code>arr.reduce(function(pre,cur) {
+    ...
+},init)</code></p>
+<ol>
+  <li>arr:表示原数组；</li>
+  <li>pre:表示上一次调用回调时的返回值，或者初始值init;</li>
+  <li>cur:表示正在处理的数组元素</li>
+  <li>Index:表示当前正在处理的数组元素的索引，若提供init值，则索引为0，否则索引为1；</li>
+  <li>Init:表示初始值
+    <h4 id="最长用到的就是pre和cur-用法实例">最长用到的就是pre和cur 用法实例</h4>
+    <p><code>var arr = [3,9,4,3,6,0,9]</code>
+ 求数组项之和
+     var sum = arr.reduce(function(prev,cur){
+         return pre + cur
+     },0)</p>
+  </li>
+</ol>
 
 
                 <hr>
@@ -323,15 +320,10 @@ class Popper extends React.Component{
                 <ul class="pager">
     
     <li class="previous">
-        <a href="/%E7%94%9F%E4%BA%A7%E5%B7%A5%E5%85%B7/2018/03/15/vim-config/" data-toggle="tooltip"
-            data-placement="top" title="vim快捷键和配置">&larr; Previous Post</a>
+        <a href="/2020/05/11/react/" data-toggle="tooltip"
+            data-placement="top" title="REACT">&larr; Previous Post</a>
     </li>
     
-    
-    <li class="next">
-        <a href="/%E8%AF%BB%E4%B9%A6%E6%80%BB%E7%BB%93/2018/06/19/read-book-effective-one/" data-toggle="tooltip"
-            data-placement="top" title="Effective JavaScript(一)">Next Post &rarr;</a>
-    </li>
     
 </ul>
 
@@ -340,8 +332,8 @@ class Popper extends React.Component{
 
 <!-- disqus 评论框 start -->
 <div class="comment">
-    <div id="disqus_thread" data-thread-key="/reactjs/2018/06/19/react-lesson-one" data-title="React初步学习"
-        data-url="https://ltongbin.com/reactjs/2018/06/19/react-lesson-one/"></div>
+    <div id="disqus_thread" data-thread-key="/2020/12/30/array" data-title="JAVASCRIPT"
+        data-url="https://ltongbin.com/2020/12/30/array/"></div>
     <script>
         /**
          *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
