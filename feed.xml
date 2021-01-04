@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-01-04T14:36:52+08:00</updated><id>/</id><subtitle>Dark knight's的个人技术博客,专注于web开发,追求前端最完美体验</subtitle><entry><title type="html">JAVASCRIPT</title><link href="/2020/12/30/array/" rel="alternate" type="text/html" title="JAVASCRIPT" /><published>2020-12-30T00:00:00+08:00</published><updated>2020-12-30T00:00:00+08:00</updated><id>/2020/12/30/array</id><content type="html" xml:base="/2020/12/30/array/">&lt;h3 id=&quot;from&quot;&gt;from()&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-01-04T14:46:17+08:00</updated><id>/</id><subtitle>Dark knight's的个人技术博客,专注于web开发,追求前端最完美体验</subtitle><entry><title type="html">JAVASCRIPT</title><link href="/2020/12/30/array/" rel="alternate" type="text/html" title="JAVASCRIPT" /><published>2020-12-30T00:00:00+08:00</published><updated>2020-12-30T00:00:00+08:00</updated><id>/2020/12/30/array</id><content type="html" xml:base="/2020/12/30/array/">&lt;h3 id=&quot;from&quot;&gt;from()&lt;/h3&gt;
 &lt;p&gt;从类数组对象或者可迭代对象中创建一个新的数组实例,属于潜拷贝
 &lt;img src=&quot;https://i.loli.net/2020/12/30/VOjgEySdAHcbkMZ.png&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
 
@@ -147,6 +147,7 @@ months.splice(4, 1, 'May');
 // replaces 1 element at index 4
 console.log(months);
 // expected output: Array [&quot;Jan&quot;, &quot;Feb&quot;, &quot;March&quot;, &quot;April&quot;, &quot;May&quot;]
+
 
 &lt;/code&gt;&lt;/pre&gt;</content><author><name>binn</name></author><category term="基础" /><summary type="html">from() 从类数组对象或者可迭代对象中创建一个新的数组实例,属于潜拷贝</summary></entry><entry><title type="html">REACT</title><link href="/2020/05/11/react/" rel="alternate" type="text/html" title="REACT" /><published>2020-05-11T00:00:00+08:00</published><updated>2020-05-11T00:00:00+08:00</updated><id>/2020/05/11/react</id><content type="html" xml:base="/2020/05/11/react/">&lt;h3 id=&quot;react的extends的含义&quot;&gt;react的extends的含义：&lt;/h3&gt;
 &lt;p&gt;es6形式的extends React.Component定义的组件&lt;/p&gt;
