@@ -306,13 +306,81 @@
   <li>Index:表示当前正在处理的数组元素的索引，若提供init值，则索引为0，否则索引为1；</li>
   <li>Init:表示初始值
     <h4 id="最长用到的就是pre和cur-用法实例">最长用到的就是pre和cur 用法实例</h4>
-    <p><code>var arr = [3,9,4,3,6,0,9]</code>
- 求数组项之和
-     var sum = arr.reduce(function(prev,cur){
-         return pre + cur
-     },0)</p>
+    <p><code>var arr = [3,9,4,3,6,0,9]</code></p>
+    <pre><code class="language-javascript"> 求数组项之和 
+ var sum = arr.reduce(function(prev,cur){
+     return pre + cur
+ },0)
+ //0+3+9+3+6+0+9
+</code></pre>
+    <pre><code class="language-javascript"> 求数组项最大值
+ var max = arr.reduce(function(prev,cur){
+     return Math.max(prev,cur)
+ })
+ 由于未传入初始值，所以开始时prev的值为数组第一项3，cur的值为数组第二项9，取最大值后继续进入下一轮回调
+</code></pre>
+    <pre><code class="language-javascript"> 数组去重
+ var newArr = arr.reduce(function(prev,cur) {
+     prev.indexOf(cur) === -1 &amp;&amp; prev.push(cur);
+     return prev
+ },[])
+ 实现原理：
+ ① 初始化一个空数组
+ ② 将需要去重处理的数组中的第1项在初始化数组中查找，如果找不到（空数组中	肯定找不到），就将该项添加到初始化数组中
+ ③ 将需要去重处理的数组中的第2项在初始化数组中查找，如果找不到，就将该项	继续添加到初始化数组中
+ ④ ……
+ ⑤ 将需要去重处理的数组中的第n项在初始化数组中查找，如果找不到，就将该项	继续添加到初始化数组中
+ ⑥ 将这个初始化数组返回
+</code></pre>
   </li>
 </ol>
+
+<h3 id="shift">shift()</h3>
+<p>从数组中删除第一个元素，并返回该元素，原始数组会被更改</p>
+<pre><code class="language-javascript">    var array = [1,2,3];
+    array.shift()
+    // 1
+    array
+    //[2,3]
+</code></pre>
+
+<h3 id="slice">slice()</h3>
+<p>返回一个新的数组对象，这一对象是一个由begin和end决定的原数组的浅拷贝，(包括begin，不包括end)，原始数组不变</p>
+<pre><code class="language-javascript">arr.slice(begin,end)
+// 当begin为负数时，表示从倒数第几个元素开始提取
+const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+
+console.log(animals.slice(2));
+// expected output: Array ["camel", "duck", "elephant"]
+
+console.log(animals.slice(2, 4));
+// expected output: Array ["camel", "duck"]
+
+console.log(animals.slice(1, 5));
+// expected output: Array ["bison", "camel", "duck", "elephant"]
+</code></pre>
+
+<h3 id="some">some()</h3>
+<p>测试数组中是不是至少有一个元素通过了被提供的函数测试，返回Boolean类型的值，方法数组中只要有一个为真，返回的就是true，反之则为false</p>
+<pre><code class="language-javascript">[2, 5, 8, 1, 4].some(x =&gt; x &gt; 10);  // false
+[12, 5, 8, 1, 4].some(x =&gt; x &gt; 10); // true
+</code></pre>
+
+<h3 id="splice">splice()</h3>
+<p>通过删除或者替换现有元素或者原地添加新的元素来修改数组，并以数组形式返回被修改的内容，原数组会改变</p>
+<pre><code class="language-javascript">const months = ['Jan', 'March', 'April', 'June'];
+months.splice(1, 0, 'Feb');
+// inserts at index 1
+console.log(months);
+// expected output: Array ["Jan", "Feb", "March", "April", "June"]
+
+months.splice(4, 1, 'May');
+// replaces 1 element at index 4
+console.log(months);
+// expected output: Array ["Jan", "Feb", "March", "April", "May"]
+
+</code></pre>
+
 
 
                 <hr>
@@ -650,7 +718,7 @@
                     
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; Binn 2020 |
+                    Copyright &copy; Binn 2021 |
                     <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px"
                         height="20px"
                         src="https://ghbtns.com/github-btn.html?user=liutongbin2017&repo=react-web&type=star&count=true">

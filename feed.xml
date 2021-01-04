@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2020-12-30T18:56:11+08:00</updated><id>/</id><subtitle>Dark knight's的个人技术博客,专注于web开发,追求前端最完美体验</subtitle><entry><title type="html">JAVASCRIPT</title><link href="/2020/12/30/array/" rel="alternate" type="text/html" title="JAVASCRIPT" /><published>2020-12-30T00:00:00+08:00</published><updated>2020-12-30T00:00:00+08:00</updated><id>/2020/12/30/array</id><content type="html" xml:base="/2020/12/30/array/">&lt;h3 id=&quot;from&quot;&gt;from()&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-01-04T14:36:52+08:00</updated><id>/</id><subtitle>Dark knight's的个人技术博客,专注于web开发,追求前端最完美体验</subtitle><entry><title type="html">JAVASCRIPT</title><link href="/2020/12/30/array/" rel="alternate" type="text/html" title="JAVASCRIPT" /><published>2020-12-30T00:00:00+08:00</published><updated>2020-12-30T00:00:00+08:00</updated><id>/2020/12/30/array</id><content type="html" xml:base="/2020/12/30/array/">&lt;h3 id=&quot;from&quot;&gt;from()&lt;/h3&gt;
 &lt;p&gt;从类数组对象或者可迭代对象中创建一个新的数组实例,属于潜拷贝
 &lt;img src=&quot;https://i.loli.net/2020/12/30/VOjgEySdAHcbkMZ.png&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
 
@@ -75,13 +75,80 @@
   &lt;li&gt;Index:表示当前正在处理的数组元素的索引，若提供init值，则索引为0，否则索引为1；&lt;/li&gt;
   &lt;li&gt;Init:表示初始值
     &lt;h4 id=&quot;最长用到的就是pre和cur-用法实例&quot;&gt;最长用到的就是pre和cur 用法实例&lt;/h4&gt;
-    &lt;p&gt;&lt;code&gt;var arr = [3,9,4,3,6,0,9]&lt;/code&gt;
- 求数组项之和
-     var sum = arr.reduce(function(prev,cur){
-         return pre + cur
-     },0)&lt;/p&gt;
+    &lt;p&gt;&lt;code&gt;var arr = [3,9,4,3,6,0,9]&lt;/code&gt;&lt;/p&gt;
+    &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt; 求数组项之和 
+ var sum = arr.reduce(function(prev,cur){
+     return pre + cur
+ },0)
+ //0+3+9+3+6+0+9
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt; 求数组项最大值
+ var max = arr.reduce(function(prev,cur){
+     return Math.max(prev,cur)
+ })
+ 由于未传入初始值，所以开始时prev的值为数组第一项3，cur的值为数组第二项9，取最大值后继续进入下一轮回调
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt; 数组去重
+ var newArr = arr.reduce(function(prev,cur) {
+     prev.indexOf(cur) === -1 &amp;amp;&amp;amp; prev.push(cur);
+     return prev
+ },[])
+ 实现原理：
+ ① 初始化一个空数组
+ ② 将需要去重处理的数组中的第1项在初始化数组中查找，如果找不到（空数组中	肯定找不到），就将该项添加到初始化数组中
+ ③ 将需要去重处理的数组中的第2项在初始化数组中查找，如果找不到，就将该项	继续添加到初始化数组中
+ ④ ……
+ ⑤ 将需要去重处理的数组中的第n项在初始化数组中查找，如果找不到，就将该项	继续添加到初始化数组中
+ ⑥ 将这个初始化数组返回
+&lt;/code&gt;&lt;/pre&gt;
   &lt;/li&gt;
-&lt;/ol&gt;</content><author><name>binn</name></author><category term="基础" /><summary type="html">from() 从类数组对象或者可迭代对象中创建一个新的数组实例,属于潜拷贝</summary></entry><entry><title type="html">REACT</title><link href="/2020/05/11/react/" rel="alternate" type="text/html" title="REACT" /><published>2020-05-11T00:00:00+08:00</published><updated>2020-05-11T00:00:00+08:00</updated><id>/2020/05/11/react</id><content type="html" xml:base="/2020/05/11/react/">&lt;h3 id=&quot;react的extends的含义&quot;&gt;react的extends的含义：&lt;/h3&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;shift&quot;&gt;shift()&lt;/h3&gt;
+&lt;p&gt;从数组中删除第一个元素，并返回该元素，原始数组会被更改&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;    var array = [1,2,3];
+    array.shift()
+    // 1
+    array
+    //[2,3]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;slice&quot;&gt;slice()&lt;/h3&gt;
+&lt;p&gt;返回一个新的数组对象，这一对象是一个由begin和end决定的原数组的浅拷贝，(包括begin，不包括end)，原始数组不变&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;arr.slice(begin,end)
+// 当begin为负数时，表示从倒数第几个元素开始提取
+const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+
+console.log(animals.slice(2));
+// expected output: Array [&quot;camel&quot;, &quot;duck&quot;, &quot;elephant&quot;]
+
+console.log(animals.slice(2, 4));
+// expected output: Array [&quot;camel&quot;, &quot;duck&quot;]
+
+console.log(animals.slice(1, 5));
+// expected output: Array [&quot;bison&quot;, &quot;camel&quot;, &quot;duck&quot;, &quot;elephant&quot;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;some&quot;&gt;some()&lt;/h3&gt;
+&lt;p&gt;测试数组中是不是至少有一个元素通过了被提供的函数测试，返回Boolean类型的值，方法数组中只要有一个为真，返回的就是true，反之则为false&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;[2, 5, 8, 1, 4].some(x =&amp;gt; x &amp;gt; 10);  // false
+[12, 5, 8, 1, 4].some(x =&amp;gt; x &amp;gt; 10); // true
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;splice&quot;&gt;splice()&lt;/h3&gt;
+&lt;p&gt;通过删除或者替换现有元素或者原地添加新的元素来修改数组，并以数组形式返回被修改的内容，原数组会改变&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const months = ['Jan', 'March', 'April', 'June'];
+months.splice(1, 0, 'Feb');
+// inserts at index 1
+console.log(months);
+// expected output: Array [&quot;Jan&quot;, &quot;Feb&quot;, &quot;March&quot;, &quot;April&quot;, &quot;June&quot;]
+
+months.splice(4, 1, 'May');
+// replaces 1 element at index 4
+console.log(months);
+// expected output: Array [&quot;Jan&quot;, &quot;Feb&quot;, &quot;March&quot;, &quot;April&quot;, &quot;May&quot;]
+
+&lt;/code&gt;&lt;/pre&gt;</content><author><name>binn</name></author><category term="基础" /><summary type="html">from() 从类数组对象或者可迭代对象中创建一个新的数组实例,属于潜拷贝</summary></entry><entry><title type="html">REACT</title><link href="/2020/05/11/react/" rel="alternate" type="text/html" title="REACT" /><published>2020-05-11T00:00:00+08:00</published><updated>2020-05-11T00:00:00+08:00</updated><id>/2020/05/11/react</id><content type="html" xml:base="/2020/05/11/react/">&lt;h3 id=&quot;react的extends的含义&quot;&gt;react的extends的含义：&lt;/h3&gt;
 &lt;p&gt;es6形式的extends React.Component定义的组件&lt;/p&gt;
 
 &lt;h3 id=&quot;react的redux&quot;&gt;react的redux&lt;/h3&gt;
