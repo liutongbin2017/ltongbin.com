@@ -20,7 +20,7 @@
 
     <link rel="shortcut icon" href="https://i.loli.net/2020/04/03/H3sMaG5EJktCv6o.jpg">
 
-    <title>JQueryArray - Binn's Blog</title>
+    <title>JS Array - Binn's Blog</title>
 
     <link rel="canonical" href="https://ltongbin.com/2021/01/01/array/">
 
@@ -202,10 +202,10 @@
                             <a class="tag" href="/tags/#基础" title="基础">基础</a>
                             
                         </div>
-                        <h1>JQueryArray</h1>
+                        <h1>JS Array</h1>
                         
                         
-                        <h2 class="subheading">array相关test2</h2>
+                        <h2 class="subheading">array</h2>
                         
                         <span class="meta">Posted by binn on January 1, 2021</span>
                     </div>
@@ -229,7 +229,14 @@
                 col-sm-12
                 col-xs-12
                 post-container">
-				<h3 id="fill">fill()</h3>
+				<h3 id="from">from()</h3>
+<p>从类数组对象或者可迭代对象中创建一个新的数组实例（属于浅拷贝）</p>
+<pre><code class="language-javascript">    array.form('foo')
+    // ['f','o','o']
+    array.from('1','2','3')
+    // ['1','2','3']
+</code></pre>
+<h3 id="fill">fill()</h3>
 <p>用一个固定值填充一个数组中从起始索引到终止索引内的全部元素
 <code>array.fill(value,start,end)</code></p>
 <ol>
@@ -374,10 +381,35 @@ months.splice(4, 1, 'May');
 // replaces 1 element at index 4
 console.log(months);
 // expected output: Array ["Jan", "Feb", "March", "April", "May"]
-
-
 </code></pre>
+<h3 id="tolocalstring">toLocalString()</h3>
+<p>返回一个字符串表示数组中的元素，数组中的元素将使用各自的toLocaleString方法转换成字符串吗，这些字符串将使用一个特定语言环境的字符串</p>
 
+<pre><code class="language-javascript">    const array = [1,'a',new Date('12 Dec 1997 14:12:00 UTC')];
+    // [1, "a", Fri Dec 12 1997 22:12:00 GMT+0800 (中国标准时间)]
+    const localeString = array.toLocaleString('en',{timeZone:'UTC'});
+    // "1,a,12/12/1997, 2:12:00 PM"
+    // en:代表时间格式：英国、美国等默认的时间格式
+    // timeZone:代表的是时区，UTC代表的是默认时区
+</code></pre>
+<h3 id="tosource">toSource()</h3>
+<p>返回一个字符串，代表该数组的源代码</p>
+<pre><code class="language-javascript">// array.toSource()
+var alpha = newArray('a','b','c');
+alpha.toSource()
+// ['a','b','c']
+</code></pre>
+<h3 id="values">values()</h3>
+<p>返回一个新的array iterator对象，该对象包含每个索引的值</p>
+<pre><code class="language-javascript">const array = ['a','b','c'];
+const iterator = array.values() // 返回的是一个对象
+for(const value of iterator) {
+    console.log(value)
+}
+// "a"
+// "b"
+// "c"
+</code></pre>
 
 
                 <hr>
@@ -397,7 +429,7 @@ console.log(months);
 
 <!-- disqus 评论框 start -->
 <div class="comment">
-    <div id="disqus_thread" data-thread-key="/2021/01/01/array" data-title="JQueryArray"
+    <div id="disqus_thread" data-thread-key="/2021/01/01/array" data-title="JS Array"
         data-url="https://ltongbin.com/2021/01/01/array/"></div>
     <script>
         /**

@@ -1,4 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-01-05T12:15:37+08:00</updated><id>/</id><subtitle>Dark knight's的个人技术博客,专注于web开发,追求前端最完美体验</subtitle><entry><title type="html">JQueryArray</title><link href="/2021/01/01/array/" rel="alternate" type="text/html" title="JQueryArray" /><published>2021-01-01T00:00:00+08:00</published><updated>2021-01-01T00:00:00+08:00</updated><id>/2021/01/01/array</id><content type="html" xml:base="/2021/01/01/array/">&lt;h3 id=&quot;fill&quot;&gt;fill()&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-01-05T13:32:57+08:00</updated><id>/</id><subtitle>Dark knight's的个人技术博客,专注于web开发,追求前端最完美体验</subtitle><entry><title type="html">JS Array</title><link href="/2021/01/01/array/" rel="alternate" type="text/html" title="JS Array" /><published>2021-01-01T00:00:00+08:00</published><updated>2021-01-01T00:00:00+08:00</updated><id>/2021/01/01/array</id><content type="html" xml:base="/2021/01/01/array/">&lt;h3 id=&quot;from&quot;&gt;from()&lt;/h3&gt;
+&lt;p&gt;从类数组对象或者可迭代对象中创建一个新的数组实例（属于浅拷贝）&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;    array.form('foo')
+    // ['f','o','o']
+    array.from('1','2','3')
+    // ['1','2','3']
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;fill&quot;&gt;fill()&lt;/h3&gt;
 &lt;p&gt;用一个固定值填充一个数组中从起始索引到终止索引内的全部元素
 &lt;code&gt;array.fill(value,start,end)&lt;/code&gt;&lt;/p&gt;
 &lt;ol&gt;
@@ -143,9 +150,35 @@ months.splice(4, 1, 'May');
 // replaces 1 element at index 4
 console.log(months);
 // expected output: Array [&quot;Jan&quot;, &quot;Feb&quot;, &quot;March&quot;, &quot;April&quot;, &quot;May&quot;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;tolocalstring&quot;&gt;toLocalString()&lt;/h3&gt;
+&lt;p&gt;返回一个字符串表示数组中的元素，数组中的元素将使用各自的toLocaleString方法转换成字符串吗，这些字符串将使用一个特定语言环境的字符串&lt;/p&gt;
 
-
-&lt;/code&gt;&lt;/pre&gt;</content><author><name>binn</name></author><category term="基础" /><summary type="html">fill() 用一个固定值填充一个数组中从起始索引到终止索引内的全部元素 array.fill(value,start,end) Value:用来填充数数组元素的值； Start：起始索引，默认是0；可选 End：终止索引，默认为this.length 可选</summary></entry><entry><title type="html">REACT</title><link href="/2020/05/11/react/" rel="alternate" type="text/html" title="REACT" /><published>2020-05-11T00:00:00+08:00</published><updated>2020-05-11T00:00:00+08:00</updated><id>/2020/05/11/react</id><content type="html" xml:base="/2020/05/11/react/">&lt;h3 id=&quot;react的extends的含义&quot;&gt;react的extends的含义：&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;    const array = [1,'a',new Date('12 Dec 1997 14:12:00 UTC')];
+    // [1, &quot;a&quot;, Fri Dec 12 1997 22:12:00 GMT+0800 (中国标准时间)]
+    const localeString = array.toLocaleString('en',{timeZone:'UTC'});
+    // &quot;1,a,12/12/1997, 2:12:00 PM&quot;
+    // en:代表时间格式：英国、美国等默认的时间格式
+    // timeZone:代表的是时区，UTC代表的是默认时区
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;tosource&quot;&gt;toSource()&lt;/h3&gt;
+&lt;p&gt;返回一个字符串，代表该数组的源代码&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// array.toSource()
+var alpha = newArray('a','b','c');
+alpha.toSource()
+// ['a','b','c']
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;values&quot;&gt;values()&lt;/h3&gt;
+&lt;p&gt;返回一个新的array iterator对象，该对象包含每个索引的值&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const array = ['a','b','c'];
+const iterator = array.values() // 返回的是一个对象
+for(const value of iterator) {
+    console.log(value)
+}
+// &quot;a&quot;
+// &quot;b&quot;
+// &quot;c&quot;
+&lt;/code&gt;&lt;/pre&gt;</content><author><name>binn</name></author><category term="基础" /><summary type="html">from() 从类数组对象或者可迭代对象中创建一个新的数组实例（属于浅拷贝） array.form('foo') // ['f','o','o'] array.from('1','2','3') // ['1','2','3'] fill() 用一个固定值填充一个数组中从起始索引到终止索引内的全部元素 array.fill(value,start,end) Value:用来填充数数组元素的值； Start：起始索引，默认是0；可选 End：终止索引，默认为this.length 可选</summary></entry><entry><title type="html">REACT</title><link href="/2020/05/11/react/" rel="alternate" type="text/html" title="REACT" /><published>2020-05-11T00:00:00+08:00</published><updated>2020-05-11T00:00:00+08:00</updated><id>/2020/05/11/react</id><content type="html" xml:base="/2020/05/11/react/">&lt;h3 id=&quot;react的extends的含义&quot;&gt;react的extends的含义：&lt;/h3&gt;
 &lt;p&gt;es6形式的extends React.Component定义的组件&lt;/p&gt;
 
 &lt;h3 id=&quot;react的redux&quot;&gt;react的redux&lt;/h3&gt;
