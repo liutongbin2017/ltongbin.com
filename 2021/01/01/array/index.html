@@ -237,66 +237,123 @@
     // ['1','2','3']
 </code></pre>
 <h3 id="fill">fill()</h3>
-<p>用一个固定值填充一个数组中从起始索引到终止索引内的全部元素
-<code>array.fill(value,start,end)</code></p>
-<ol>
-  <li>Value:用来填充数数组元素的值；</li>
-  <li>Start：起始索引，默认是0；可选</li>
-  <li>End：终止索引，默认为this.length 可选
-<img src="https://i.loli.net/2020/12/30/59wjCzL8MyVKFip.png" alt="image.png" /></li>
-</ol>
+<p>用一个固定值填充一个数组中从起始索引到终止索引内的全部元素</p>
+<pre><code class="language-javascript">array.fill(value,start,end)`
+1. Value:用来填充数数组元素的值；
+2. Start：起始索引，默认是0；可选
+3. End：终止索引，默认为this.length 可选
+</code></pre>
+<pre><code class="language-javascript">var array = [1,2,3,4,5]
+// array.fill(0,2,4)
+// [1,2,0,0,5]
+// array.fill(5,1)
+// [1,5,5,5,5]
+// array.fill(6)
+// [6,6,6,6,6]
+</code></pre>
 
 <h3 id="filter">filter()</h3>
 <p>创建一个新的数组，其包含通过所提供函数实现的测试的所有元素,不会	改变原数组</p>
-
-<p><code>const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];</code></p>
-
-<p><code>const result = words.filter(word =&gt; word.length &gt; 6);</code></p>
-
-<p><code>console.log(result);</code></p>
-
-<p><code>// expected output: Array ["exuberant", "destruction", "present"]</code></p>
+<pre><code class="language-javascript">const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+const result = words.filter(word =&gt; word.length &gt; 6);
+console.log(result);
+// expected output: Array ["exuberant", "destruction", "present"]
+</code></pre>
 
 <h3 id="find">find()</h3>
-<p>返回数组中满足提供的测试函数的第一个元素的值，不会改变原数组
-<img src="https://i.loli.net/2020/12/30/2EX4h73K9zVd86o.png" alt="image.png" /></p>
-
+<p>返回数组中满足提供的测试函数的第一个元素的值，不会改变原数组</p>
+<pre><code class="language-javascript">var array = [5,12,8,130,44]
+array.find(element =&gt; element &gt; 100)
+// 12
+// array [5,12,8,130,44] 未改变原数组
+</code></pre>
 <h3 id="findindex">findIndex()</h3>
 <p>返回数组中满足提供的测试函数的第一个元素的索引，若没有找到对应元素则返回-1</p>
 <h4 id="应用场景检索元素是否存在用-1来做判断">应用场景：检索元素是否存在，用-1来做判断</h4>
-<p><img src="https://i.loli.net/2020/12/30/TDzyRx9jIGPhHoW.png" alt="image.png" /></p>
+<pre><code class="language-javascript">var array = [5,12,8,130,44]
+array.findIndex(element =&gt; element &gt; 13)
+// 3
+array.findIndex(element =&gt; element &gt; 200)
+// -1
+</code></pre>
 
 <h3 id="flat">flat()</h3>
 <p>用于将嵌套的数组拉平，组成一个新数组
-<code>var newArray = arr.flat([depth]),depth:指定要提取嵌套数组的结构深度，默认	值是1 ,(Infinity，比较特殊，无论嵌套多少层都会转换成1维数组i)</code>
-<img src="https://i.loli.net/2020/12/30/bQjTGXu4gypzswB.png" alt="image.png" />
-<img src="https://i.loli.net/2020/12/30/peyzKoLlY2arbhs.png" alt="image.png" /></p>
+<code>var newArray = arr.flat([depth]),depth:指定要提取嵌套数组的结构深度，默认	值是1 ,(Infinity，比较特殊，无论嵌套多少层都会转换成1维数组i)</code></p>
+<pre><code class="language-javascript">const arr = [0,1,2,[3,4]]
+arr.flat()
+// [0,1,2,3,4]
+var arr2 = [0,1,2,[[[3,4]]]]
+arr2.flat(2)
+// [0,1,2,[3,4]]
+arr2.flat(3)
+// [0,1,2,3,4]
+arr2.flat(Infinity)
+// [0,1,2,3,4,5]
+</code></pre>
 
 <h3 id="flatmap">flatMap()</h3>
-<p>对原数组的每个成员执行一个函数，对返回值组成的数组执行一次flat方法，flatMap只能展开一层数组
-<img src="https://i.loli.net/2020/12/30/idKQn3jqceUk9LA.png" alt="image.png" />
-<img src="https://i.loli.net/2020/12/30/YMwXKvxda6CBTAo.png" alt="image.png" /></p>
+<p>对原数组的每个成员执行一个函数，对返回值组成的数组执行一次flat方法，flatMap只能展开一层数组</p>
+<pre><code class="language-javascript">var arr = [1,2,3,4];
+arr.map(x =&gt; [x * 2])
+// [[2],[4],[6],[8]]
+arr.flatMap(x =&gt; [x * 2])
+// [2,4,6,8]
+arr.flatMap(x =&gt; [[x * 2]])
+// [[2],[4],[6],[8]]
+</code></pre>
 
 <h3 id="includes">includes()</h3>
-<p>判断一个数组中是否包含一个指定的值
-<img src="https://i.loli.net/2020/12/30/yLaEHZGeDx2onVc.png" alt="image.png" /></p>
-
+<p>判断一个数组中是否包含一个指定的值</p>
+<pre><code class="language-javascript">const array = [1,2,3];
+array.includes(2)
+// true
+const pets = ['cat','dog','bat']
+pets.includes('cat')
+// true
+pets.includes('at')
+// false
+</code></pre>
 <h3 id="indexof">indexOf()</h3>
-<p>返回在数组中可以找到一个给定元素的第一个索引，如果不存在，返回(-1)
-<img src="https://i.loli.net/2020/12/30/3Xn9blSyMvNi7he.png" alt="image.png" /></p>
-
+<p>返回在数组中可以找到一个给定元素的第一个索引，如果不存在，返回(-1)</p>
+<pre><code class="language-javascript">var beasts= ['ant','bison','camel','duck','bison']
+beasts.includes('ant')
+// true
+beasts.includes('camel')
+// true
+beasts.indexOf('camel')
+// 2
+beasts.indexOf('bison')
+// 1
+beasts.indexOf('sss')
+// -1
+</code></pre>
 <h3 id="lastindexof">lastIndexOf()</h3>
-<p>返回指定元素在数组中的最后一个的索引，如果不存在返回-1
-<img src="https://i.loli.net/2020/12/30/aBQb6d42YsWxqJC.png" alt="image.png" /></p>
-
+<p>返回指定元素在数组中的最后一个的索引，如果不存在返回-1</p>
+<pre><code class="language-javascript">const animals = ['Dodo','Tiger','Penguin','Dodo']
+animals.lastIndexOf('Dodo')
+// 3
+animals.lastIndexOf('Tiger')
+// 1
+</code></pre>
 <h3 id="join">join()</h3>
-<p>将一个数组的所有元素连接成一个字符串并返回这个字符串
-<img src="https://i.loli.net/2020/12/30/bPeCYqxMAUZ9QrE.png" alt="image.png" /></p>
-
+<p>将一个数组的所有元素连接成一个字符串并返回这个字符串</p>
+<pre><code class="language-javascript">const elements = ['Fire','Air','Water'];
+elements.join()
+// "Fire,Air,Water"
+elements.join('')
+// "FireAirWater"
+elements.join('-')
+// "Fire-Air-Water"
+</code></pre>
 <h3 id="pop">pop()</h3>
-<p>从一个数组中删除并返回最后一个元素，原数组会被改变
-<img src="https://i.loli.net/2020/12/30/3jlyprzK6OYxhCs.png" alt="image.png" /></p>
-
+<p>从一个数组中删除并返回最后一个元素，原数组会被改变</p>
+<pre><code class="language-javascript">var plants = ['broccoli','cauliflower','cabbage','kale','tomato']
+plants.pop() //会改变原数组
+// tomato
+plants
+// ['broccoli','cauliflower','cabbage','kale']
+</code></pre>
 <h3 id="reduce">reduce()</h3>
 <p>对数组中的每个元素执行一个由您提供的reducer函数，将其结果汇总为单个返回值
 <code>arr.reduce(function(pre,cur) {

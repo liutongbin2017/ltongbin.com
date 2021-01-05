@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-01-05T13:32:57+08:00</updated><id>/</id><subtitle>Dark knight's的个人技术博客,专注于web开发,追求前端最完美体验</subtitle><entry><title type="html">JS Array</title><link href="/2021/01/01/array/" rel="alternate" type="text/html" title="JS Array" /><published>2021-01-01T00:00:00+08:00</published><updated>2021-01-01T00:00:00+08:00</updated><id>/2021/01/01/array</id><content type="html" xml:base="/2021/01/01/array/">&lt;h3 id=&quot;from&quot;&gt;from()&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-01-05T16:14:38+08:00</updated><id>/</id><subtitle>Dark knight's的个人技术博客,专注于web开发,追求前端最完美体验</subtitle><entry><title type="html">JS Array</title><link href="/2021/01/01/array/" rel="alternate" type="text/html" title="JS Array" /><published>2021-01-01T00:00:00+08:00</published><updated>2021-01-01T00:00:00+08:00</updated><id>/2021/01/01/array</id><content type="html" xml:base="/2021/01/01/array/">&lt;h3 id=&quot;from&quot;&gt;from()&lt;/h3&gt;
 &lt;p&gt;从类数组对象或者可迭代对象中创建一个新的数组实例（属于浅拷贝）&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;    array.form('foo')
     // ['f','o','o']
@@ -6,66 +6,123 @@
     // ['1','2','3']
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&quot;fill&quot;&gt;fill()&lt;/h3&gt;
-&lt;p&gt;用一个固定值填充一个数组中从起始索引到终止索引内的全部元素
-&lt;code&gt;array.fill(value,start,end)&lt;/code&gt;&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;Value:用来填充数数组元素的值；&lt;/li&gt;
-  &lt;li&gt;Start：起始索引，默认是0；可选&lt;/li&gt;
-  &lt;li&gt;End：终止索引，默认为this.length 可选
-&lt;img src=&quot;https://i.loli.net/2020/12/30/59wjCzL8MyVKFip.png&quot; alt=&quot;image.png&quot; /&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;用一个固定值填充一个数组中从起始索引到终止索引内的全部元素&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;array.fill(value,start,end)`
+1. Value:用来填充数数组元素的值；
+2. Start：起始索引，默认是0；可选
+3. End：终止索引，默认为this.length 可选
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var array = [1,2,3,4,5]
+// array.fill(0,2,4)
+// [1,2,0,0,5]
+// array.fill(5,1)
+// [1,5,5,5,5]
+// array.fill(6)
+// [6,6,6,6,6]
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3 id=&quot;filter&quot;&gt;filter()&lt;/h3&gt;
 &lt;p&gt;创建一个新的数组，其包含通过所提供函数实现的测试的所有元素,不会	改变原数组&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;const result = words.filter(word =&amp;gt; word.length &amp;gt; 6);&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;console.log(result);&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;// expected output: Array [&quot;exuberant&quot;, &quot;destruction&quot;, &quot;present&quot;]&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+const result = words.filter(word =&amp;gt; word.length &amp;gt; 6);
+console.log(result);
+// expected output: Array [&quot;exuberant&quot;, &quot;destruction&quot;, &quot;present&quot;]
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3 id=&quot;find&quot;&gt;find()&lt;/h3&gt;
-&lt;p&gt;返回数组中满足提供的测试函数的第一个元素的值，不会改变原数组
-&lt;img src=&quot;https://i.loli.net/2020/12/30/2EX4h73K9zVd86o.png&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
-
+&lt;p&gt;返回数组中满足提供的测试函数的第一个元素的值，不会改变原数组&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var array = [5,12,8,130,44]
+array.find(element =&amp;gt; element &amp;gt; 100)
+// 12
+// array [5,12,8,130,44] 未改变原数组
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&quot;findindex&quot;&gt;findIndex()&lt;/h3&gt;
 &lt;p&gt;返回数组中满足提供的测试函数的第一个元素的索引，若没有找到对应元素则返回-1&lt;/p&gt;
 &lt;h4 id=&quot;应用场景检索元素是否存在用-1来做判断&quot;&gt;应用场景：检索元素是否存在，用-1来做判断&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2020/12/30/TDzyRx9jIGPhHoW.png&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var array = [5,12,8,130,44]
+array.findIndex(element =&amp;gt; element &amp;gt; 13)
+// 3
+array.findIndex(element =&amp;gt; element &amp;gt; 200)
+// -1
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3 id=&quot;flat&quot;&gt;flat()&lt;/h3&gt;
 &lt;p&gt;用于将嵌套的数组拉平，组成一个新数组
-&lt;code&gt;var newArray = arr.flat([depth]),depth:指定要提取嵌套数组的结构深度，默认	值是1 ,(Infinity，比较特殊，无论嵌套多少层都会转换成1维数组i)&lt;/code&gt;
-&lt;img src=&quot;https://i.loli.net/2020/12/30/bQjTGXu4gypzswB.png&quot; alt=&quot;image.png&quot; /&gt;
-&lt;img src=&quot;https://i.loli.net/2020/12/30/peyzKoLlY2arbhs.png&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+&lt;code&gt;var newArray = arr.flat([depth]),depth:指定要提取嵌套数组的结构深度，默认	值是1 ,(Infinity，比较特殊，无论嵌套多少层都会转换成1维数组i)&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const arr = [0,1,2,[3,4]]
+arr.flat()
+// [0,1,2,3,4]
+var arr2 = [0,1,2,[[[3,4]]]]
+arr2.flat(2)
+// [0,1,2,[3,4]]
+arr2.flat(3)
+// [0,1,2,3,4]
+arr2.flat(Infinity)
+// [0,1,2,3,4,5]
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3 id=&quot;flatmap&quot;&gt;flatMap()&lt;/h3&gt;
-&lt;p&gt;对原数组的每个成员执行一个函数，对返回值组成的数组执行一次flat方法，flatMap只能展开一层数组
-&lt;img src=&quot;https://i.loli.net/2020/12/30/idKQn3jqceUk9LA.png&quot; alt=&quot;image.png&quot; /&gt;
-&lt;img src=&quot;https://i.loli.net/2020/12/30/YMwXKvxda6CBTAo.png&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;对原数组的每个成员执行一个函数，对返回值组成的数组执行一次flat方法，flatMap只能展开一层数组&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var arr = [1,2,3,4];
+arr.map(x =&amp;gt; [x * 2])
+// [[2],[4],[6],[8]]
+arr.flatMap(x =&amp;gt; [x * 2])
+// [2,4,6,8]
+arr.flatMap(x =&amp;gt; [[x * 2]])
+// [[2],[4],[6],[8]]
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3 id=&quot;includes&quot;&gt;includes()&lt;/h3&gt;
-&lt;p&gt;判断一个数组中是否包含一个指定的值
-&lt;img src=&quot;https://i.loli.net/2020/12/30/yLaEHZGeDx2onVc.png&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
-
+&lt;p&gt;判断一个数组中是否包含一个指定的值&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const array = [1,2,3];
+array.includes(2)
+// true
+const pets = ['cat','dog','bat']
+pets.includes('cat')
+// true
+pets.includes('at')
+// false
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&quot;indexof&quot;&gt;indexOf()&lt;/h3&gt;
-&lt;p&gt;返回在数组中可以找到一个给定元素的第一个索引，如果不存在，返回(-1)
-&lt;img src=&quot;https://i.loli.net/2020/12/30/3Xn9blSyMvNi7he.png&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
-
+&lt;p&gt;返回在数组中可以找到一个给定元素的第一个索引，如果不存在，返回(-1)&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var beasts= ['ant','bison','camel','duck','bison']
+beasts.includes('ant')
+// true
+beasts.includes('camel')
+// true
+beasts.indexOf('camel')
+// 2
+beasts.indexOf('bison')
+// 1
+beasts.indexOf('sss')
+// -1
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&quot;lastindexof&quot;&gt;lastIndexOf()&lt;/h3&gt;
-&lt;p&gt;返回指定元素在数组中的最后一个的索引，如果不存在返回-1
-&lt;img src=&quot;https://i.loli.net/2020/12/30/aBQb6d42YsWxqJC.png&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
-
+&lt;p&gt;返回指定元素在数组中的最后一个的索引，如果不存在返回-1&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const animals = ['Dodo','Tiger','Penguin','Dodo']
+animals.lastIndexOf('Dodo')
+// 3
+animals.lastIndexOf('Tiger')
+// 1
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&quot;join&quot;&gt;join()&lt;/h3&gt;
-&lt;p&gt;将一个数组的所有元素连接成一个字符串并返回这个字符串
-&lt;img src=&quot;https://i.loli.net/2020/12/30/bPeCYqxMAUZ9QrE.png&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
-
+&lt;p&gt;将一个数组的所有元素连接成一个字符串并返回这个字符串&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const elements = ['Fire','Air','Water'];
+elements.join()
+// &quot;Fire,Air,Water&quot;
+elements.join('')
+// &quot;FireAirWater&quot;
+elements.join('-')
+// &quot;Fire-Air-Water&quot;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&quot;pop&quot;&gt;pop()&lt;/h3&gt;
-&lt;p&gt;从一个数组中删除并返回最后一个元素，原数组会被改变
-&lt;img src=&quot;https://i.loli.net/2020/12/30/3jlyprzK6OYxhCs.png&quot; alt=&quot;image.png&quot; /&gt;&lt;/p&gt;
-
+&lt;p&gt;从一个数组中删除并返回最后一个元素，原数组会被改变&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var plants = ['broccoli','cauliflower','cabbage','kale','tomato']
+plants.pop() //会改变原数组
+// tomato
+plants
+// ['broccoli','cauliflower','cabbage','kale']
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&quot;reduce&quot;&gt;reduce()&lt;/h3&gt;
 &lt;p&gt;对数组中的每个元素执行一个由您提供的reducer函数，将其结果汇总为单个返回值
 &lt;code&gt;arr.reduce(function(pre,cur) {
@@ -178,7 +235,7 @@ for(const value of iterator) {
 // &quot;a&quot;
 // &quot;b&quot;
 // &quot;c&quot;
-&lt;/code&gt;&lt;/pre&gt;</content><author><name>binn</name></author><category term="基础" /><summary type="html">from() 从类数组对象或者可迭代对象中创建一个新的数组实例（属于浅拷贝） array.form('foo') // ['f','o','o'] array.from('1','2','3') // ['1','2','3'] fill() 用一个固定值填充一个数组中从起始索引到终止索引内的全部元素 array.fill(value,start,end) Value:用来填充数数组元素的值； Start：起始索引，默认是0；可选 End：终止索引，默认为this.length 可选</summary></entry><entry><title type="html">REACT</title><link href="/2020/05/11/react/" rel="alternate" type="text/html" title="REACT" /><published>2020-05-11T00:00:00+08:00</published><updated>2020-05-11T00:00:00+08:00</updated><id>/2020/05/11/react</id><content type="html" xml:base="/2020/05/11/react/">&lt;h3 id=&quot;react的extends的含义&quot;&gt;react的extends的含义：&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;</content><author><name>binn</name></author><category term="基础" /><summary type="html">from() 从类数组对象或者可迭代对象中创建一个新的数组实例（属于浅拷贝） array.form('foo') // ['f','o','o'] array.from('1','2','3') // ['1','2','3'] fill() 用一个固定值填充一个数组中从起始索引到终止索引内的全部元素 array.fill(value,start,end)` 1. Value:用来填充数数组元素的值； 2. Start：起始索引，默认是0；可选 3. End：终止索引，默认为this.length 可选 var array = [1,2,3,4,5] // array.fill(0,2,4) // [1,2,0,0,5] // array.fill(5,1) // [1,5,5,5,5] // array.fill(6) // [6,6,6,6,6]</summary></entry><entry><title type="html">REACT</title><link href="/2020/05/11/react/" rel="alternate" type="text/html" title="REACT" /><published>2020-05-11T00:00:00+08:00</published><updated>2020-05-11T00:00:00+08:00</updated><id>/2020/05/11/react</id><content type="html" xml:base="/2020/05/11/react/">&lt;h3 id=&quot;react的extends的含义&quot;&gt;react的extends的含义：&lt;/h3&gt;
 &lt;p&gt;es6形式的extends React.Component定义的组件&lt;/p&gt;
 
 &lt;h3 id=&quot;react的redux&quot;&gt;react的redux&lt;/h3&gt;
