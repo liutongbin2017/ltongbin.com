@@ -1,8 +1,100 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-01-05T16:14:38+08:00</updated><id>/</id><subtitle>Dark knight's的个人技术博客,专注于web开发,追求前端最完美体验</subtitle><entry><title type="html">JS Array</title><link href="/2021/01/01/array/" rel="alternate" type="text/html" title="JS Array" /><published>2021-01-01T00:00:00+08:00</published><updated>2021-01-01T00:00:00+08:00</updated><id>/2021/01/01/array</id><content type="html" xml:base="/2021/01/01/array/">&lt;h3 id=&quot;from&quot;&gt;from()&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-01-07T10:00:02+08:00</updated><id>/</id><subtitle>Dark knight's的个人技术博客,专注于web开发,追求前端最完美体验</subtitle><entry><title type="html">JS Object</title><link href="/2021/01/06/object/" rel="alternate" type="text/html" title="JS Object" /><published>2021-01-06T00:00:00+08:00</published><updated>2021-01-06T00:00:00+08:00</updated><id>/2021/01/06/object</id><content type="html" xml:base="/2021/01/06/object/">&lt;h3 id=&quot;objectassign&quot;&gt;Object.assign()&lt;/h3&gt;
+&lt;p&gt;该方法用于将所有可枚举属性的值从一个或多个源对象分配到目标对象。它将返回目标对象&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const target = { a: 1, b: 2 };
+const source = { b: 4, c: 5 };
+
+const returnedTarget = Object.assign(target, source);
+console.log(target);
+// expected output: Object { a: 1, b: 4, c: 5 }
+console.log(returnedTarget);
+// expected output: Object { a: 1, b: 4, c: 5 }
+
+`Object.assign()第一级是深拷贝，第二级及其他就变成浅拷贝，因为assign()拷贝的是（可枚举）属性值`
+let obj1 = { a: 0 , b: { c: 0}};
+let obj2 = Object.assign({}, obj1);
+log(JSON.stringify(obj2));
+// { a: 0, b: { c: 0}}
+obj1.a = 1;
+log(JSON.stringify(obj1));
+// { a: 1, b: { c: 0}}
+log(JSON.stringify(obj2));
+// { a: 0, b: { c: 0}}
+
+obj2.a = 2;
+log(JSON.stringify(obj1));
+// { a: 1, b: { c: 0}}
+log(JSON.stringify(obj2));
+// { a: 2, b: { c: 0}}
+
+obj2.b.c = 3;
+log(JSON.stringify(obj1));
+// { a: 1, b: { c: 3}}
+log(JSON.stringify(obj2));
+// { a: 2, b: { c: 3}}
+
+// Deep Clone
+obj1 = { a: 0 , b: { c: 0}};
+let obj3 = JSON.parse(JSON.stringify(obj1));
+obj1.a = 4;
+obj1.b.c = 4;
+log(JSON.stringify(obj3));
+// { a: 0, b: { c: 0}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;objectentries&quot;&gt;Object.entries()&lt;/h3&gt;
+&lt;p&gt;该方法返回一个给定对象自身可枚举属性的键值对数组，其排列与使用for…in循环遍历该对象时返回的顺序一致（区别在于for-in循环还会枚举原型链中的属性）&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const object1 = {
+  a: 'someString',
+  b: 42
+};
+
+for (const [key, value] of object1) {
+  console.log(`${key}: ${value}`);
+}
+// &quot;a: someString&quot;
+// &quot;b: 42&quot;
+
+`Object.entries()返回一个数组，其元素是与直接在object上找到的可枚举属性键值对相对应的数组。属性的顺序与通过手动循环对象的属性值所给出的顺序相同`
+const obj = { foo: 'bar', baz: 42 };
+console.log(Object.entries(obj)); // [ ['foo', 'bar'], ['baz', 42] ]
+
+const obj = { 0: 'a', 1: 'b', 2: 'c' };
+console.log(Object.entries(obj)); // [ ['0', 'a'], ['1', 'b'], ['2', 'c'] ]
+
+Object.entries(obj).forEach(([key, value]) =&amp;gt; {
+console.log(`${key} ${value}`); // &quot;a 5&quot;, &quot;b 7&quot;, &quot;c 9&quot;
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;objectfreeze&quot;&gt;Object.freeze()&lt;/h3&gt;
+&lt;p&gt;该方法可以冻结一个对象。一个被冻结的对象再也不能被修改；冻结了一个对象则不能向这个对象添加属性，不能删除已有属性，不能修改该对象已有属性的可枚举性、可配置性、可写性，以及不能修改已有属性的值。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const obj = {
+  prop: 42
+};
+
+Object.freeze(obj);
+
+obj.prop = 33;
+// Throws an error in strict mode
+
+console.log(obj.prop);
+// expected output: 42
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;objectfromentries&quot;&gt;Object.fromEntries()&lt;/h3&gt;
+&lt;p&gt;把键值对列表转换成一个对象&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// Map转化为Object
+const map = new Map([ ['foo', 'bar'], ['baz', 42] ]);
+const obj = Object.fromEntries(map);
+console.log(obj); // { foo: &quot;bar&quot;, baz: 42 }
+// Array转化为Object
+const arr = [ ['0', 'a'], ['1', 'b'], ['2', 'c'] ];
+const obj = Object.fromEntries(arr);
+console.log(obj); // { 0: &quot;a&quot;, 1: &quot;b&quot;, 2: &quot;c&quot; }
+
+
+&lt;/code&gt;&lt;/pre&gt;</content><author><name>binn</name></author><category term="基础" /><summary type="html">Object.assign() 该方法用于将所有可枚举属性的值从一个或多个源对象分配到目标对象。它将返回目标对象 ```javascript const target = { a: 1, b: 2 }; const source = { b: 4, c: 5 };</summary></entry><entry><title type="html">JS Array</title><link href="/2021/01/01/array/" rel="alternate" type="text/html" title="JS Array" /><published>2021-01-01T00:00:00+08:00</published><updated>2021-01-01T00:00:00+08:00</updated><id>/2021/01/01/array</id><content type="html" xml:base="/2021/01/01/array/">&lt;h3 id=&quot;from&quot;&gt;from()&lt;/h3&gt;
 &lt;p&gt;从类数组对象或者可迭代对象中创建一个新的数组实例（属于浅拷贝）&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;    array.form('foo')
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;    Array.form('foo')
     // ['f','o','o']
-    array.from('1','2','3')
+    Array.from('1','2','3')
     // ['1','2','3']
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&quot;fill&quot;&gt;fill()&lt;/h3&gt;
@@ -235,7 +327,7 @@ for(const value of iterator) {
 // &quot;a&quot;
 // &quot;b&quot;
 // &quot;c&quot;
-&lt;/code&gt;&lt;/pre&gt;</content><author><name>binn</name></author><category term="基础" /><summary type="html">from() 从类数组对象或者可迭代对象中创建一个新的数组实例（属于浅拷贝） array.form('foo') // ['f','o','o'] array.from('1','2','3') // ['1','2','3'] fill() 用一个固定值填充一个数组中从起始索引到终止索引内的全部元素 array.fill(value,start,end)` 1. Value:用来填充数数组元素的值； 2. Start：起始索引，默认是0；可选 3. End：终止索引，默认为this.length 可选 var array = [1,2,3,4,5] // array.fill(0,2,4) // [1,2,0,0,5] // array.fill(5,1) // [1,5,5,5,5] // array.fill(6) // [6,6,6,6,6]</summary></entry><entry><title type="html">REACT</title><link href="/2020/05/11/react/" rel="alternate" type="text/html" title="REACT" /><published>2020-05-11T00:00:00+08:00</published><updated>2020-05-11T00:00:00+08:00</updated><id>/2020/05/11/react</id><content type="html" xml:base="/2020/05/11/react/">&lt;h3 id=&quot;react的extends的含义&quot;&gt;react的extends的含义：&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;</content><author><name>binn</name></author><category term="基础" /><summary type="html">from() 从类数组对象或者可迭代对象中创建一个新的数组实例（属于浅拷贝） Array.form('foo') // ['f','o','o'] Array.from('1','2','3') // ['1','2','3'] fill() 用一个固定值填充一个数组中从起始索引到终止索引内的全部元素 array.fill(value,start,end)` 1. Value:用来填充数数组元素的值； 2. Start：起始索引，默认是0；可选 3. End：终止索引，默认为this.length 可选 var array = [1,2,3,4,5] // array.fill(0,2,4) // [1,2,0,0,5] // array.fill(5,1) // [1,5,5,5,5] // array.fill(6) // [6,6,6,6,6]</summary></entry><entry><title type="html">REACT</title><link href="/2020/05/11/react/" rel="alternate" type="text/html" title="REACT" /><published>2020-05-11T00:00:00+08:00</published><updated>2020-05-11T00:00:00+08:00</updated><id>/2020/05/11/react</id><content type="html" xml:base="/2020/05/11/react/">&lt;h3 id=&quot;react的extends的含义&quot;&gt;react的extends的含义：&lt;/h3&gt;
 &lt;p&gt;es6形式的extends React.Component定义的组件&lt;/p&gt;
 
 &lt;h3 id=&quot;react的redux&quot;&gt;react的redux&lt;/h3&gt;
@@ -2440,525 +2532,4 @@ var sortArrayByParity = function(A) {
     }
 }
 
-&lt;/code&gt;&lt;/pre&gt;</content><author><name>binn</name></author><category term="面试" /><category term="基础" /><category term="LeetCode" /><summary type="html">本文将LeetCode刷过的题目进行简单的总结和记录，便于自己进行复习，同时将看到的解题思路进行汇总让其他的小伙伴能够理解。</summary></entry><entry><title type="html">LeetCode刷题总结(简单版二)</title><link href="/leetcode/2019/09/04/leetcode-two/" rel="alternate" type="text/html" title="LeetCode刷题总结(简单版二)" /><published>2019-09-04T00:00:00+08:00</published><updated>2019-09-04T00:00:00+08:00</updated><id>/leetcode/2019/09/04/leetcode-two</id><content type="html" xml:base="/leetcode/2019/09/04/leetcode-two/">&lt;p&gt;本文将LeetCode刷过的题目进行简单的总结和记录，便于自己进行复习，同时将看到的解题思路进行汇总让其他的小伙伴能够理解。&lt;/p&gt;
-
-&lt;h3 id=&quot;1有趣的电影&quot;&gt;1.有趣的电影&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/not-boring-movies/&quot;&gt;有趣的电影&lt;/a&gt;：
-某城市开了一家新的电影院，吸引了很多人过来看电影。该电影院特别注意用户体验，专门有个 LED显示板做电影推荐，上面公布着影评和相关电影描述。
-作为该电影院的信息部主管，您需要编写一个 SQL查询，找出所有影片描述为非 boring (不无聊) 的并且 id 为奇数 的影片，结果请按等级 rating 排列。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;例如，下表 cinema:
-
-+---------+-----------+--------------+-----------+
-|   id    | movie     |  description |  rating   |
-+---------+-----------+--------------+-----------+
-|   1     | War       |   great 3D   |   8.9     |
-|   2     | Science   |   fiction    |   8.5     |
-|   3     | irish     |   boring     |   6.2     |
-|   4     | Ice song  |   Fantacy    |   8.6     |
-|   5     | House card|   Interesting|   9.1     |
-+---------+-----------+--------------+-----------+
-对于上面的例子，则正确的输出是为：
-
-+---------+-----------+--------------+-----------+
-|   id    | movie     |  description |  rating   |
-+---------+-----------+--------------+-----------+
-|   5     | House card|   Interesting|   9.1     |
-|   1     | War       |   great 3D   |   8.9     |
-+---------+-----------+--------------+-----------+
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&quot;答案一&quot;&gt;答案一：&lt;/h4&gt;
-&lt;p&gt;我们可以使用 mod(id,2)=1 来确定奇数 id，然后添加 description != ‘boring’ 来解决问题。
-官方题解：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-MySQL&quot;&gt;select * 
-from cinema
-where mod(id,2) != 0 and description != 'boring'
-order by rating desc
-;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&quot;答案二&quot;&gt;答案二：&lt;/h4&gt;
-&lt;p&gt;如何确定奇数除了使用mod函数还有一个比较巧妙的方法， id&amp;amp;1按位与,该操作会将数字转为32位的二进制进行比较&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;//id=1
-0001
-0001
-
-0001 结果为1
-
-//id=2
-0010
-0001 
-
-0000 结果为0
-
-//id=3
-0011
-0001
-
-0001 结果为1
-
-//id=4
-0010
-0001
-
-0000 结果为0
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;因为1的前31位都是0，跟0进行与操作肯定是0，主要在于最后一位如果是奇数肯定能得到1，如果是0肯定是0
-所以答案也可以写成这样&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;select * 
-from cinema 
-where description&amp;lt;&amp;gt;'boring' and id&amp;amp;1 
-order by rating desc
-;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;2汉明距离&quot;&gt;2.汉明距离&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/hamming-distance/&quot;&gt;汉明距离&lt;/a&gt;:
-两个整数之间的汉明距离指的是这两个数字对应二进制位不同的位置的数目。
-给出两个整数 x 和 y，计算它们之间的汉明距离。
-注意：
-0 ≤ x, y &amp;lt; 231.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;示例:
-
-输入: x = 1, y = 4
-
-输出: 2
-
-解释:
-1   (0 0 0 1)
-4   (0 1 0 0)
-       ↑   ↑
-
-上面的箭头指出了对应二进制位不同的位置。
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&quot;答案一-1&quot;&gt;答案一：&lt;/h4&gt;
-&lt;p&gt;分析其实本题的意图就是将x，y转为二进制后，记录对应位置值不相同的位置数量， 所以我们就想到了按位异或。x^y后得到一个数值，需要将这个值转为二进制再去统计数量。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;/**
- * @param {number} x
- * @param {number} y
- * @return {number}
- */
-var hammingDistance = function(x, y) {
-  let z = x^y;
-  let num = 0;
-  let bin = z.toString(2);
-  for(let i = 0; i &amp;lt; bin.length; i++) {
-      if(bin.charAt(i) === '1') {
-          num++;
-      }
-  }
-    
-    return num;
-};
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;3翻转二叉树&quot;&gt;3.翻转二叉树&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/invert-binary-tree/&quot;&gt;翻转二叉树&lt;/a&gt;:
-翻转一棵二叉树。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;示例：
-
-输入：
-
-     4
-   /   \
-  2     7
- / \   / \
-1   3 6   9
-输出：
-
-     4
-   /   \
-  7     2
- / \   / \
-9   6 3   1
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&quot;答案一-2&quot;&gt;答案一&lt;/h4&gt;
-&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
- * }
- */
-class Solution {
-    public TreeNode invertTree(TreeNode root) {
-        if(root == null) {
-            return null;
-        }
-        
-        TreeNode right = invertTree(root.right);
-        TreeNode left = invertTree(root.left);
-        
-        root.left = right;
-        root.right = left;
-        return root;
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&quot;答案二-1&quot;&gt;答案二&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;/**
- * Definition for a binary tree node.
- * function TreeNode(val) {
- *     this.val = val;
- *     this.left = this.right = null;
- * }
- */
-/**
- * @param {TreeNode} root
- * @return {TreeNode}
- */
-var invertTree = function(root) {
-    if(root !== null) {
-        [root.left, root.right] = [invertTree(root.right), invertTree(root.left)]
-    }
-    return root;
-};
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;4机器人能否返回原点&quot;&gt;4.机器人能否返回原点&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/robot-return-to-origin/&quot;&gt;机器人能否返回原点&lt;/a&gt;：
-在二维平面上，有一个机器人从原点 (0, 0) 开始。给出它的移动顺序，判断这个机器人在完成移动后是否在 (0, 0) 处结束。
-移动顺序由字符串表示。字符 move[i] 表示其第 i 次移动。机器人的有效动作有 R（右），L（左），U（上）和 D（下）。如果机器人在完成所有动作后返回原点，则返回 true。否则，返回 false。
-注意：机器人“面朝”的方向无关紧要。 “R” 将始终使机器人向右移动一次，“L” 将始终向左移动等。此外，假设每次移动机器人的移动幅度相同。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;示例 1:
-
-输入: &quot;UD&quot;
-输出: true
-解释：机器人向上移动一次，然后向下移动一次。所有动作都具有相同的幅度，因此它最终回到它开始的原点。因此，我们返回 true。
-示例 2:
-
-输入: &quot;LL&quot;
-输出: false
-解释：机器人向左移动两次。它最终位于原点的左侧，距原点有两次 “移动” 的距离。我们返回 false，因为它在移动结束时没有返回原点。
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&quot;答案一-3&quot;&gt;答案一&lt;/h4&gt;
-&lt;p&gt;分析：是否回到原点，取决于上下移动的步数相等，左右移动的步数相等。
-所以最简单的方法就是去计数&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;/**
- * @param {string} moves
- * @return {boolean}
- */
-var judgeCircle = function(moves) {
-     let u = 0;
-        let d = 0;
-        let r = 0;
-        let l = 0;
-        let movesArr = moves.split(&quot;&quot;);
-        
-        movesArr.forEach(function(val) {
-            if(val === 'U') {
-                u++;
-            }
-            if(val === 'D') {
-                d++;
-            }
-            if(val === 'L') {
-                l++;
-            }
-            if(val === 'R') {
-                r++;
-            }
-            
-        });
-        return u === d &amp;amp;&amp;amp; r === l;
-};
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&quot;答案二-2&quot;&gt;答案二&lt;/h4&gt;
-&lt;p&gt;比第一个方法要巧妙一些，不去计数了但是还是要判断步数相等，通过切割关键点来得到数组，如果关键点数量一样数组的长度相同。&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;
-/**
- * @param {string} moves
- * @return {boolean}
- */
-var judgeCircle = function(moves) {
-  return moves.split('L').length === moves.split('R').length &amp;amp;&amp;amp; moves.split('U').length === moves.split('D').length
-};
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;5高度检查器&quot;&gt;5.高度检查器&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/height-checker/&quot;&gt;高度检查器&lt;/a&gt;:
-学校在拍年度纪念照时，一般要求学生按照 非递减 的高度顺序排列。
-请你返回至少有多少个学生没有站在正确位置数量。该人数指的是：能让所有学生以 非递减 高度排列的必要移动人数。&lt;/p&gt;
-
-&lt;p&gt;提示：&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;1 &amp;lt;= heights.length &amp;lt;= 100&lt;/li&gt;
-  &lt;li&gt;1 &amp;lt;= heights[i] &amp;lt;= 100&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt;示例：
-
-输入：[1,1,4,2,1,3]
-输出：3
-解释：
-高度为 4、3 和最后一个 1 的学生，没有站在正确的位置。
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&quot;答案一-4&quot;&gt;答案一&lt;/h4&gt;
-&lt;p&gt;分析：将数组重新排序后得到新的数组去判断同一个位置的值是否相等，不想等计数+1.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;/**
- * @param {number[]} heights
- * @return {number}
- */
-var heightChecker = function(heights) {    
-    var temp = heights.concat().sort((a, b) =&amp;gt; (a - b) );
-    var count = 0;
-
-    for(var i = 0; i &amp;lt; heights.length; i++) {
-        if(heights[i] != temp[i]) {
-            count++;   
-        }
-    }
-    
-    return count;
-};
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;6二叉树的最大深度&quot;&gt;6.二叉树的最大深度&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/&quot;&gt;二叉树的最大深度&lt;/a&gt;:
-给定一个二叉树，找出其最大深度。
-二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。
-说明: 叶子节点是指没有子节点的节点。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;示例：
-给定二叉树 [3,9,20,null,null,15,7]，
-
-    3
-   / \
-  9  20
-    /  \
-   15   7
-
-返回它的最大深度 3 。
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&quot;答案一-5&quot;&gt;答案一&lt;/h4&gt;
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;/**
- * Definition for a binary tree node.
- * function TreeNode(val) {
- *     this.val = val;
- *     this.left = this.right = null;
- * }
- */
-/**
- * @param {TreeNode} root
- * @return {number}
- */
-var maxDepth = function(root) {
-    if(root == null) {
-        return 0;
-    } else {
-        let left = maxDepth(root.left);
-        let right = maxDepth(root.right);
-        return Math.max(left, right) + 1;
-    }
-    
-};
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;7交换工资&quot;&gt;7.交换工资&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/swap-salary/&quot;&gt;交换工资&lt;/a&gt;
-给定一个 salary 表，如下所示，有 m = 男性 和 f = 女性 的值。交换所有的 f 和 m 值（例如，将所有 f 值更改为 m，反之亦然）。要求只使用一个更新（Update）语句，并且没有中间的临时表。
-注意，您必只能写一个 Update 语句，请不要编写任何 Select 语句。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;
-
-例如：
-
-| id | name | sex | salary |
-|----|------|-----|--------|
-| 1  | A    | m   | 2500   |
-| 2  | B    | f   | 1500   |
-| 3  | C    | m   | 5500   |
-| 4  | D    | f   | 500    |
-运行你所编写的更新语句之后，将会得到以下表:
-
-| id | name | sex | salary |
-|----|------|-----|--------|
-| 1  | A    | f   | 2500   |
-| 2  | B    | m   | 1500   |
-| 3  | C    | f   | 5500   |
-| 4  | D    | m   | 500    |
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&quot;答案一-6&quot;&gt;答案一&lt;/h4&gt;
-&lt;pre&gt;&lt;code class=&quot;language-mysql&quot;&gt;UPDATE salary 
-SET sex = CASE sex
-        WHEN 'm' THEN 'f'
-        ELSE 'm'
-    END;
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;8有序数组的平方&quot;&gt;8.有序数组的平方&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/squares-of-a-sorted-array/&quot;&gt;有序数组的平方&lt;/a&gt;:
-给定一个按非递减顺序排序的整数数组 A，返回每个数字的平方组成的新数组，要求也按非递减顺序排序。&lt;/p&gt;
-
-&lt;p&gt;提示：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;1 &amp;lt;= A.length &amp;lt;= 10000&lt;/li&gt;
-  &lt;li&gt;-10000 &amp;lt;= A[i] &amp;lt;= 10000&lt;/li&gt;
-  &lt;li&gt;A 已按非递减顺序排序。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt;示例 1：
-
-输入：[-4,-1,0,3,10]
-输出：[0,1,9,16,100]
-示例 2：
-
-输入：[-7,-3,2,3,11]
-输出：[4,9,9,49,121]
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&quot;答案一-7&quot;&gt;答案一&lt;/h4&gt;
-&lt;p&gt;分析：因为是从小打大，其中可以包含负数，所以取平方后两头应该最大。之所以使用&lt;code&gt;unshift&lt;/code&gt;是因为双向指针来获取，拿到的一开始的值肯定是最大的后面越来越小&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;
-/**
- * @param {number[]} A
- * @return {number[]}
- */
-var sortedSquares = function(A) {
-    let count = A.length;
-    let result = [];
-    let i = 0;
-    let j = count -1;
-    
-    while(i &amp;lt;= j) {
-        let left = Math.pow(A[i], 2);
-        let right = Math.pow(A[j], 2);
-        
-        if(left &amp;gt; right) {
-            result.unshift(left);
-            i++;
-        } else {
-            result.unshift(right);
-            j--;
-        }
-        
-    }
-
-    return result;
-    
-};
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;9增减字符串匹配&quot;&gt;9.增减字符串匹配&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/di-string-match/&quot;&gt;增减字符串匹配&lt;/a&gt;:
-给定只含 ”I”（增大）或 “D”（减小）的字符串 S ，令 N = S.length。
-返回 [0, 1, …, N] 的任意排列 A 使得对于所有 i = 0, …, N-1，都有：
-如果 S[i] == “I”，那么 A[i] &amp;lt; A[i+1]
-如果 S[i] == “D”，那么 A[i] &amp;gt; A[i+1]&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;示例 1：
-
-输出：&quot;IDID&quot;
-输出：[0,4,1,3,2]
-示例 2：
-
-输出：&quot;III&quot;
-输出：[0,1,2,3]
-示例 3：
-
-输出：&quot;DDI&quot;
-输出：[3,2,0,1]
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&quot;答案一-8&quot;&gt;答案一&lt;/h4&gt;
-&lt;p&gt;分析：根据结果的分析是所有的I从0开始依次递增，所有D从N开始依次递减&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;
-/**
- * @param {string} S
- * @return {number[]}
- */
-var diStringMatch = function(S) {
-    let len = S.length;
-    let imin = 0, dmax = len;
-    let result = new Array(len + 1);
-    for(let i = 0; i &amp;lt;= len; i++) {
-        if(S.charAt(i) === 'I') {
-            result[i] = imin;
-            imin++;
-        } else {
-            result[i] = dmax;
-            dmax--;
-        }
-    }
-    
-    return result;
-    
-};
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&quot;答案二-3&quot;&gt;答案二&lt;/h4&gt;
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;分析：乍一看这个一行的解法不是特别明白，但是分析示例答案可以看出无论给出的字符串是什么样的最后都可以补充一位，可以补I也可以补D,对于结果是没有影响的
-所以先不补位置。然后逢I加一 逢D减一。
-var diStringMatch = function(S) {
-    let a = 0,b = S.length;
-    return (S+S[S.length - 1]).split('').map((x) =&amp;gt; x=='I'?a++:b--)
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;10组合两个表&quot;&gt;10.组合两个表&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/combine-two-tables/&quot;&gt;组合两个表&lt;/a&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;表1: Person
-
-+-------------+---------+
-| 列名         | 类型     |
-+-------------+---------+
-| PersonId    | int     |
-| FirstName   | varchar |
-| LastName    | varchar |
-+-------------+---------+
-PersonId 是上表主键
-
-
-表2: Address
-
-+-------------+---------+
-| 列名         | 类型    |
-+-------------+---------+
-| AddressId   | int     |
-| PersonId    | int     |
-| City        | varchar |
-| State       | varchar |
-+-------------+---------+
-AddressId 是上表主键
-
-
-编写一个 SQL 查询，满足条件：无论 person 是否有地址信息，都需要基于上述两表提供 person 的以下信息：
-FirstName, LastName, City, State
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&quot;答案一-9&quot;&gt;答案一&lt;/h4&gt;
-&lt;p&gt;因为表 Address 中的 personId 是表 Person 的外关键字，所以我们可以连接这两个表来获取一个人的地址信息。
-考虑到可能不是每个人都有地址信息，我们应该使用 outer join 而不是默认的 inner join。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;select FirstName, LastName, City, State
-from Person left join Address
-on Person.PersonId = Address.PersonId
-;
 &lt;/code&gt;&lt;/pre&gt;</content><author><name>binn</name></author><category term="面试" /><category term="基础" /><category term="LeetCode" /><summary type="html">本文将LeetCode刷过的题目进行简单的总结和记录，便于自己进行复习，同时将看到的解题思路进行汇总让其他的小伙伴能够理解。</summary></entry></feed>

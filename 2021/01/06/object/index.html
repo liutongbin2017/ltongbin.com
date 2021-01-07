@@ -20,9 +20,9 @@
 
     <link rel="shortcut icon" href="https://i.loli.net/2020/04/03/H3sMaG5EJktCv6o.jpg">
 
-    <title>Binn's Blog</title>
+    <title>JS Object - Binn's Blog</title>
 
-    <link rel="canonical" href="https://ltongbin.com/page5/">
+    <link rel="canonical" href="https://ltongbin.com/2021/01/06/object/">
 
     <!-- Bootstrap Core CSS -->
     <link href="https://cdn.darknights.cn/assets/styles/bootstrap.min.css" rel="stylesheet">
@@ -180,9 +180,9 @@
     <!-- Page Header -->
 <style type="text/css">
     header.intro-header{
-        /* background-image: url('https://cdn.darknights.cn/assets/https://i.loli.net/2020/04/01/fLMBqjQmHdbGOT9.jpg ') */
+        /* background-image: url('https://cdn.darknights.cn/assets/https://i.loli.net/2020/04/01/wgEhj9MlWeQ1kOv.jpg ') */
         /* background-image: url(' ') */
-        background-image: url('https://i.loli.net/2020/04/01/fLMBqjQmHdbGOT9.jpg ')
+        background-image: url('https://i.loli.net/2020/04/01/wgEhj9MlWeQ1kOv.jpg ')
 
 
     }
@@ -190,339 +190,207 @@
 
 
 
-<header class="intro-header">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading"  >
-                    <h1>Binn</h1>
-                    <!--<hr class="small">-->
-                    <span class="subheading">认真过好每一天</span>
+
+
+    <header class="intro-header" >
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                            <a class="tag" href="/tags/#基础" title="基础">基础</a>
+                            
+                        </div>
+                        <h1>JS Object</h1>
+                        
+                        
+                        <h2 class="subheading">object</h2>
+                        
+                        <span class="meta">Posted by binn on January 6, 2021</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
 
 
 
 
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-
-        <!-- Post Container -->
-        <div class="
-                col-lg-8 col-lg-offset-2
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-1
                 col-md-8 col-md-offset-1
                 col-sm-12
                 col-xs-12
-                 post-container col-lg-offset-1 
-            ">
-            
-<div class="post-preview">
-    <a href="/%E8%AF%BB%E4%B9%A6%E6%80%BB%E7%BB%93/2017/12/20/read-book-web/">
-        <h2 class="post-title">
-            高性能网站建设指南
-        </h2>
-        
-        <h3 class="post-subtitle">
-            读书《高性能网站建设指南》总结
-        </h3>
-        
-        <div class="post-content-preview">
-            高性能网站建设指南-前端工程师技能精髓
+                post-container">
+				<h3 id="objectassign">Object.assign()</h3>
+<p>该方法用于将所有可枚举属性的值从一个或多个源对象分配到目标对象。它将返回目标对象</p>
+<pre><code class="language-javascript">const target = { a: 1, b: 2 };
+const source = { b: 4, c: 5 };
 
-减少HTTP请求
-性能黄金法则提示了只有10%~20%响应时间花在了HTML文档上其他都用在了加载各种组件包括（图片，样式表，脚本，falsh）进行的HTTP请求上。因此改善响应时间的最简单途径就是减少组件数量，并由此减少请求数量
+const returnedTarget = Object.assign(target, source);
+console.log(target);
+// expected output: Object { a: 1, b: 4, c: 5 }
+console.log(returnedTarget);
+// expected output: Object { a: 1, b: 4, c: 5 }
 
-可以以下通过方式
+`Object.assign()第一级是深拷贝，第二级及其他就变成浅拷贝，因为assign()拷贝的是（可枚举）属性值`
+let obj1 = { a: 0 , b: { c: 0}};
+let obj2 = Object.assign({}, obj1);
+log(JSON.stringify(obj2));
+// { a: 0, b: { c: 0}}
+obj1.a = 1;
+log(JSON.stringify(obj1));
+// { a: 1, b: { c: 0}}
+log(JSON.stringify(obj2));
+// { a: 0, b: { c: 0}}
 
-  CSS Sprites
+obj2.a = 2;
+log(JSON.stringify(obj1));
+// { a: 1, b: { c: 0}}
+log(JSON.stringify(obj2));
+// { a: 2, b: { c: 0}}
 
+obj2.b.c = 3;
+log(JSON.stringify(obj1));
+// { a: 1, b: { c: 3}}
+log(JSON.stringify(obj2));
+// { a: 2, b: { c: 3}}
 
+// Deep Clone
+obj1 = { a: 0 , b: { c: 0}};
+let obj3 = JSON.parse(JSON.stringify(obj1));
+obj1.a = 4;
+obj1.b.c = 4;
+log(JSON.stringify(obj3));
+// { a: 0, b: { c: 0}}
+</code></pre>
+<h3 id="objectentries">Object.entries()</h3>
+<p>该方法返回一个给定对象自身可枚举属性的键值对数组，其排列与使用for…in循环遍历该对象时返回的顺序一致（区别在于for-in循环还会枚举原型链中的属性）</p>
+<pre><code class="language-javascript">const object1 = {
+  a: 'someString',
+  b: 42
+};
 
-  内联图片 data:URL
+for (const [key, value] of object1) {
+  console.log(`${key}: ${value}`);
+}
+// "a: someString"
+// "b: 42"
 
+`Object.entries()返回一个数组，其元素是与直接在object上找到的可枚举属性键值对相对应的数组。属性的顺序与通过手动循环对象的属性值所给出的顺序相同`
+const obj = { foo: 'bar', baz: 42 };
+console.log(Object.entries(obj)); // [ ['foo', 'bar'], ['baz', 42] ]
 
+const obj = { 0: 'a', 1: 'b', 2: 'c' };
+console.log(Object.entries(obj)); // [ ['0', 'a'], ['1', 'b'], ['2', 'c'] ]
 
-  合并脚本和样式表
+Object.entries(obj).forEach(([key, value]) =&gt; {
+console.log(`${key} ${value}`); // "a 5", "b 7", "c 9"
+});
+</code></pre>
+<h3 id="objectfreeze">Object.freeze()</h3>
+<p>该方法可以冻结一个对象。一个被冻结的对象再也不能被修改；冻结了一个对象则不能向这个对象添加属性，不能删除已有属性，不能修改该对象已有属性的可枚举性、可配置性、可写性，以及不能修改已有属性的值。</p>
+<pre><code class="language-javascript">const obj = {
+  prop: 42
+};
 
+Object.freeze(obj);
 
-...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by binn on 2017-12-20
-    </p>
-    <!--<p class="post-meta"></p>December 20, 2017-->
-</div>
-<hr>
+obj.prop = 33;
+// Throws an error in strict mode
 
-<div class="post-preview">
-    <a href="/js%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2017/11/20/js-generator/">
-        <h2 class="post-title">
-            Generator函数的含义和用法
-        </h2>
-        
-        <h3 class="post-subtitle">
-            ES6重点记录
-        </h3>
-        
-        <div class="post-content-preview">
-            同步和异步
-要了解generator首先需要说一下异步和同步，大家都知道，Javascript的语言执行环境是单线程（Single thread）.所谓单线程，就是只一次只能完成一个任务如果有多个任务就需要排队，前面一个任务完成，再执行后面一个任务，一次类推。
-这种做法
-
-  
-    好处是实现起来比较简单，执行环境相对单纯.
-    坏处是只要有一个任务耗时很长，后面的任务都必须排队等着...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by binn on 2017-11-20
-    </p>
-    <!--<p class="post-meta"></p>November 20, 2017-->
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/js%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2017/11/16/lodash-one/">
-        <h2 class="post-title">
-            Lodash.js源码阅读分析（一）
-        </h2>
-        
-        <h3 class="post-subtitle">
-            对于lodash的源码进行分析解读
-        </h3>
-        
-        <div class="post-content-preview">
-            Lodash.js源码阅读分析（一）
-通过详细阅读lodash的源码，学习代码风格同时补充基础。
-
-文章参考
-
-  JavaScript: The less known parts
-  JS 的整型你懂了吗？
-
-
-延伸阅读
-
-  每一个JavaScript开发者应该了解的浮点知识
-  Numbers in JavaScript
+console.log(obj.prop);
+// expected output: 42
+</code></pre>
+<h3 id="objectfromentries">Object.fromEntries()</h3>
+<p>把键值对列表转换成一个对象</p>
+<pre><code class="language-javascript">// Map转化为Object
+const map = new Map([ ['foo', 'bar'], ['baz', 42] ]);
+const obj = Object.fromEntries(map);
+console.log(obj); // { foo: "bar", baz: 42 }
+// Array转化为Object
+const arr = [ ['0', 'a'], ['1', 'b'], ['2', 'c'] ];
+const obj = Object.fromEntries(arr);
+console.log(obj); // { 0: "a", 1: "b", 2: "c" }
 
 
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by binn on 2017-11-16
-    </p>
-    <!--<p class="post-meta"></p>November 16, 2017-->
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/%E7%94%9F%E4%BA%A7%E5%B7%A5%E5%85%B7/2017/11/15/sublime-quick/">
-        <h2 class="post-title">
-            SublimeText快捷键
-        </h2>
-        
-        <h3 class="post-subtitle">
-            SublimeText快捷键总结工欲善其事必先利其器快捷键总结
-        </h3>
-        
-        <div class="post-content-preview">
-            Sublime Text 2 - 实用快捷键 (Mac OS X)
-
-打开/前往
+</code></pre>
 
 
-  
-    
-      ⌘T
-      前往文件
-    
-    
-      ⌘⌃P
-      前往项目
-    
-    
-      ⌘R
-      前往 method
-    
-    
-      ⌘⇧P
-      命令提示
-    
-    
-      ⌃G
-      前往行
-...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by binn on 2017-11-15
-    </p>
-    <!--<p class="post-meta"></p>November 15, 2017-->
-</div>
-<hr>
+                <hr>
 
-<div class="post-preview">
-    <a href="/%E7%94%9F%E4%BA%A7%E5%B7%A5%E5%85%B7/2017/11/15/idea-quick/">
-        <h2 class="post-title">
-            IDEA快捷键
-        </h2>
-        
-        <h3 class="post-subtitle">
-            熟悉IDEA快捷键工欲善其事必先利其器快捷键总结Mac版
-        </h3>
-        
-        <div class="post-content-preview">
-            常用快捷键
-
-  Command + Alt + L： 格式化代码
-  Command + Alt + I： 将选中的代码进行自动缩进编排，这个功能在编辑JSP文件时也可以工作
-  Command + Alt + o： 优化导入的类和包(去掉无用的import语句)
-  Command + /： 注释 //
-  Command + shift + /： 注释 /**/
-  Ctrl + sh...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by binn on 2017-11-15
-    </p>
-    <!--<p class="post-meta"></p>November 15, 2017-->
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/%E7%94%9F%E4%BA%A7%E5%B7%A5%E5%85%B7/2017/11/15/quick-key/">
-        <h2 class="post-title">
-            Visual Studio快捷键
-        </h2>
-        
-        <h3 class="post-subtitle">
-            工欲善其事必先利其器快捷键总结
-        </h3>
-        
-        <div class="post-content-preview">
-            工欲善其事必先利其器快捷键总结
-
-项目相关的快捷键
-
-Ctrl + Shift + B = 生成项目
-
-Ctrl + Alt + L = 显示Solution Explorer（解决方案资源管理器）
-
-Shift + Alt+ C = 添加新类
-
-Shift + Alt + A = 添加新项目到项目
-
-编辑相关的键盘快捷键
-
-Ctrl + Enter = 在当前行插入空行
-
-Ctrl + S...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by binn on 2017-11-15
-    </p>
-    <!--<p class="post-meta"></p>November 15, 2017-->
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/js%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2017/11/01/js-base-number/">
-        <h2 class="post-title">
-            javascript的的最大安全数
-        </h2>
-        
-        <h3 class="post-subtitle">
-            javascript基础知识
-        </h3>
-        
-        <div class="post-content-preview">
-            JS 中的最大安全整数
-JS中所有的数字类型存储都是双精度浮点数浮点数并不是能够精确表示范围内的所有数的， 虽然 double 浮点型的范围看上去很大: 2.23x10^(-308) ~ 1.79x10^308。 可以表示的最大整数可以很大，但能够精确表示，使用算数运算的并没有这么大。
-
-例如下面会报错
-console.log(0.1 + 0.2)
-//output: 0.300000000...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by binn on 2017-11-01
-    </p>
-    <!--<p class="post-meta"></p>November 1, 2017-->
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/js%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2017/11/01/bin-operate/">
-        <h2 class="post-title">
-            javascript的位操作
-        </h2>
-        
-        <h3 class="post-subtitle">
-            在javascript中的位操作涉及二进制的处理
-        </h3>
-        
-        <div class="post-content-preview">
-            关于javascript中的~操作
-
-参考文章中有一道面试题,尽管文章已经有了一部分解释但是还有一些点不够明确在此在进行一次分析
-
-
-  !~location.href.search(‘abc’)
-
-
-首先再次回顾一下js中的位运算
-
-
-  &amp; 与
-  | 或
-  ~ 非
-  ^ 异或
-  &lt;&lt; 左移
-  &gt;&gt; 算数右移(有符号右移)
-  &gt;&gt;&g...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by binn on 2017-11-01
-    </p>
-    <!--<p class="post-meta"></p>November 1, 2017-->
-</div>
-<hr>
-
-
-
-
-<ul class="pager">
+                <ul class="pager">
     
     <li class="previous">
-        <a href="/page4">&larr; Newer Posts</a>
+        <a href="/2021/01/01/array/" data-toggle="tooltip"
+            data-placement="top" title="JS Array">&larr; Previous Post</a>
     </li>
     
-    
-    <li class="next">
-        <a href="/page6">Older Posts &rarr;</a>
-    </li>
     
 </ul>
 
-        </div>
-        <!-- Sidebar Container -->
-        
+
+
+
+<!-- disqus 评论框 start -->
+<div class="comment">
+    <div id="disqus_thread" data-thread-key="/2021/01/06/object" data-title="JS Object"
+        data-url="https://ltongbin.com/2021/01/06/object/"></div>
+    <script>
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        /*
+         var disqus_config = function () {
+         this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+         this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+         };
+         */
+        (function () { // DON'T EDIT BELOW THIS LINE
+            var d = document,
+                s = d.createElement('script');
+            s.src = 'https://iori-1.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+</div>
+<!-- disqus 评论框 end -->
+
+
+
+
+
+
+
+
+
+            </div>
+
+            <!-- Sidebar Container -->
             
+
+
+
+
+
 <div class="
                 col-lg-3 col-lg-offset-0
                 col-md-3 col-md-offset-0
                 col-sm-12
                 col-xs-12
                 sidebar-container
+                hidden-xs
+                hidden-sm
             ">
     <!-- Search Container -->
     <div class="hidden-xs">
@@ -535,272 +403,202 @@ console.log(0.1 + 0.2)
         </div>
     </div>
 
-    <!-- Featured Tags -->
-    
-    <section>
-        <hr class="hidden-sm hidden-xs">
-        <h5><a href="/tags/">FEATURED TAGS</a></h5>
-        <div class="tags">
-            
-            
-            <a href="/tags/#博客搭建" title="博客搭建" rel="2">
-                博客搭建
-            </a>
-            
-            
-            
-            <a href="/tags/#JavaScript" title="JavaScript" rel="3">
-                JavaScript
-            </a>
-            
-            
-            
-            <a href="/tags/#jekyll" title="jekyll" rel="1">
-                jekyll
-            </a>
-            
-            
-            
-            <a href="/tags/#interview" title="interview" rel="1">
-                interview
-            </a>
-            
-            
-            
-            <a href="/tags/#工具" title="工具" rel="5">
-                工具
-            </a>
-            
-            
-            
-            <a href="/tags/#git" title="git" rel="3">
-                git
-            </a>
-            
-            
-            
-            <a href="/tags/#娱乐" title="娱乐" rel="1">
-                娱乐
-            </a>
-            
-            
-            
-            <a href="/tags/#html" title="html" rel="1">
-                html
-            </a>
-            
-            
-            
-            <a href="/tags/#管理系统主题" title="管理系统主题" rel="1">
-                管理系统主题
-            </a>
-            
-            
-            
-            <a href="/tags/#计算机基础" title="计算机基础" rel="4">
-                计算机基础
-            </a>
-            
-            
-            
-            <a href="/tags/#javascript" title="javascript" rel="20">
-                javascript
-            </a>
-            
-            
-            
-            <a href="/tags/#生产工具" title="生产工具" rel="4">
-                生产工具
-            </a>
-            
-            
-            
-            <a href="/tags/#IDE" title="IDE" rel="4">
-                IDE
-            </a>
-            
-            
-            
-            <a href="/tags/#Lodash" title="Lodash" rel="1">
-                Lodash
-            </a>
-            
-            
-            
-            <a href="/tags/#ES6学习笔记" title="ES6学习笔记" rel="1">
-                ES6学习笔记
-            </a>
-            
-            
-            
-            <a href="/tags/#读书总结" title="读书总结" rel="13">
-                读书总结
-            </a>
-            
-            
-            
-            <a href="/tags/#Vim" title="Vim" rel="1">
-                Vim
-            </a>
-            
-            
-            
-            <a href="/tags/#reactjs" title="reactjs" rel="1">
-                reactjs
-            </a>
-            
-            
-            
-            <a href="/tags/#面试" title="面试" rel="12">
-                面试
-            </a>
-            
-            
-            
-            <a href="/tags/#CSS" title="CSS" rel="1">
-                CSS
-            </a>
-            
-            
-            
-            <a href="/tags/#HTML" title="HTML" rel="1">
-                HTML
-            </a>
-            
-            
-            
-            <a href="/tags/#调试" title="调试" rel="1">
-                调试
-            </a>
-            
-            
-            
-            <a href="/tags/#脚手架" title="脚手架" rel="1">
-                脚手架
-            </a>
-            
-            
-            
-            <a href="/tags/#基础" title="基础" rel="11">
-                基础
-            </a>
-            
-            
-            
-            <a href="/tags/#LeetCode" title="LeetCode" rel="5">
-                LeetCode
-            </a>
-            
-            
-            
-            <a href="/tags/#HSTS" title="HSTS" rel="3">
-                HSTS
-            </a>
-            
-            
-        </div>
-    </section>
-    
+    <hr class="hidden-sm hidden-xs">
+    <!--<h5 id="catalog">-->
+    <!--<a class="catalog-toggle" href="#">目录</a>-->
+    <!--</h5>-->
+    <div id="toc"></div>
 
-    <!-- Short About -->
-    <section class="visible-md visible-lg">
-        <hr>
-        <h5><a href="/about/">ABOUT ME</a></h5>
-        <div class="short-about">
-            
-            <img class="avatar" src="https://i.loli.net/2020/05/11/RauNc1K9482ivYP.jpg" />
-            
-            
-            <p>人是不能闲的，一闲就会想得太多，一闲就会感情泛滥 ，所谓矫情屁事多，空虚寂寞冷，都是因为懒散堕落闲。</p>
-            
-            <!-- SNS Link -->
-            <ul class="list-inline">
-                
-                
-                <li>
-                    <a target="_blank" href="https://www.zhihu.com/people/liu-tong-bin-17">
-                        <span class="fa-stack fa-lg">
-                            <i class="fa fa-circle fa-stack-2x"></i>
-                            <i class="fa  fa-stack-1x fa-inverse">知</i>
-                        </span>
-                    </a>
-                </li>
-                
-                
-                <li>
-                    <a target="_blank" href="https://weibo.com/3151133253/profile?topnav=1&wvr=6&is_all=1">
-                        <span class="fa-stack fa-lg">
-                            <i class="fa fa-circle fa-stack-2x"></i>
-                            <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-                        </span>
-                    </a>
-                </li>
-                
-                
-                <li>
-                    <a target="_blank" href="https://github.com/liutongbin2017">
-                        <span class="fa-stack fa-lg">
-                            <i class="fa fa-circle fa-stack-2x"></i>
-                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                        </span>
-                    </a>
-                </li>
-                
-            </ul>
-        </div>
-    </section>
-    <!-- Friends Blog -->
-    
-    <hr>
-    <h5>FRIENDS</h5>
-    <ul class="list-inline">
-        
-        <li><a href=""></a></li>
-        
-        <li><a href="http://www.ruanyifeng.com/blog/">阮一峰的网络日志</a></li>
-        
-        <li><a href="http://www.zhangxinxu.com/wordpress/">张鑫旭</a></li>
-        
-        <li><a href="http://www.cnblogs.com/TomXu/tag/JavaScript/">汤姆大叔的博客</a></li>
-        
-        <li><a href="http://macshuo.com/">MacTalk By 池建强</a></li>
-        
-        <li><a href="http://www.barretlee.com/">小胡子哥</a></li>
-        
-        <li><a href="https://lifesinger.wordpress.com/">岁月如歌玉伯</a></li>
-        
-        <li><a href="https://mritd.me">漠然</a></li>
-        
-        <li><a href="http://xtoshiba.me">Hux Blog</a></li>
-        
-        <li><a href="http://blog.codingplayboy.com/">熊建刚</a></li>
-        
-        <li><a href="https://teddysun.com/">秋水逸冰</a></li>
-        
-        <li><a href="http://www.alloyteam.com">AlloyTeam</a></li>
-        
-        <li><a href="https://efe.baidu.com">百度EFE</a></li>
-        
-        <li><a href="http://eux.baidu.com/">百度EUX</a></li>
-        
-        <li><a href="https://fed.taobao.org">淘宝前端团队</a></li>
-        
-        <li><a href="https://isux.tencent.com/">腾讯ISUX</a></li>
-        
-        <li><a href="https://aotu.io/">凹凸实验室</a></li>
-        
-    </ul>
-    
+
+
+    <!--<ul class="catalog-body">-->
+    <!--<li class="h2_nav"><a href="#多页应用vuepwa" rel="nofollow">多页应用、Vue、PWA？</a></li>-->
+    <!--<li class="h2_nav"><a href="#实现-prpl-模式" rel="nofollow">实现 “PRPL” 模式</a></li>-->
+    <!--<li class="h3_nav active"><a href="#1-pushpreload推送预加载初始-url-路由所需的关键资源" rel="nofollow">1. PUSH/PRELOAD，推送/预加载初始 URL 路由所需的关键资源。</a></li>-->
+    <!--</ul>-->
+
+
+
+
+
 </div>
 
 
 
 
 
-        
+            <!-- 详情底部的友情链接和标签云这里不单独抽离 -->
+            <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                            <a href="/tags/#博客搭建" title="博客搭建" rel="2">
+                                博客搭建
+                            </a>
+        				
+                            <a href="/tags/#JavaScript" title="JavaScript" rel="3">
+                                JavaScript
+                            </a>
+        				
+                            <a href="/tags/#jekyll" title="jekyll" rel="1">
+                                jekyll
+                            </a>
+        				
+                            <a href="/tags/#interview" title="interview" rel="1">
+                                interview
+                            </a>
+        				
+                            <a href="/tags/#工具" title="工具" rel="5">
+                                工具
+                            </a>
+        				
+                            <a href="/tags/#git" title="git" rel="3">
+                                git
+                            </a>
+        				
+                            <a href="/tags/#娱乐" title="娱乐" rel="1">
+                                娱乐
+                            </a>
+        				
+                            <a href="/tags/#html" title="html" rel="1">
+                                html
+                            </a>
+        				
+                            <a href="/tags/#管理系统主题" title="管理系统主题" rel="1">
+                                管理系统主题
+                            </a>
+        				
+                            <a href="/tags/#计算机基础" title="计算机基础" rel="4">
+                                计算机基础
+                            </a>
+        				
+                            <a href="/tags/#javascript" title="javascript" rel="20">
+                                javascript
+                            </a>
+        				
+                            <a href="/tags/#生产工具" title="生产工具" rel="4">
+                                生产工具
+                            </a>
+        				
+                            <a href="/tags/#IDE" title="IDE" rel="4">
+                                IDE
+                            </a>
+        				
+                            <a href="/tags/#Lodash" title="Lodash" rel="1">
+                                Lodash
+                            </a>
+        				
+                            <a href="/tags/#ES6学习笔记" title="ES6学习笔记" rel="1">
+                                ES6学习笔记
+                            </a>
+        				
+                            <a href="/tags/#读书总结" title="读书总结" rel="13">
+                                读书总结
+                            </a>
+        				
+                            <a href="/tags/#Vim" title="Vim" rel="1">
+                                Vim
+                            </a>
+        				
+                            <a href="/tags/#reactjs" title="reactjs" rel="1">
+                                reactjs
+                            </a>
+        				
+                            <a href="/tags/#面试" title="面试" rel="12">
+                                面试
+                            </a>
+        				
+                            <a href="/tags/#CSS" title="CSS" rel="1">
+                                CSS
+                            </a>
+        				
+                            <a href="/tags/#HTML" title="HTML" rel="1">
+                                HTML
+                            </a>
+        				
+                            <a href="/tags/#调试" title="调试" rel="1">
+                                调试
+                            </a>
+        				
+                            <a href="/tags/#脚手架" title="脚手架" rel="1">
+                                脚手架
+                            </a>
+        				
+                            <a href="/tags/#基础" title="基础" rel="11">
+                                基础
+                            </a>
+        				
+                            <a href="/tags/#LeetCode" title="LeetCode" rel="5">
+                                LeetCode
+                            </a>
+        				
+                            <a href="/tags/#HSTS" title="HSTS" rel="3">
+                                HSTS
+                            </a>
+        				
+        			</div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+                    
+                        <li><a href=""></a></li>
+                    
+                        <li><a href="http://www.ruanyifeng.com/blog/">阮一峰的网络日志</a></li>
+                    
+                        <li><a href="http://www.zhangxinxu.com/wordpress/">张鑫旭</a></li>
+                    
+                        <li><a href="http://www.cnblogs.com/TomXu/tag/JavaScript/">汤姆大叔的博客</a></li>
+                    
+                        <li><a href="http://macshuo.com/">MacTalk By 池建强</a></li>
+                    
+                        <li><a href="http://www.barretlee.com/">小胡子哥</a></li>
+                    
+                        <li><a href="https://lifesinger.wordpress.com/">岁月如歌玉伯</a></li>
+                    
+                        <li><a href="https://mritd.me">漠然</a></li>
+                    
+                        <li><a href="http://xtoshiba.me">Hux Blog</a></li>
+                    
+                        <li><a href="http://blog.codingplayboy.com/">熊建刚</a></li>
+                    
+                        <li><a href="https://teddysun.com/">秋水逸冰</a></li>
+                    
+                        <li><a href="http://www.alloyteam.com">AlloyTeam</a></li>
+                    
+                        <li><a href="https://efe.baidu.com">百度EFE</a></li>
+                    
+                        <li><a href="http://eux.baidu.com/">百度EUX</a></li>
+                    
+                        <li><a href="https://fed.taobao.org">淘宝前端团队</a></li>
+                    
+                        <li><a href="https://isux.tencent.com/">腾讯ISUX</a></li>
+                    
+                        <li><a href="https://aotu.io/">凹凸实验室</a></li>
+                    
+                </ul>
+                
+            </div>
+
+
+        </div>
     </div>
-</div>
-
+</article>
 
 
 
