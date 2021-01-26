@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-01-22T15:36:07+08:00</updated><id>/</id><subtitle>Dark knight's的个人技术博客,专注于web开发,追求前端最完美体验</subtitle><entry><title type="html">JS Object</title><link href="/2021/01/06/object/" rel="alternate" type="text/html" title="JS Object" /><published>2021-01-06T00:00:00+08:00</published><updated>2021-01-06T00:00:00+08:00</updated><id>/2021/01/06/object</id><content type="html" xml:base="/2021/01/06/object/">&lt;h3 id=&quot;objectassign&quot;&gt;Object.assign()&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-01-26T17:40:52+08:00</updated><id>/</id><subtitle>Dark knight's的个人技术博客,专注于web开发,追求前端最完美体验</subtitle><entry><title type="html">JS Object</title><link href="/2021/01/06/object/" rel="alternate" type="text/html" title="JS Object" /><published>2021-01-06T00:00:00+08:00</published><updated>2021-01-06T00:00:00+08:00</updated><id>/2021/01/06/object</id><content type="html" xml:base="/2021/01/06/object/">&lt;h3 id=&quot;objectassign&quot;&gt;Object.assign()&lt;/h3&gt;
 &lt;p&gt;该方法用于将所有可枚举属性的值从一个或多个源对象分配到目标对象。它将返回目标对象&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const target = { a: 1, b: 2 };
 const source = { b: 4, c: 5 };
@@ -529,6 +529,36 @@ var reverse = function(x) {
     if (res &amp;gt; Math.pow(2, 31) - 1 || res &amp;lt; Math.pow(2, 31) * -1) res = 0
     return res
 }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;3回文数&quot;&gt;3.回文数&lt;/h3&gt;
+&lt;p&gt;判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;示例 1:
+输入: 121
+输出: true
+
+示例 2:
+输入: -121
+输出: false
+解释: 从左向右读, 为 -121 。 从右向左读, 为 121- 。因此它不是一个回文数。
+
+示例 3:
+输入: 10
+输出: false
+解释: 从右向左读, 为 01 。因此它不是一个回文数。
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;答案一-2&quot;&gt;答案一&lt;/h3&gt;
+&lt;p&gt;我的答案是将数字转换成字符串然后倒转，判断Number值是否相等&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;x = 121
+var isPalindrome = function(x) {
+    var newX = x.toString().split('').reverse().join('')
+    if(Number(x) === Number(newX)) {
+        return true
+    } else {
+        return false
+    }
+};
 &lt;/code&gt;&lt;/pre&gt;</content><author><name>binn</name></author><category term="面试" /><category term="基础" /><category term="LeetCode" /><summary type="html">本文将LeetCode刷过的题目进行简单的总结和记录，便于自己进行复习，补充js基础 1.两数之和 两数之和： 给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 的那 两个 整数，并返回它们的数组下标。 你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。 你可以按任意顺序返回答案。 ``` 示例1: 输入：nums = [2,7,11,15], target = 9 输出：[0,1] 解释：因为 nums[0] + nums[1] == 9 ，返回 [0, 1] 。</summary></entry><entry><title type="html">JavaScript内置对象之数组</title><link href="/js%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2019/11/12/js-array/" rel="alternate" type="text/html" title="JavaScript内置对象之数组" /><published>2019-11-12T00:00:00+08:00</published><updated>2019-11-12T00:00:00+08:00</updated><id>/js%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2019/11/12/js-array</id><content type="html" xml:base="/js%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2019/11/12/js-array/">&lt;p&gt;本文为了详细记录JavaScript内置对象中的一些方法&lt;/p&gt;</content><author><name>binn</name></author><category term="javascript" /><summary type="html">本文为了详细记录JavaScript内置对象中的一些方法</summary></entry><entry><title type="html">在浏览器输入 URL 回车之后发生了什么</title><link href="/%E9%9D%A2%E8%AF%95/2019/09/16/browser-input-all/" rel="alternate" type="text/html" title="在浏览器输入 URL 回车之后发生了什么" /><published>2019-09-16T00:00:00+08:00</published><updated>2019-09-16T00:00:00+08:00</updated><id>/%E9%9D%A2%E8%AF%95/2019/09/16/browser-input-all</id><content type="html" xml:base="/%E9%9D%A2%E8%AF%95/2019/09/16/browser-input-all/">&lt;p&gt;不久前看了一篇文章&lt;a href=&quot;https://4ark.me/post/b6c7c0a2.html&quot;&gt;在浏览器输入 URL 回车之后发生了什么&lt;/a&gt;, 感觉讲的实在很好所以在此我也想总结一下,当自己被问到这个问题的时候会如何回答呢?&lt;/p&gt;
 
 &lt;p&gt;在浏览器输入 URL 回车之后发生了什么？
